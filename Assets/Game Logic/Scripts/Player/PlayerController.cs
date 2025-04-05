@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     [SerializeField] Camera cam;
     Rigidbody rb;
@@ -17,6 +18,10 @@ public class PlayerController : MonoBehaviour
     float divisaoCameraMovement, rotacaoX;
     float rotacaoHorizontal, rotacaoVertical;
 
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner) Destroy(this);
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -63,21 +68,6 @@ public class PlayerController : MonoBehaviour
 
                                 rotacaoVertical -= x.deltaPosition.y * sensibilidadeTouch;
                                 rotacaoVertical = Mathf.Clamp(rotacaoVertical, -40, 40); // Limita para a camera não da 360º na vertical
-
-
-
-
-
-
-
-                                /*float mouseX = x.deltaPosition.x * sensibilidadeTouch;
-                                float mouseY = x.deltaPosition.y * sensibilidadeTouch;
-
-                                rotacaoX -= mouseY;
-                                rotacaoX = Mathf.Clamp(rotacaoX, -80, 80);
-
-                                cam.transform.localRotation = Quaternion.Euler(rotacaoX, 0f, 0f); 
-                                transform.Rotate(Vector3.up * mouseX);*/
                             }
 
                             // Movement
@@ -91,16 +81,7 @@ public class PlayerController : MonoBehaviour
 
                                 vetor = new Vector3(moveX, 0, moveY).normalized;
 
-                                if (idCamera != -1)
-                                {
-                                    transform.localRotation = Quaternion.Euler(0, moveX, 0);
-                                }
-                                else
-                                {
-                                    transform.Rotate(0, rotacaoHorizontal, 0);
-                                    rotacaoHorizontal = 0f;
-                                    cameraPivot.localRotation = Quaternion.Euler(0, rotacaoHorizontal, 0);
-                                }
+                                
                             }
                         }
                         break;
@@ -143,10 +124,17 @@ public class PlayerController : MonoBehaviour
 
             // Rotaciona o objeto pivot em relação a movimentação do dedo
             cameraPivot.localRotation = Quaternion.Euler(rotacaoVertical, rotacaoHorizontal, 0f);
-            cameraPivot.position = transform.position;
+            
         }
+        cameraPivot.position = transform.position;
 
 
+        if (vetor != Vector3.zero)
+        {
+            Vector3 direcaoComCamera = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
+            Quaternion novaRotacao = Quaternion.LookRotation(direcaoComCamera);
+            transform.rotation = Quaternion.Slerp(transform.rotation, novaRotacao, Time.deltaTime * 10f);
+        }
 
 
 
