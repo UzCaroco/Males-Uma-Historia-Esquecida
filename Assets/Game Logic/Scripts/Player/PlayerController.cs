@@ -18,14 +18,20 @@ public class PlayerController : NetworkBehaviour
     float divisaoCameraMovement, rotacaoX;
     float rotacaoHorizontal, rotacaoVertical;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner) Destroy(this);
+        if (!IsOwner)
+        {
+            cam.gameObject.SetActive(false); // Desativa a câmera dos outros players
+            return;
+        }
     }
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
         divisaoCameraMovement = porcentagem * Screen.width;
 
         // pega as rotações iniciais e armazena;
@@ -35,7 +41,7 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-
+        if (!IsOwner) return;
         if (Input.touchCount > 0)
         {
             foreach (Touch x in Input.touches)
@@ -142,6 +148,8 @@ public class PlayerController : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsOwner) return;
+
         // Faz a movimentação do player com base na direção ao qual a câmera está olhando e movimenta relacionando-o ao touch do dedo
         Vector3 direcao = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
         vt = direcao * velocity * Time.fixedDeltaTime + rb.position;
