@@ -7,7 +7,9 @@ public class PlayerController : NetworkBehaviour
 {
     [SerializeField] Camera cam;
     Rigidbody rb;
+    Animator ani;
 
+    [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
     Touch touchCamera, touchMovement;
     Vector3 vetor, vt;
@@ -21,12 +23,14 @@ public class PlayerController : NetworkBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        ani = playerModel.GetComponent<Animator>();
     }
     public override void OnNetworkSpawn()
     {
         if (!IsOwner)
         {
             cam.gameObject.SetActive(false); // Desativa a câmera dos outros players
+            rb.isKinematic = true; // Impede que a física interfira na posição do player remoto
             return;
         }
     }
@@ -42,6 +46,7 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) return;
+
         if (Input.touchCount > 0)
         {
             foreach (Touch x in Input.touches)
@@ -137,9 +142,15 @@ public class PlayerController : NetworkBehaviour
 
         if (vetor != Vector3.zero)
         {
+            ani.SetBool("IsWalking", true);
+
             Vector3 direcaoComCamera = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
             Quaternion novaRotacao = Quaternion.LookRotation(direcaoComCamera);
-            transform.rotation = Quaternion.Slerp(transform.rotation, novaRotacao, Time.deltaTime * 10f);
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, novaRotacao, Time.deltaTime * 10f);
+        }
+        else
+        {
+            ani.SetBool("IsWalking", false);
         }
 
 
