@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -11,15 +12,18 @@ public class PlayerController : NetworkBehaviour
 
     [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
+    [SerializeField] Image mira;
     Touch touchCamera, touchMovement;
     Vector3 vetor, vt;
     Vector2 posicaoInicialMovement;
+    
 
     int idMovement = -1, idCamera = -1;
     [SerializeField] float porcentagem, velocity, sensibilidadeTouch;
     float divisaoCameraMovement, rotacaoX;
     float rotacaoHorizontal, rotacaoVertical;
 
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -46,6 +50,11 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) return;
+
+        
+
+            // Desenha uma linha/mira na tela para ver o que a câmera está vendo
+            Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 5, Color.red);
 
         if (Input.touchCount > 0)
         {

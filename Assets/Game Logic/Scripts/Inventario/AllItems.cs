@@ -17,12 +17,6 @@ public class Item
     public ItemType type;
     public short id;
     public Sprite icon;
-
-    public Item(string name, ItemType type, short id, Sprite icon)
-    {
-        this.name = name;
-        this.type = type;
-        this.id = id;
-        this.icon = icon;
-    }
+    public GameObject itemObject;
+    public Vector3 position;
 }
