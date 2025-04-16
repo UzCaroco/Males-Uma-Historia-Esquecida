@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interact
+  - Parede
+  - Ponto De Sorteio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Parede
   - 
   - Grab
   - Use

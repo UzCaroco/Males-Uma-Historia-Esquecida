@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : NetworkBehaviour
@@ -13,6 +15,7 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
     [SerializeField] Image mira;
+    [SerializeField] LayerMask layerDaParede;
     Touch touchCamera, touchMovement;
     Vector3 vetor, vt;
     Vector2 posicaoInicialMovement;
@@ -40,6 +43,8 @@ public class PlayerController : NetworkBehaviour
     }
     void Start()
     {
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); // Carrega a cena do outro mundo
+
         divisaoCameraMovement = porcentagem * Screen.width;
 
         // pega as rotações iniciais e armazena;
@@ -54,7 +59,7 @@ public class PlayerController : NetworkBehaviour
         
 
             // Desenha uma linha/mira na tela para ver o que a câmera está vendo
-            Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 5, Color.red);
+            Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 50, Color.red);
 
         if (Input.touchCount > 0)
         {
@@ -145,6 +150,7 @@ public class PlayerController : NetworkBehaviour
             // Rotaciona o objeto pivot em relação a movimentação do dedo
             cameraPivot.localRotation = Quaternion.Euler(rotacaoVertical, rotacaoHorizontal, 0f);
             
+
         }
         cameraPivot.position = transform.position;
 
@@ -174,5 +180,27 @@ public class PlayerController : NetworkBehaviour
         Vector3 direcao = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
         vt = direcao * velocity * Time.fixedDeltaTime + rb.position;
         rb.MovePosition(vt);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            Scene cena2 = SceneManager.GetSceneByBuildIndex(1);
+            SceneManager.MoveGameObjectToScene(gameObject, cena2); // Move o player para a cena do outro mundo
+
+            SceneManager.UnloadSceneAsync(0); // Descarrega a cena do mundo inicial
+        }
+
+        
+    }
+    void PositionCamera()
+    {
+        
+    }
+
+    private void LateUpdate()
+    {
+        PositionCamera();
     }
 }

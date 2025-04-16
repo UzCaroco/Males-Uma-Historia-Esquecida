@@ -13,7 +13,7 @@ using TMPro;
 
 public class RelayManager : MonoBehaviour
 {
-    
+    [SerializeField] TextMeshProUGUI joinCodeText;
 
     public async void StartHostRelay()
     {
@@ -24,6 +24,7 @@ public class RelayManager : MonoBehaviour
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(2);
         string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
+        joinCodeText.text = joinCode;
         Debug.Log("Join Code: " + joinCode);
 
         var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
