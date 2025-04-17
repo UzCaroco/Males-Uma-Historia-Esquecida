@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase 2.unity
     guid: 63024828a155b1941bab1aa1a1acfeb7
+  - enabled: 1
+    path: Assets/Scenes/Teste Patrulha NPC.unity
+    guid: 1840d2301ff62d74c98691d09af024c1
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 7ee76be91a237ca488e88e632be17fd6, type: 2}
