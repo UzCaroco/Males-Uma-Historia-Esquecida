@@ -44,6 +44,7 @@ public class PlayerController : NetworkBehaviour
     void Start()
     {
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); // Carrega a cena do outro mundo
+        SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive); // Carrega a cena do outro mundo
 
         divisaoCameraMovement = porcentagem * Screen.width;
 

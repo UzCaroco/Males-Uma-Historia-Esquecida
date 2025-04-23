@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Martelo
   itemType: 1
   id: 1
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   itemPrefab: {fileID: 2872950279983497115, guid: b995e0c215bedef499ed6d619c602ce2,
     type: 3}
   position: {x: 0.60968924, y: 0.92499995, z: -7.359142}

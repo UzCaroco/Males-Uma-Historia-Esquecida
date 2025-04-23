@@ -36,16 +36,16 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 520
-    y: 93
+    x: 542
+    y: 16
     width: 190
     height: 135
   IsDragging: 0
-  IsSelected: 0
+  IsSelected: 1
   _sentence:
     CharacterName: sicrano
     Text: escolheu a 1
-    CharacterSprite: {fileID: 21300000, guid: 2e27d8e1746b5584286bbe28fbfa253a, type: 3}
+    CharacterSprite: {fileID: 0}
   ParentNode: {fileID: 2058799050869256676}
   ChildNode: {fileID: 4911832909721228072}
   _isExternalFunc: 0
@@ -66,8 +66,8 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 247
-    y: 170
+    x: 269
+    y: 93
     width: 190
     height: 135
   IsDragging: 0
@@ -95,16 +95,16 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 522
-    y: 271
+    x: 544
+    y: 194
     width: 190
     height: 135
   IsDragging: 0
-  IsSelected: 0
+  IsSelected: 1
   _sentence:
     CharacterName: fulano
     Text: escolheu a 2
-    CharacterSprite: {fileID: 21300000, guid: dd6818d48a9501449b38f2c52186d13c, type: 3}
+    CharacterSprite: {fileID: 0}
   ParentNode: {fileID: 2058799050869256676}
   ChildNode: {fileID: 4911832909721228072}
   _isExternalFunc: 0
@@ -125,16 +125,16 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: 730
-    y: 188
+    x: 752
+    y: 111
     width: 190
     height: 135
   IsDragging: 0
-  IsSelected: 0
+  IsSelected: 1
   _sentence:
     CharacterName: caroco
     Text: fim
-    CharacterSprite: {fileID: 21300000, guid: c03d0e70107745d48b9cc5f2abe74fe5, type: 3}
+    CharacterSprite: {fileID: 0}
   ParentNode: {fileID: 2886171853184869988}
   ChildNode: {fileID: 0}
   _isExternalFunc: 0
@@ -155,16 +155,16 @@ MonoBehaviour:
   NodeGraph: {fileID: 11400000}
   Rect:
     serializedVersion: 2
-    x: -8
-    y: 162
+    x: 13
+    y: 86
     width: 190
     height: 135
   IsDragging: 0
-  IsSelected: 0
+  IsSelected: 1
   _sentence:
     CharacterName: "Caro\xE7o"
     Text: eai beleza?
-    CharacterSprite: {fileID: 21300000, guid: c03d0e70107745d48b9cc5f2abe74fe5, type: 3}
+    CharacterSprite: {fileID: 0}
   ParentNode: {fileID: 0}
   ChildNode: {fileID: 2058799050869256676}
   _isExternalFunc: 0

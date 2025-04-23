@@ -43,7 +43,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (other.CompareTag("Ponto De Sorteio"))
         {
-            Debug.Log(frentePonto.collider);
+            //Debug.Log(frentePonto.collider);
             Vector3 posicionar = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             transform.position = Vector3.Slerp(transform.position, posicionar, 1f);
 
@@ -72,11 +72,11 @@ public class EnemyPatrol : MonoBehaviour
                         opcoes.Add((raycasts[i], 1, -transform.right)); // Adiciona a opção com peso 1 se o raycast não colidiu com nada com vetor para esquerda
                     }
 
-                    Debug.Log("Raycast " + i + " não colidiu com nada"); // Loga que o raycast não colidiu com nada
+                    //Debug.Log("Raycast " + i + " não colidiu com nada"); // Loga que o raycast não colidiu com nada
                 }
                 else if (raycasts[i].collider != null)
                 {
-                    Debug.Log("Raycast " + i + " colidiu com a parede"); // Loga que o raycast colidiu com a parede
+                    //Debug.Log("Raycast " + i + " colidiu com a parede"); // Loga que o raycast colidiu com a parede
                 }
             }
             if (frentePonto.collider != null)
@@ -114,7 +114,7 @@ public class EnemyPatrol : MonoBehaviour
 
             if (sorteio < acumulado)
             {
-                Debug.Log("Direção sorteada: " + op.direcao); // Loga a direção sorteada
+                //Debug.Log("Direção sorteada: " + op.direcao); // Loga a direção sorteada
 
                 enemyMove.podeAndar = false;
                 enemyMove.vetorMovimento = op.direcao; // Define a direção do movimento do inimigo
@@ -147,11 +147,11 @@ public class EnemyPatrol : MonoBehaviour
                                 opcoesSecundarias.Add((raycasts[i], 1, -transform.right)); // Adiciona a opção com peso 1 se o raycast não colidiu com nada com vetor para esquerda
                             }
 
-                            Debug.Log("Raycast " + i + " não colidiu com nada"); // Loga que o raycast não colidiu com nada
+                            //Debug.Log("Raycast " + i + " não colidiu com nada"); // Loga que o raycast não colidiu com nada
                         }
                         else if (raycasts[i].collider != null)
                         {
-                            Debug.Log("Raycast " + i + " colidiu com a parede"); // Loga que o raycast colidiu com a parede
+                            //Debug.Log("Raycast " + i + " colidiu com a parede"); // Loga que o raycast colidiu com a parede
                         }
                     }
 
