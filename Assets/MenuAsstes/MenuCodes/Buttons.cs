@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
     }
     public void StarButtons()
     {
-        SceneManager.LoadScene("Fase 2");
+        SceneManager.LoadScene("cutScene");
     }
     public void CreditScene()
     {
@@ -27,6 +27,8 @@ public class Buttons : MonoBehaviour
     {
         Touch touch=Input.GetTouch(0);
         press.gameObject.SetActive(false);
+        play.gameObject.gameObject.SetActive(true);
+        creditos.gameObject.SetActive(true);
 
     }
     public void Update()
@@ -36,11 +38,6 @@ public class Buttons : MonoBehaviour
         {
             PressBUtton();  
         }
-        if (press==false)
-        {
-            play.gameObject.gameObject.SetActive(true);
-            creditos.gameObject.SetActive(true);
-
-        }
+    
     }
 }
