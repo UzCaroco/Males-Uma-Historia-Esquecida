@@ -25,12 +25,18 @@ public class Buttons : MonoBehaviour
     }
     public void PressBUtton()
     {
+        Touch touch=Input.GetTouch(0);
         press.gameObject.SetActive(false);
 
     }
     public void Update()
     {
-        if(press==false)
+        Touch touch = Input.GetTouch(0);
+        if(touch.phase==TouchPhase.Began)
+        {
+            PressBUtton();  
+        }
+        if (press==false)
         {
             play.gameObject.gameObject.SetActive(true);
             creditos.gameObject.SetActive(true);
