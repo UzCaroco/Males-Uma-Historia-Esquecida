@@ -14,11 +14,11 @@ public class PlayerController : NetworkBehaviour
 
     [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
-    [SerializeField] Image mira;
+    [SerializeField] Image mira, joystickPai, joystickFilho;
     [SerializeField] LayerMask layerDaParede;
     Touch touchCamera, touchMovement;
     Vector3 vetor, vt;
-    Vector2 posicaoInicialMovement;
+    Vector2 posicaoInicialMovement, posicaoPadraoJoystick;
     
 
     int idMovement = -1, idCamera = -1;
@@ -51,6 +51,8 @@ public class PlayerController : NetworkBehaviour
         // pega as rotações iniciais e armazena;
         rotacaoHorizontal = cameraPivot.transform.localEulerAngles.y;
         rotacaoVertical = cameraPivot.transform.localEulerAngles.x;
+
+        posicaoPadraoJoystick = joystickPai.transform.position;
     }
 
     void Update()
@@ -81,6 +83,8 @@ public class PlayerController : NetworkBehaviour
                             {
                                 idMovement = x.fingerId;
                                 posicaoInicialMovement = x.position;
+                                joystickPai.transform.position = x.position;
+                                joystickFilho.transform.position = x.position;
                             }
                         }
                         break;
@@ -99,6 +103,14 @@ public class PlayerController : NetworkBehaviour
                             // Movement
                             if (x.fingerId == idMovement)
                             {
+                                Vector2 direcao = x.position - posicaoInicialMovement;
+
+                                if (direcao.magnitude > 170f)
+                                {
+                                    direcao = direcao.normalized * 170f;
+                                }
+                                joystickFilho.transform.position = posicaoInicialMovement + direcao;
+
                                 float moveX = x.position.x - posicaoInicialMovement.x;
                                 float moveY = x.position.y - posicaoInicialMovement.y;
 
@@ -124,6 +136,9 @@ public class PlayerController : NetworkBehaviour
                             {
                                 idMovement = -1;
                                 vetor = Vector3.zero;
+
+                                joystickPai.transform.position = posicaoPadraoJoystick;
+                                joystickFilho.transform.position = posicaoPadraoJoystick;
                             }
                         }
                         break;
@@ -140,6 +155,9 @@ public class PlayerController : NetworkBehaviour
                             {
                                 idMovement = -1;
                                 vetor = Vector3.zero;
+
+                                joystickPai.transform.position = posicaoPadraoJoystick;
+                                joystickFilho.transform.position = posicaoPadraoJoystick;
                             }
                         }
                         break;
