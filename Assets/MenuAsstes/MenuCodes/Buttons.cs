@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
     }
     public void StarButtons()
     {
-        SceneManager.LoadScene("cutScene");
+        SceneManager.LoadScene("SampleScene");
     }
     public void CreditScene()
     {

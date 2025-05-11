@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using Unity.Burst.CompilerServices;
-using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +10,7 @@ public class PlayerController : NetworkBehaviour
 {
     [SerializeField] Camera cam;
     Rigidbody rb;
+    CharacterController CharacterController;
     Animator ani;
 
     [SerializeField] GameObject playerModel;
@@ -31,10 +32,12 @@ public class PlayerController : NetworkBehaviour
     {
         rb = GetComponent<Rigidbody>();
         ani = playerModel.GetComponent<Animator>();
+        CharacterController = GetComponent<CharacterController>();
     }
-    public override void OnNetworkSpawn()
+    public override void Spawned()
     {
-        if (!IsOwner)
+        base.Spawned();
+        if (!HasInputAuthority) //se não for o dono
         {
             cam.gameObject.SetActive(false); // Desativa a câmera dos outros players
             rb.isKinematic = true; // Impede que a física interfira na posição do player remoto
@@ -57,12 +60,10 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-        if (!IsOwner) return;
+        if (!HasInputAuthority) return;
 
-        
-
-            // Desenha uma linha/mira na tela para ver o que a câmera está vendo
-            Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 50, Color.red);
+        // Desenha uma linha/mira na tela para ver o que a câmera está vendo
+        Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 50, Color.red);
 
         if (Input.touchCount > 0)
         {
@@ -193,12 +194,21 @@ public class PlayerController : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (!IsOwner) return;
+        
+    }
+
+    public override void FixedUpdateNetwork()
+    {
+        base.FixedUpdateNetwork();
+
+        if (!HasInputAuthority) return;
 
         // Faz a movimentação do player com base na direção ao qual a câmera está olhando e movimenta relacionando-o ao touch do dedo
         Vector3 direcao = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
-        vt = direcao * velocity * Time.fixedDeltaTime + rb.position;
-        rb.MovePosition(vt);
+        vt = direcao * velocity * Runner.DeltaTime;
+        CharacterController.Move(vt);
+
+
     }
 
     private void OnCollisionEnter(Collision other)
