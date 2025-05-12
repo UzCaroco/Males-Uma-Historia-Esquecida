@@ -809,8 +809,9 @@ GameObject:
   - component: {fileID: 8998385201639854048}
   - component: {fileID: 7556329540646821613}
   - component: {fileID: 7044006912901396821}
-  - component: {fileID: 4478625822940990421}
-  - component: {fileID: 7540051069613979949}
+  - component: {fileID: 3679685548004055241}
+  - component: {fileID: 7935438392781861263}
+  - component: {fileID: 2322486468122049639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -855,7 +856,8 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 8998385201639854048}
   - {fileID: 7044006912901396821}
-  - {fileID: 7540051069613979949}
+  - {fileID: 7935438392781861263}
+  - {fileID: 2322486468122049639}
   ForceRemoteRenderTimeframe: 0
 --- !u!136 &5470636174372135895
 CapsuleCollider:
@@ -874,7 +876,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1570836
   m_Height: 1.8063852
@@ -893,6 +895,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 4149703861183073782}
+  rb: {fileID: 0}
+  ani: {fileID: 0}
   playerModel: {fileID: 5812139969569970699}
   cameraPivot: {fileID: 9052960572382484600}
   mira: {fileID: 4108032876216953384}
@@ -941,7 +945,7 @@ MonoBehaviour:
   StateHashes: 000000002b1a167c794069558b7cfd670f5f2b88
   TriggerHashes: 00000000
   TotalWords: 1
---- !u!143 &4478625822940990421
+--- !u!143 &3679685548004055241
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -966,8 +970,8 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.08, z: 0}
---- !u!114 &7540051069613979949
+  m_Center: {x: 0, y: 1.2, z: 0}
+--- !u!114 &7935438392781861263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -986,6 +990,19 @@ MonoBehaviour:
   braking: 10
   maxSpeed: 2
   rotationSpeed: 15
+--- !u!114 &2322486468122049639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606074155395285752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1072f84b2b7f894e8212022d613109b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactRadius: 1.25
 --- !u!1 &9009444971914474730
 GameObject:
   m_ObjectHideFlags: 0

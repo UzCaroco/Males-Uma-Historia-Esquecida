@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 
-public class DoorVault : MonoBehaviour, IInteractable
+public class DoorVault : NetworkBehaviour, IInteractable
 {
     bool codigoCorreto = true;
+
+
 
     public void Interact(PlayerInventory playerInventory)
     {

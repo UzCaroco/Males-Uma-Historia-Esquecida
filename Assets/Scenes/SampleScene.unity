@@ -561,7 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RunnerPrefab: {fileID: 838595505}
   StartMode: 1
-  AutoStartAs: 4
+  AutoStartAs: 6
   AutoHideGUI: 1
   AutoClients: 1
   ClientStartDelay: 0.1
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838595501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 513d22e37fc27b84fae6dd2a3cf250a4, type: 3}
   m_Name: 
@@ -2826,6 +2826,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f0397d97733a4408200a5263208424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1559277155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559277156}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559277156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559277155}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1913277471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562454094 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7640558969779515294, guid: 5ec1cf33679f06847a12019a9a3f39fe,
@@ -3152,6 +3183,74 @@ Transform:
   m_LocalScale: {x: 21.51, y: 11.8, z: 0.31}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1913277468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913277471}
+  - component: {fileID: 1913277470}
+  - component: {fileID: 1913277469}
+  m_Layer: 0
+  m_Name: PlayerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1913277469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913277468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 1060190123
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1913277470}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &1913277470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913277468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d395d7d02926a84bb35bd64452c1a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseAvatar:
+    RawGuidValue: 913cd1cb9f600f744aa3834f19ec35ac
+  _spawnPoint: {fileID: 1082891486}
+--- !u!4 &1913277471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913277468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1559277156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1921439172
@@ -4495,6 +4594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7938b4e000d5342a3f20efd58840bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _codeVaultTransform: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &3865040277123896597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4533,6 +4633,7 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: 3865040277123896596}
   - {fileID: 3865040277123896599}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &3865040277123896599
@@ -4668,6 +4769,7 @@ MonoBehaviour:
   - {fileID: 7514248252461830092}
   - {fileID: 6751998341363908879}
   NetworkedBehaviours:
+  - {fileID: 5531521449690755422}
   - {fileID: 5531521449690755424}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &5531521449690755424
@@ -4803,6 +4905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7938b4e000d5342a3f20efd58840bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _codeVaultTransform: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &6260005132985068484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4841,6 +4944,7 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: 6260005132985068483}
   - {fileID: 6260005132985068486}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &6260005132985068486
@@ -4984,6 +5088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7938b4e000d5342a3f20efd58840bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _codeVaultTransform: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &6751998341363908878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5022,6 +5127,7 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: 6751998341363908877}
   - {fileID: 6751998341363908880}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &6751998341363908880
@@ -5075,6 +5181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7938b4e000d5342a3f20efd58840bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _codeVaultTransform: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &7514248252461830091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5113,6 +5220,7 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: 7514248252461830090}
   - {fileID: 7514248252461830093}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &7514248252461830093
@@ -5159,3 +5267,4 @@ SceneRoots:
   - {fileID: 838595506}
   - {fileID: 3115974056819434409}
   - {fileID: 6695959326089256030}
+  - {fileID: 1913277471}

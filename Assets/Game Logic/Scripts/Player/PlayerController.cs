@@ -9,9 +9,9 @@ using UnityEngine.UI;
 public class PlayerController : NetworkBehaviour
 {
     [SerializeField] Camera cam;
-    Rigidbody rb;
+    [SerializeField] Rigidbody rb;
     CharacterController CharacterController;
-    Animator ani;
+    [SerializeField] Animator ani;
 
     [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
@@ -20,14 +20,14 @@ public class PlayerController : NetworkBehaviour
     Touch touchCamera, touchMovement;
     Vector3 vetor, vt;
     Vector2 posicaoInicialMovement, posicaoPadraoJoystick;
-    
+
 
     int idMovement = -1, idCamera = -1;
     [SerializeField] float porcentagem, velocity, sensibilidadeTouch;
     float divisaoCameraMovement, rotacaoX;
     float rotacaoHorizontal, rotacaoVertical;
 
-    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -120,7 +120,7 @@ public class PlayerController : NetworkBehaviour
 
                                 vetor = new Vector3(moveX, 0, moveY).normalized;
 
-                                
+
                             }
                         }
                         break;
@@ -169,7 +169,7 @@ public class PlayerController : NetworkBehaviour
 
             // Rotaciona o objeto pivot em relação a movimentação do dedo
             cameraPivot.localRotation = Quaternion.Euler(rotacaoVertical, rotacaoHorizontal, 0f);
-            
+
 
         }
         cameraPivot.position = transform.position;
@@ -194,7 +194,7 @@ public class PlayerController : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 
     public override void FixedUpdateNetwork()
@@ -221,15 +221,6 @@ public class PlayerController : NetworkBehaviour
             SceneManager.UnloadSceneAsync(0); // Descarrega a cena do mundo inicial
         }
 
-        
-    }
-    void PositionCamera()
-    {
-        
-    }
 
-    private void LateUpdate()
-    {
-        PositionCamera();
     }
 }
