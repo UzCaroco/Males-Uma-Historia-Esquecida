@@ -811,7 +811,6 @@ GameObject:
   - component: {fileID: 7044006912901396821}
   - component: {fileID: 3679685548004055241}
   - component: {fileID: 7935438392781861263}
-  - component: {fileID: 2322486468122049639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -857,7 +856,6 @@ MonoBehaviour:
   - {fileID: 8998385201639854048}
   - {fileID: 7044006912901396821}
   - {fileID: 7935438392781861263}
-  - {fileID: 2322486468122049639}
   ForceRemoteRenderTimeframe: 0
 --- !u!136 &5470636174372135895
 CapsuleCollider:
@@ -966,11 +964,11 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 15
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.2, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7935438392781861263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,26 +981,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
+  _stateAuthorityChangeErrorCorrectionDelta: 0.15
   gravity: -20
-  jumpImpulse: 8
+  jumpImpulse: 5
   acceleration: 10
-  braking: 10
-  maxSpeed: 2
+  braking: 20
+  maxSpeed: 5
   rotationSpeed: 15
---- !u!114 &2322486468122049639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8606074155395285752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1072f84b2b7f894e8212022d613109b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactRadius: 1.25
 --- !u!1 &9009444971914474730
 GameObject:
   m_ObjectHideFlags: 0

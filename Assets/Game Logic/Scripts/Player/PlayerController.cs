@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using Fusion;
+using FusionDemo;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(NetworkCharacterController))]
 public class PlayerController : NetworkBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] Rigidbody rb;
     CharacterController CharacterController;
     [SerializeField] Animator ani;
+    private NetworkCharacterController _cc;
 
     [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
@@ -37,10 +40,16 @@ public class PlayerController : NetworkBehaviour
     public override void Spawned()
     {
         base.Spawned();
+
+        // get the NetworkCharacterController reference
+        _cc = GetBehaviour<NetworkCharacterController>();
+
         if (!HasInputAuthority) //se não for o dono
         {
+            Debug.Log("Foi atribuido?" + _cc);
             cam.gameObject.SetActive(false); // Desativa a câmera dos outros players
-            rb.isKinematic = true; // Impede que a física interfira na posição do player remoto
+
+            //rb.isKinematic = true; // Impede que a física interfira na posição do player remoto
             return;
         }
     }
@@ -60,7 +69,7 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-        if (!HasInputAuthority) return;
+        /*if (!HasInputAuthority) return;
 
         // Desenha uma linha/mira na tela para ver o que a câmera está vendo
         Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 50, Color.red);
@@ -187,7 +196,7 @@ public class PlayerController : NetworkBehaviour
         {
             ani.SetBool("IsWalking", false);
         }
-
+        */
 
 
     }
@@ -196,17 +205,50 @@ public class PlayerController : NetworkBehaviour
     {
 
     }
-
+    [Networked] private NetworkButtons NetworkButtons { get; set; }
     public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();
 
         if (!HasInputAuthority) return;
 
-        // Faz a movimentação do player com base na direção ao qual a câmera está olhando e movimenta relacionando-o ao touch do dedo
+        /*// Faz a movimentação do player com base na direção ao qual a câmera está olhando e movimenta relacionando-o ao touch do dedo
         Vector3 direcao = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
         vt = direcao * velocity * Runner.DeltaTime;
-        CharacterController.Move(vt);
+        _cc.Move(vt);*/
+
+        // If we received input from the input authority
+        // The NetworkObject input authority AND the server/host will have the inputs
+        if (GetInput<DemoNetworkInput>(out var input))
+        {
+            var dir = default(Vector3);
+
+            // Handle horizontal input
+            if (input.IsDown(DemoNetworkInput.BUTTON_RIGHT))
+            {
+                dir += Vector3.right;
+            }
+            else if (input.IsDown(DemoNetworkInput.BUTTON_LEFT))
+            {
+                dir += Vector3.left;
+            }
+
+            // Handle vertical input
+            if (input.IsDown(DemoNetworkInput.BUTTON_FORWARD))
+            {
+                dir += Vector3.forward;
+            }
+            else if (input.IsDown(DemoNetworkInput.BUTTON_BACKWARD))
+            {
+                dir += Vector3.back;
+            }
+
+            // Move with the direction calculated
+            _cc.Move(dir.normalized);
+
+            // Store the current buttons to use them on the next FUN (FixedUpdateNetwork) call
+            NetworkButtons = input.Buttons;
+        }
 
 
     }
