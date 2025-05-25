@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using Fusion;
-using FusionDemo;
-using Unity.Burst.CompilerServices;
+using Fusion.Addons.Physics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(NetworkCharacterController))]
+//[RequireComponent(typeof(NetworkCharacterController))]
 public class PlayerController : NetworkBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] Rigidbody rb;
-    CharacterController CharacterController;
     [SerializeField] Animator ani;
-    private NetworkCharacterController _cc;
+    [SerializeField] CharacterController caracter;
+    [SerializeField] private NetworkCharacterController _cc;
+    [SerializeField] NetworkTransform networkTransform;
+    [SerializeField] NetworkRigidbody3D rbNetworked;
+    [SerializeField] NetworkTRSP networkTRSP;
 
     [SerializeField] GameObject playerModel;
     [SerializeField] Transform cameraPivot;
@@ -30,29 +30,66 @@ public class PlayerController : NetworkBehaviour
     float divisaoCameraMovement, rotacaoX;
     float rotacaoHorizontal, rotacaoVertical;
 
+    // Parâmetros para subir rampas
+    [SerializeField] float slopeLimit = 45f; // Ângulo máximo de inclinação que o personagem pode subir
+    [SerializeField] float stepOffset = 0.3f; // Altura máxima de um degrau que o personagem pode subir
+    [SerializeField] float gravityMultiplier = 2f; // Multiplicador de gravidade para descida de rampas
+    [SerializeField] LayerMask groundLayer; // Layer para detecção do solo
+
+    [Networked] private NetworkButtons NetworkButtons { get; set; }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         ani = playerModel.GetComponent<Animator>();
-        CharacterController = GetComponent<CharacterController>();
+    }
+
+    private void OnEnable()
+    {
+    }
+
+    private void OnDisable()
+    {
     }
     public override void Spawned()
     {
-        base.Spawned();
+        Debug.Log(" " + Object.StateAuthority + Object.InputAuthority);
 
-        // get the NetworkCharacterController reference
-        _cc = GetBehaviour<NetworkCharacterController>();
+        if (HasInputAuthority)
+        {
+            Runner.SetPlayerObject(Object.InputAuthority, Object); // Set the player object for the input authority
+
+            // get the NetworkCharacterController reference
+            _cc = GetBehaviour<NetworkCharacterController>();
+            Debug.Log("Foi atribuido?" + _cc);
+            networkTransform = GetBehaviour<NetworkTransform>();
+            Debug.Log("Foi atribuido?" + networkTransform);
+            rbNetworked = GetBehaviour<NetworkRigidbody3D>();
+            Debug.Log("Foi atribuido?" + rbNetworked);
+            networkTRSP = GetBehaviour<NetworkTRSP>();
+            Debug.Log("Foi atribuido?" + networkTRSP);
+
+        }
 
         if (!HasInputAuthority) //se não for o dono
         {
-            Debug.Log("Foi atribuido?" + _cc);
+            Runner.SetPlayerObject(Object.InputAuthority, Object); // Set the player object for the input authority
+            Debug.Log("Sera q foi clandestinamente?" + Object.HasInputAuthority);
+
+            Debug.Log("Sem autoridade de input nesse player! " + Object.InputAuthority);
+
             cam.gameObject.SetActive(false); // Desativa a câmera dos outros players
 
             //rb.isKinematic = true; // Impede que a física interfira na posição do player remoto
             return;
         }
     }
+    public override void Despawned(NetworkRunner runner, bool hasState)
+    {
+        base.Despawned(runner, hasState);
+
+
+    }
+
     void Start()
     {
         //SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); // Carrega a cena do outro mundo
@@ -65,11 +102,14 @@ public class PlayerController : NetworkBehaviour
         rotacaoVertical = cameraPivot.transform.localEulerAngles.x;
 
         posicaoPadraoJoystick = joystickPai.transform.position;
+
     }
 
     void Update()
     {
-        /*if (!HasInputAuthority) return;
+        if (!HasInputAuthority) return;
+
+
 
         // Desenha uma linha/mira na tela para ver o que a câmera está vendo
         Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 50, Color.red);
@@ -80,7 +120,7 @@ public class PlayerController : NetworkBehaviour
             {
                 switch (x.phase)
                 {
-                    case TouchPhase.Began:
+                    case UnityEngine.TouchPhase.Began:
                         {
                             // Camera
                             if (x.position.x > divisaoCameraMovement)
@@ -98,7 +138,7 @@ public class PlayerController : NetworkBehaviour
                             }
                         }
                         break;
-                    case TouchPhase.Moved:
+                    case UnityEngine.TouchPhase.Moved:
                         {
                             // Camera
                             if (x.fingerId == idCamera)
@@ -133,7 +173,7 @@ public class PlayerController : NetworkBehaviour
                             }
                         }
                         break;
-                    case TouchPhase.Ended:
+                    case UnityEngine.TouchPhase.Ended:
                         {
                             // Camera
                             if (x.fingerId == idCamera)
@@ -152,7 +192,7 @@ public class PlayerController : NetworkBehaviour
                             }
                         }
                         break;
-                    case TouchPhase.Canceled:
+                    case UnityEngine.TouchPhase.Canceled:
                         {
                             // Camera
                             if (x.fingerId == idCamera)
@@ -181,7 +221,7 @@ public class PlayerController : NetworkBehaviour
 
 
         }
-        cameraPivot.position = transform.position;
+        //cameraPivot.position = transform.position;
 
 
         if (vetor != Vector3.zero)
@@ -196,61 +236,79 @@ public class PlayerController : NetworkBehaviour
         {
             ani.SetBool("IsWalking", false);
         }
-        */
+
+
+        //cameraPivot.transform.position = Vector3.Lerp(transform.position, this.transform.position, Time.deltaTime * 15f);
+        // playerModel.transform.position = Vector3.Lerp(transform.position, this.transform.position, Time.deltaTime * 15f);
+        transform.parent.position = Vector3.Lerp(transform.position, this.transform.position, Time.deltaTime * 15f);
 
 
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
 
     }
-    [Networked] private NetworkButtons NetworkButtons { get; set; }
+
+    // Método para verificar se está em uma rampa
+    private bool IsOnSlope()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f, groundLayer))
+        {
+            float angle = Vector3.Angle(hit.normal, Vector3.up);
+            return angle > 0 && angle < slopeLimit;
+        }
+        return false;
+    }
+
+    // Método para obter a direção de movimento ajustada para rampas
+    private Vector3 GetSlopeMoveDirection(Vector3 direction)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f, groundLayer))
+        {
+            // Projeta o movimento na direção da rampa
+            Vector3 slopeDirection = Vector3.ProjectOnPlane(direction, hit.normal).normalized;
+            return slopeDirection;
+        }
+        return direction;
+    }
+
     public override void FixedUpdateNetwork()
     {
-        base.FixedUpdateNetwork();
-
         if (!HasInputAuthority) return;
 
-        /*// Faz a movimentação do player com base na direção ao qual a câmera está olhando e movimenta relacionando-o ao touch do dedo
+        // Faz a movimentação do player com base na direção ao qual a câmera está olhando
         Vector3 direcao = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
-        vt = direcao * velocity * Runner.DeltaTime;
-        _cc.Move(vt);*/
 
-        // If we received input from the input authority
-        // The NetworkObject input authority AND the server/host will have the inputs
-        if (GetInput<DemoNetworkInput>(out var input))
+        // Calcula a velocidade base
+        float speed = _cc.maxSpeed;
+        Vector3 moveDirection = direcao.normalized;
+
+        // Verifica se está em uma rampa e ajusta o movimento
+        bool onSlope = IsOnSlope();
+        if (onSlope && vetor != Vector3.zero)
         {
-            var dir = default(Vector3);
+            // Ajusta a direção do movimento para seguir a inclinação da rampa
+            moveDirection = GetSlopeMoveDirection(direcao);
 
-            // Handle horizontal input
-            if (input.IsDown(DemoNetworkInput.BUTTON_RIGHT))
-            {
-                dir += Vector3.right;
-            }
-            else if (input.IsDown(DemoNetworkInput.BUTTON_LEFT))
-            {
-                dir += Vector3.left;
-            }
-
-            // Handle vertical input
-            if (input.IsDown(DemoNetworkInput.BUTTON_FORWARD))
-            {
-                dir += Vector3.forward;
-            }
-            else if (input.IsDown(DemoNetworkInput.BUTTON_BACKWARD))
-            {
-                dir += Vector3.back;
-            }
-
-            // Move with the direction calculated
-            _cc.Move(dir.normalized);
-
-            // Store the current buttons to use them on the next FUN (FixedUpdateNetwork) call
-            NetworkButtons = input.Buttons;
+            // Adiciona um pequeno impulso vertical para ajudar a subir rampas
+            // Este é o segredo para subir rampas com o CharacterController
+            moveDirection.y = 0.5f;
         }
 
+        // Calcula o vetor final de movimento
+        vt = moveDirection * speed * Runner.DeltaTime;
 
+        // Move o CharacterController com o vetor ajustado
+        _cc.Move(vt);
+
+        // Sincroniza a rotação do objeto principal com a do modelo visual
+        if (vetor != Vector3.zero && networkTransform != null)
+        {
+            transform.rotation = playerModel.transform.rotation;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -262,7 +320,5 @@ public class PlayerController : NetworkBehaviour
 
             SceneManager.UnloadSceneAsync(0); // Descarrega a cena do mundo inicial
         }
-
-
     }
 }

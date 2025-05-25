@@ -1,6 +1,8 @@
 using UnityEngine;
+using Fusion;
 
 public interface IInteractable
 {
-    void Interact(PlayerInventory playerInventory);
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    void OnInteractObject(PlayerInventory playerInventory);
 }

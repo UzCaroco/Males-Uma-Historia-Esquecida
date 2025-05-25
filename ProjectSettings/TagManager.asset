@@ -7,6 +7,9 @@ TagManager:
   - Interact
   - Parede
   - Ponto De Sorteio
+  - CinemachineTarget
+  - Estante
+  - SpawnErrado
   layers:
   - Default
   - TransparentFX

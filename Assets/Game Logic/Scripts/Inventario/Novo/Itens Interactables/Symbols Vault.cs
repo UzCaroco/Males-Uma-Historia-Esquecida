@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
 
-public class SymbolsVault : NetworkBehaviour, IInteractable
+public class SymbolsVault : MonoBehaviour, IInteractable
 {
-    [Networked, OnChangedRender(nameof(RotateServerRPC))] public Quaternion codeVaultTransform { get; set; }
-    public void Interact(PlayerInventory playerInventory)
+    //[Networked, OnChangedRender(nameof(RotateServerRPC))] 
+    public Quaternion codeVaultTransform { get; set; }
+    public void OnInteractObject(PlayerInventory playerInventory)
     {
-        if (HasStateAuthority)
+        Debug.Log("Interagindo com o símbolo");
+        codeVaultTransform = Quaternion.Euler(Vector3.right * 60);
+
+        transform.Rotate(Vector3.right * 60);
+
+        /*if (HasStateAuthority)
         {
             codeVaultTransform = Quaternion.Euler(Vector3.right * 60);
             //RotateServerRPC();
@@ -17,8 +23,8 @@ public class SymbolsVault : NetworkBehaviour, IInteractable
         else
         {
             Debug.Log("You don't have authority to rotate this object.");
-        }
-            
+        }*/
+
     }
 
     void RotateServerRPC()

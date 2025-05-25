@@ -9,13 +9,14 @@ namespace Fusion.Menu {
 #endif
   using UnityEngine;
   using UnityEngine.UI;
+    using UnityEngine.Video;
 
-  /// <summary>
-  /// The party screen shows two modes. Creating a new game or joining a game with a party code.
-  /// After creating a game the session party code can be optained via the ingame menu.
-  /// One speciality is that a region list is requested from the connection when entering the screen in order to create a matching session codes.
-  /// </summary>
-  public partial class FusionMenuUIParty : FusionMenuUIScreen {
+    /// <summary>
+    /// The party screen shows two modes. Creating a new game or joining a game with a party code.
+    /// After creating a game the session party code can be optained via the ingame menu.
+    /// One speciality is that a region list is requested from the connection when entering the screen in order to create a matching session codes.
+    /// </summary>
+    public partial class FusionMenuUIParty : FusionMenuUIScreen {
     /// <summary>
     /// The session code input field.
     /// </summary>
@@ -106,10 +107,19 @@ namespace Fusion.Menu {
     /// <summary>
     /// Is called when the <see cref="_backButton"/> is pressed using SendMessage() from the UI object.
     /// </summary>
-    public virtual void OnBackButtonPressed() {
+    /// 
+    [SerializeField] GameObject _videoPlayer;
+    [SerializeField] GameObject _rawImage;
+        [SerializeField] GameObject _logotipo;
+        public virtual void OnBackButtonPressed() {
       Controller.Show<FusionMenuUIMain>();
-    }
 
+            _videoPlayer.SetActive(true);
+            _rawImage.SetActive(true);
+            _logotipo.SetActive(true);
+        }
+
+        
     /// <summary>
     /// The connect method to handle create and join.
     /// Internally the region request is awaited.

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UseItem : MonoBehaviour, IInteractable
 {
     [SerializeField] ItemData _data;
-    public void Interact(PlayerInventory playerInventory)
+    public void OnInteractObject(PlayerInventory playerInventory)
     {
         if (playerInventory != null)
         {

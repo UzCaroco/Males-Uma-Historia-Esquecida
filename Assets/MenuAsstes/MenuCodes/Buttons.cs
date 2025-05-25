@@ -8,35 +8,38 @@ using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
-    public GameObject play, creditos, press;
+    public GameObject play, sair, press;
     private void Start()
     {
-      play.gameObject.gameObject.SetActive(false);
-        creditos.gameObject.SetActive(false);   
+        play.gameObject.gameObject.SetActive(false);
+        sair.gameObject.SetActive(false);   
         press.gameObject.SetActive(true);
     }
-    public void StarButtons()
+    public void StartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Meu Host");
     }
-    public void CreditScene()
+    public void CreditButton()
     {
-        SceneManager.LoadScene("");
+
     }
     public void PressBUtton()
     {
         Touch touch=Input.GetTouch(0);
         press.gameObject.SetActive(false);
         play.gameObject.gameObject.SetActive(true);
-        creditos.gameObject.SetActive(true);
+        sair.gameObject.SetActive(true);
 
     }
     public void Update()
     {
-        Touch touch = Input.GetTouch(0);
-        if(touch.phase==TouchPhase.Began)
+        if (Input.touchCount > 0)
         {
-            PressBUtton();  
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                PressBUtton();
+            }
         }
     
     }

@@ -10,7 +10,7 @@ namespace Fusion.Menu {
   using UnityEngine;
 
   /// <summary>
-  /// The main menu.
+  /// The main menu.onparty
   /// </summary>
   public partial class FusionMenuUIMain : FusionMenuUIScreen {
     /// <summary>
@@ -186,14 +186,21 @@ namespace Fusion.Menu {
       await Controller.HandleConnectionResult(result, this.Controller);
     }
 
-    
 
-    /// <summary>
-    /// Is called when the <see cref="_partyButton"/> is pressed using SendMessage() from the UI object.
-    /// </summary>
-    protected virtual void OnPartyButtonPressed() {
+
+        /// <summary>
+        /// Is called when the <see cref="_partyButton"/> is pressed using SendMessage() from the UI object.
+        /// </summary>
+        /// 
+        [SerializeField] GameObject _videoPlayer;
+        [SerializeField] GameObject _rawImage;
+        [SerializeField] GameObject _logotipo;
+        protected virtual void OnPartyButtonPressed() {
       Controller.Show<FusionMenuUIParty>();
-    }
+            _videoPlayer.SetActive(false);
+            _rawImage.SetActive(false);
+            _logotipo.SetActive(false);
+        }
 
     /// <summary>
     /// Is called when the <see cref="_sceneButton"/> is pressed using SendMessage() from the UI object.

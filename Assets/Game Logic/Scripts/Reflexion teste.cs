@@ -43,11 +43,13 @@ public class Reflexionteste : MonoBehaviour
                 else
                 {
                     // Chegou num destino (tipo a parede falsa)
-                    /*if (hit.collider.CompareTag("FendaSecreta"))
+                    if (hit.collider.CompareTag("Estante"))
                     {
-                        Debug.Log("Acertou a fenda!");
+                        Debug.Log("Acertou o Estante!");
+
+                        hit.collider.gameObject.SetActive(false); // Desativa o objeto do livro
                         // Aqui você chama o método pra abrir a parede
-                    }*/
+                    }
                     break;
                 }
             }

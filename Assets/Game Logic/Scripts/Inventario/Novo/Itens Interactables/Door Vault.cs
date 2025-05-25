@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
 
-public class DoorVault : NetworkBehaviour, IInteractable
+public class DoorVault : MonoBehaviour, IInteractable
 {
     bool codigoCorreto = true;
 
 
 
-    public void Interact(PlayerInventory playerInventory)
+    public void OnInteractObject(PlayerInventory playerInventory)
     {
         Debug.Log("Interagindo com o porta do cofre");
 
