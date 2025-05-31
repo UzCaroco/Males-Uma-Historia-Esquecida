@@ -32,7 +32,7 @@ public class Chest : NetworkBehaviour, IInteractable
 
 
     NetworkTRSP NetworkTRSP;
-    bool open = false;
+    NetworkBool open = false;
 
     private void Start()
     {

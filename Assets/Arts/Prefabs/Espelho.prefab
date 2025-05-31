@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1681967916349242359}
   - component: {fileID: 5610897885231643530}
   - component: {fileID: 3720822845056046889}
+  - component: {fileID: 5191690550541815745}
+  - component: {fileID: 7550257497607418527}
   m_Layer: 11
   m_Name: Espelho.002
   m_TagString: Finish
@@ -119,6 +121,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20f6bfa57cf5474285aa45015afd601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5191690550541815745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365190332183834693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3595165543
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 3720822845056046889}
+  - {fileID: 7550257497607418527}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &7550257497607418527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365190332183834693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2038946961, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
 --- !u!1 &4644465957613405765
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +167,8 @@ GameObject:
   - component: {fileID: 3976429473032655494}
   - component: {fileID: 2497395679820299946}
   - component: {fileID: 6360273032438433395}
+  - component: {fileID: 5498076771135063038}
+  - component: {fileID: 6872130288820594918}
   m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
@@ -237,6 +274,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.58590865, y: 0.027901787, z: 0.31367016}
   m_Center: {x: 0, y: 0.01668141, z: 0.000097967684}
+--- !u!114 &5498076771135063038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644465957613405765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 534798246
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 2497395679820299946}
+  - {fileID: 6872130288820594918}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &6872130288820594918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644465957613405765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2038946961, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
 --- !u!1 &5586998881070237553
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +482,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5413738615706552112}
+  - component: {fileID: 5231244035837943530}
+  - component: {fileID: 2582334599699198501}
   m_Layer: 0
   m_Name: Espelho
   m_TagString: Untagged
@@ -438,3 +510,39 @@ Transform:
   - {fileID: 4152213037513344967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5231244035837943530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250904750888981571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 811314483
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects:
+  - {fileID: 5498076771135063038}
+  - {fileID: 5191690550541815745}
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &2582334599699198501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250904750888981571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 5413738615706552112}
+  _guid: 53cef6ec-c29b-42bf-
