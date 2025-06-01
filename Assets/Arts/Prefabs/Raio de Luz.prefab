@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7047480227701928654
+--- !u!1 &6686229629639806743
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1078609187436015097}
-  - component: {fileID: 5780019664293190856}
-  - component: {fileID: 8456524545152843891}
-  - component: {fileID: 788112782578187375}
+  - component: {fileID: 5132494188798134267}
+  - component: {fileID: 704299144882351503}
+  - component: {fileID: 3404706887841138403}
+  - component: {fileID: 2163120778681731641}
+  - component: {fileID: 7200998900749105945}
+  - component: {fileID: 4182298639554957710}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Raio de Luz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1078609187436015097
+--- !u!4 &5132494188798134267
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7047480227701928654}
+  m_GameObject: {fileID: 6686229629639806743}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008614037, y: -0, z: -0, w: 0.9999629}
-  m_LocalPosition: {x: 14.1, y: 1.73, z: 84.100006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.987, y: 0, z: 0}
---- !u!108 &5780019664293190856
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &704299144882351503
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7047480227701928654}
+  m_GameObject: {fileID: 6686229629639806743}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
+  m_Intensity: 4.42
   m_Range: 10
-  m_SpotAngle: 2.6284733
-  m_InnerSpotAngle: 1.3552649
+  m_SpotAngle: 1
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -80,7 +82,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -96,13 +98,13 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &8456524545152843891
+--- !u!114 &3404706887841138403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7047480227701928654}
+  m_GameObject: {fileID: 6686229629639806743}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59a7d92f6f1b57241a5f8e187d382bdc, type: 3}
@@ -110,15 +112,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxReflections: 5
   maxDistance: 100
-  lineRenderer: {fileID: 788112782578187375}
---- !u!120 &788112782578187375
+  lineRenderer: {fileID: 0}
+--- !u!120 &2163120778681731641
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7047480227701928654}
+  m_GameObject: {fileID: 6686229629639806743}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -215,3 +217,37 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &7200998900749105945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686229629639806743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 751392524
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &4182298639554957710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686229629639806743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 5132494188798134267}
+  _guid: 72f1ef75-24c1-4b27-
