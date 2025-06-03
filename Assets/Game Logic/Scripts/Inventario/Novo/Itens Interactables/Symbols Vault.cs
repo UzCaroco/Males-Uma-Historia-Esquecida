@@ -7,7 +7,7 @@ public class SymbolsVault : MonoBehaviour, IInteractable
 {
     //[Networked, OnChangedRender(nameof(RotateServerRPC))] 
     public Quaternion codeVaultTransform { get; set; }
-    public void OnInteractObject(PlayerInventory playerInventory)
+    public void OnInteractObject(Inven playerInventory)
     {
         Debug.Log("Interagindo com o símbolo");
         codeVaultTransform = Quaternion.Euler(Vector3.right * 60);

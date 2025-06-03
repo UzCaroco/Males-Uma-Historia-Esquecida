@@ -54,13 +54,13 @@ public class PlayerController : NetworkBehaviour
     {
         Debug.Log(" " + Object.StateAuthority + Object.InputAuthority);
 
-        if (HasInputAuthority)
+        if (HasStateAuthority)
         {
             Runner.SetPlayerObject(Object.InputAuthority, Object); // Set the player object for the input authority
 
             // get the NetworkCharacterController reference
             _cc = GetBehaviour<NetworkCharacterController>();
-            Debug.Log("Foi atribuido?" + _cc);
+            Debug.Log("Foi atribuido?" + _cc.gameObject.name);
             networkTransform = GetBehaviour<NetworkTransform>();
             Debug.Log("Foi atribuido?" + networkTransform);
             rbNetworked = GetBehaviour<NetworkRigidbody3D>();
@@ -68,20 +68,9 @@ public class PlayerController : NetworkBehaviour
             networkTRSP = GetBehaviour<NetworkTRSP>();
             Debug.Log("Foi atribuido?" + networkTRSP);
 
+            cam.gameObject.SetActive(Object.HasInputAuthority);
         }
 
-        if (!HasInputAuthority) //se não for o dono
-        {
-            Runner.SetPlayerObject(Object.InputAuthority, Object); // Set the player object for the input authority
-            Debug.Log("Sera q foi clandestinamente?" + Object.HasInputAuthority);
-
-            Debug.Log("Sem autoridade de input nesse player! " + Object.InputAuthority);
-
-            cam.gameObject.SetActive(false); // Desativa a câmera dos outros players
-
-            //rb.isKinematic = true; // Impede que a física interfira na posição do player remoto
-            return;
-        }
     }
     public override void Despawned(NetworkRunner runner, bool hasState)
     {
@@ -231,6 +220,7 @@ public class PlayerController : NetworkBehaviour
             Vector3 direcaoComCamera = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;
             Quaternion novaRotacao = Quaternion.LookRotation(direcaoComCamera);
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, novaRotacao, Time.deltaTime * 10f);
+            
         }
         else
         {
@@ -278,6 +268,8 @@ public class PlayerController : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
         if (!HasInputAuthority) return;
+
+        playerModel.transform.position = networkTRSP.transform.position; // Mantém a altura do modelo do player igual à do NetworkTRSP
 
         // Faz a movimentação do player com base na direção ao qual a câmera está olhando
         Vector3 direcao = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * vetor;

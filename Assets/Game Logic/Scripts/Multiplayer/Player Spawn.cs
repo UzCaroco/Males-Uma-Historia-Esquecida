@@ -11,6 +11,9 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     public GameObject spawnPoint, canvasVideo;
     [SerializeField] private NetworkRunner runner;
 
+
+    [SerializeField] NetworkObject prefabSobrado, prefabEspelho, prefabBau, prefabPortaSaida, prefabPortasInteriores;
+
     bool jaChegouEm90 = false, ativouVideo = false;
 
     public override void FixedUpdateNetwork()
@@ -66,7 +69,8 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
         if (player == Runner.LocalPlayer) // ou Runner.IsServer se tiver usando Server/Client
         {
             Debug.Log("ENTROU NOS ESTADOS UNIDOS DE FORMA LEGAL");
-            NetworkObject playerObj = Runner.Spawn(playerPrefab, spawnPoint.transform.position, Quaternion.identity, inputAuthority: player);
+            NetworkObject playerObj = Runner.Spawn(playerPrefab, inputAuthority: player);
+            playerObj.transform.position = spawnPoint.transform.position; // Define a posição do jogador
             Runner.SetPlayerObject(player, playerObj);
 
             //playerObj.GetComponentInChildren<Camera>().enabled = false;
@@ -75,6 +79,17 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 
 
         }
+
+        // Verifica se é o primeiro jogador (host)
+        if (Runner.IsSharedModeMasterClient && Runner.ActivePlayers.Count() <= 1)
+        {
+            SpawnarObjetosInterativos();
+        }
+    }
+    private void SpawnarObjetosInterativos()
+    {
+        Debug.Log("ENTROOOOU");
+        Runner.Spawn(prefabSobrado);
     }
 
     void OnVideoEnd(VideoPlayer vp)

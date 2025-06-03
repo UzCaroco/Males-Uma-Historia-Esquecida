@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour, IInteractable
 {
-    public void OnInteractObject(PlayerInventory playerInventory)
+    public void OnInteractObject(Inven playerInventory)
     {
         if (playerInventory != null)
         {

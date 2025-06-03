@@ -1,9 +1,9 @@
+
 using Fusion;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlayerInventory : NetworkBehaviour
+public class Inven : NetworkBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] LayerMask interactableLayer;
@@ -77,82 +77,18 @@ public class PlayerInventory : NetworkBehaviour
             {
                 if (netObj.TryGetComponent(out IInteractable interactable))
                 {
-                    //interactable.OnInteractObject(this);
+                    interactable.OnInteractObject(this);
                 }
             }
         }
 
-        
+
     }
     public void Interagir()
     {
         Debug.Log("Clicou para Interagir primeiramente");
 
         RPC_HandleHit();
-
-
-        /*Debug.Log("Clicou para Interagir");
-
-
-
-        if (hitInteract.collider)
-        {
-            hitInteract.collider.TryGetComponent(out IInteractable interactable);
-
-            if (interactable != null)
-            {
-                interactable.OnInteractObject(this);
-            }
-        }
-        else
-        {
-            Debug.Log("Não tem nada pra interagir.");
-        }
-
-
-
-        if (Object.HasInputAuthority)
-        {
-            
-        }*/
-
-    
-
-        /*if (hitInteract.collider)
-        {
-            hitInteract.collider.TryGetComponent(out IInteractable interactable);
-
-            if (interactable != null)
-            {
-                Rpc_Interagir();
-            }
-        }
-        else
-        {
-            Debug.Log("Não tem nada pra interagir.");
-        }*/
-    }
-
-    
-    private void Rpc_Interagir()
-    {
-        Debug.Log("Foi para o rpc");
-
-        // Raycast aqui no lado do servidor (usando a mesma lógica)
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, 5, interactableLayer))
-        {
-            Debug.Log("ativou o raycast");
-            if (hit.collider.TryGetComponent(out IInteractable interactable))
-            {
-                Debug.Log("entrou no if");
-                //interactable.OnInteractObject(this);
-                
-            }
-        }
-        else
-        {
-            Debug.Log("Nada pra interagir no lado do servidor.");
-        }
     }
 
     public void OnPointerDown()
@@ -186,7 +122,7 @@ public class PlayerInventory : NetworkBehaviour
 
                     if (interactable != null)
                     {
-                        //interactable.OnInteractObject(this);
+                        interactable.OnInteractObject(this);
                     }
                 }
                 else
@@ -197,15 +133,4 @@ public class PlayerInventory : NetworkBehaviour
         }
     }
 
-
-    /*public void SpawnObjetoServidor()
-    {
-        GameManager gm = FindObjectOfType<GameManager>();
-        if (gm == null)
-        {
-            var obj = Runner.Spawn(prefabGameManager, Vector3.zero, Quaternion.identity, PlayerRef.None);
-            // Agora 'obj' está com StateAuthority no host
-        }
-
-    }*/
 }

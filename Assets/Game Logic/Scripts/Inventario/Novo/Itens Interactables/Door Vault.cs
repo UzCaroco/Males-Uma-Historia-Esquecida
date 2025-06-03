@@ -9,7 +9,7 @@ public class DoorVault : MonoBehaviour, IInteractable
 
 
 
-    public void OnInteractObject(PlayerInventory playerInventory)
+    public void OnInteractObject(Inven playerInventory)
     {
         Debug.Log("Interagindo com o porta do cofre");
 

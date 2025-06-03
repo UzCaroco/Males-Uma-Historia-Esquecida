@@ -45,7 +45,7 @@ public class Chest : NetworkBehaviour, IInteractable
 
 
     
-    public void OnInteractObject(PlayerInventory playerInventory)
+    public void OnInteractObject(Inven playerInventory)
     {
         // The code inside here will run on the client which owns this object (has state and input authority).
         Debug.Log("Received DealDamageRpc on StateAuthority, modifying Networked variable");

@@ -21,7 +21,7 @@ public class Health : NetworkBehaviour, IInteractable
         NetworkedHealth -= damage;
     }
 
-    public void OnInteractObject(PlayerInventory playerInventory)
+    public void OnInteractObject(Inven playerInventory)
     {
         
     }
