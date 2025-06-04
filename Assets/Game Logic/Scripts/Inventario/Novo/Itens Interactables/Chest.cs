@@ -5,9 +5,18 @@ using UnityEngine;
 
 public class Chest : NetworkBehaviour, IInteractable
 {
-    [Networked, OnChangedRender(nameof(ChangedVoid))] Vector3 chestState { get; set; }
+    [Networked] int chestId { get; set; } = 0;
+    [Networked] Vector3 chestState { get; set; }
 
-    void ChangedVoid()
+
+
+    public override void FixedUpdateNetwork()
+    {
+        
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    void RPC_ChangedVoid()
     {
         Debug.Log("Chest state changed: " + chestState);
 
@@ -15,13 +24,16 @@ public class Chest : NetworkBehaviour, IInteractable
         {
             Debug.Log(chestState);
 
-            NetworkTRSP.transform.Rotate(chestState);
-            
+            transform.Rotate(chestState);
+            Debug.Log(transform.rotation.eulerAngles + "ROTACAO DO OBJETO");
+
         }
         else
         {
             Debug.Log(chestState);
-            NetworkTRSP.transform.Rotate(chestState);
+
+            transform.Rotate(chestState);
+            Debug.Log(transform.rotation.eulerAngles + "ROTACAO DO OBJETO");
             
         }
     }
@@ -31,21 +43,21 @@ public class Chest : NetworkBehaviour, IInteractable
 
 
 
-    NetworkTRSP NetworkTRSP;
+    NetworkTRSP networkT;
     NetworkBool open = false;
 
     private void Start()
     {
-        NetworkTRSP = GetComponent<NetworkTRSP>();
-        if (NetworkTRSP == null)
+        networkT = GetComponent<NetworkTRSP>();
+        if (networkT == null)
         {
             Debug.LogError("NetworkTRSP component not found on the object.");
         }
     }
 
 
-    
-    public void OnInteractObject(Inven playerInventory)
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_OnInteractObject(Inven playerInventory)
     {
         // The code inside here will run on the client which owns this object (has state and input authority).
         Debug.Log("Received DealDamageRpc on StateAuthority, modifying Networked variable");
@@ -53,13 +65,25 @@ public class Chest : NetworkBehaviour, IInteractable
 
         if (!open)
         {
-            chestState = new Vector3(90, 0, 0);
+            chestState = new Vector3(-90, 0, 0);
             open = true;
+
+            if (HasStateAuthority)
+                RPC_ChangedVoid();
+
+            chestId++;
+            Debug.Log("ID DO BAU " + chestId);
         }
         else
         {
-            chestState = new Vector3(-90, 0, 0);
+            chestState = new Vector3(90, 0, 0);
             open = false;
+
+            if (HasStateAuthority)
+                RPC_ChangedVoid();
+
+            chestId++;
+            Debug.Log("ID DO BAU " + chestId);
         }
 
     }

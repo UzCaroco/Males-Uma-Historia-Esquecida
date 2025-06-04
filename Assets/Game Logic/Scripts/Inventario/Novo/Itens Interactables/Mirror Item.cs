@@ -48,7 +48,7 @@ public class MirrorItem : NetworkBehaviour, IInteractable
         Debug.Log(min + " " + max);
         Debug.Log(this.gameObject.transform.parent.name);
     }
-    public void OnInteractObject(Inven playerInventory)
+    public void RPC_OnInteractObject(Inven playerInventory)
     {
         if (direcao && rotacao < max)
         {

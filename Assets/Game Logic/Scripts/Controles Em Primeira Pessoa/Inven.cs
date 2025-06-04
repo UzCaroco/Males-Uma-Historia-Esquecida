@@ -13,14 +13,9 @@ public class Inven : NetworkBehaviour
     public Image itemIcon;
     public ItemData itemAtual = null;
 
-    [SerializeField] float tempoPressionado = 0f, limiteMaxParaPointerDownIniciar = 5f;
-
-    [SerializeField] private NetworkObject prefabGameManager;
-
-
-
     public float rayDistance = 100f;
 
+    FirstPersonCamera cameraPessoal;
     void Start()
     {
         Debug.Log($"Start - Tem Input Authority? {Object.HasInputAuthority}");
@@ -29,105 +24,56 @@ public class Inven : NetworkBehaviour
 
     public override void Spawned()
     {
-        Debug.Log("Spawned do PlayerInventory");
-
-        if (HasInputAuthority)
-        {
-            Debug.Log("parece q essa porra foi");
-            Runner.SetPlayerObject(Object.InputAuthority, Object); // Set the player object for the input authority
-
-
-
-
-
-
-
-
-
-            PlayerSpawn[] spawns = FindObjectsByType<PlayerSpawn>(FindObjectsSortMode.None);
-
-            if (Object.HasStateAuthority)
-            {
-                foreach (var spawn in spawns)
-                {
-
-                    if (spawn != this && spawn.gameObject.name == "Prototype Runner")
-                    {
-                        //spawn.gameObject.SetActive(false);
-                    }
-                }
-            }
-
-
-
-
-            //SpawnObjetoServidor();
-        }
+        cam = Camera.main;
+        cameraPessoal = cam.GetComponent<FirstPersonCamera>();
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-    void RPC_HandleHit()
+    public void RPC_HandleHit(Vector3 origem, Vector3 direcao)
     {
         Debug.Log("ENTROU AQUI, AGR VAI");
 
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        foreach (var x in Runner.ActivePlayers)
+        {
+            var networkObject = Runner.GetPlayerObject(x); //Percorre os objetos de rede ativos (Players)
+            if (networkObject != null) //Verifica se o objeto de rede não é nulo
+            {
+                if (networkObject.HasStateAuthority)
+                {
+                    Debug.Log("Encontrou o jogador com autoridade de estado: " + networkObject);
+
+
+                    // Pega o componente Inven a partir do NetworkObject do player
+                    var inven = networkObject.GetComponent<Inven>();
+                    if (inven != null)
+                    {
+                        inven.RPC_AtirarRayCast(origem, direcao); // Chama o RPC
+                    }
+
+                    break; // Encerra o loop se encontrar o jogador com autoridade de estado
+                }
+            }
+        }
+    }
+    public override void FixedUpdateNetwork()
+    {
+        cameraPessoal.UpdateInteragir();
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AtirarRayCast(Vector3 origem, Vector3 direcao)
+    {
+        Debug.Log("Atirando RayCast");
+        // Cria o ray com a origem e direção recebidas
+        Ray ray = new Ray(origem, direcao);
+
         if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
             if (hit.collider.TryGetComponent(out NetworkObject netObj))
             {
                 if (netObj.TryGetComponent(out IInteractable interactable))
                 {
-                    interactable.OnInteractObject(this);
-                }
-            }
-        }
-
-
-    }
-    public void Interagir()
-    {
-        Debug.Log("Clicou para Interagir primeiramente");
-
-        RPC_HandleHit();
-    }
-
-    public void OnPointerDown()
-    {
-        segurandoBotao = true;
-    }
-
-    bool segurandoBotao;
-    public void OnPointerUp()
-    {
-        segurandoBotao = false;
-        tempoPressionado = 0f;
-    }
-
-    private void Update()
-    {
-        if (segurandoBotao && tempoPressionado < limiteMaxParaPointerDownIniciar)
-        {
-            tempoPressionado += Time.deltaTime;
-        }
-
-        else if (tempoPressionado >= limiteMaxParaPointerDownIniciar)
-        {
-            if (Object.HasInputAuthority)
-            {
-                Debug.Log("Clicou para Interagir no POINT DOWN");
-
-                if (hitInteract.collider)
-                {
-                    hitInteract.collider.TryGetComponent(out IInteractable interactable);
-
-                    if (interactable != null)
-                    {
-                        interactable.OnInteractObject(this);
-                    }
-                }
-                else
-                {
-                    Debug.Log("Não tem nada pra interagir.");
+                    interactable.RPC_OnInteractObject(this);
                 }
             }
         }

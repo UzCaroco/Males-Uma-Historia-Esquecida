@@ -4,5 +4,5 @@ using Fusion;
 public interface IInteractable
 {
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-    void OnInteractObject(Inven playerInventory);
+    void RPC_OnInteractObject(Inven playerInventory);
 }

@@ -48,6 +48,7 @@ public class PlayerMovement : NetworkBehaviour
     private void Start()
     {
         divisaoCameraMovement = porcentagem * Screen.width;
+        posicaoPadraoJoystick = joystickPai.transform.position;
     }
 
     private void Update()

@@ -12,7 +12,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     [SerializeField] private NetworkRunner runner;
 
 
-    [SerializeField] NetworkObject prefabSobrado, prefabEspelho, prefabBau, prefabPortaSaida, prefabPortasInteriores;
+    [SerializeField] NetworkObject prefabSobrado;
 
     bool jaChegouEm90 = false, ativouVideo = false;
 
@@ -88,8 +88,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     }
     private void SpawnarObjetosInterativos()
     {
-        Debug.Log("ENTROOOOU");
-        Runner.Spawn(prefabSobrado);
+        Runner.Spawn(prefabSobrado, inputAuthority: runner.LocalPlayer);
     }
 
     void OnVideoEnd(VideoPlayer vp)

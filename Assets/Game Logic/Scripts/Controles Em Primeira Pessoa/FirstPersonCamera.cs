@@ -8,8 +8,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     private float verticalRotation;
     private float horizontalRotation;
-
-
+    Camera cam;
 
 
 
@@ -20,6 +19,11 @@ public class FirstPersonCamera : MonoBehaviour
 
     [SerializeField] Transform cameraPivot;
     [SerializeField] Image mira;
+
+    [SerializeField] float tempoPressionado = 0f, limiteMaxParaPointerDownIniciar = 5f;
+    [SerializeField] LayerMask interactableLayer;
+    public RaycastHit hitInteract => Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, interactableLayer) ? hit : default;
+    bool segurandoBotao;
 
     void Start()
     {
@@ -107,6 +111,42 @@ public class FirstPersonCamera : MonoBehaviour
         horizontalRotation += mouseX * MouseSensitivity;
 
         transform.rotation = Quaternion.Euler(verticalRotation, horizontalRotation, 0);*/
+    }
+
+    public void Interagir()
+    {
+        Debug.Log("Clicou para Interagir primeiramente");
+        cam = Camera.main;
+        Target.gameObject.GetComponent<Inven>().RPC_HandleHit(cam.transform.position, cam.transform.forward);
+    }
+
+    public void OnPointerDown()
+    {
+        Debug.Log("Clicou para Interagir primeiramente");
+
+        segurandoBotao = true;
+    }
+
+    
+    public void OnPointerUp()
+    {
+        segurandoBotao = false;
+        tempoPressionado = 0f;
+    }
+
+
+    public void UpdateInteragir()
+    {
+        if (segurandoBotao && tempoPressionado < limiteMaxParaPointerDownIniciar)
+        {
+            tempoPressionado += Time.deltaTime;
+        }
+
+        else if (tempoPressionado >= limiteMaxParaPointerDownIniciar)
+        {
+            cam = Camera.main;
+            Target.gameObject.GetComponent<Inven>().RPC_HandleHit(cam.transform.position, cam.transform.forward);
+        }
     }
 
 

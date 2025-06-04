@@ -1931,10 +1931,10 @@ GameObject:
   - component: {fileID: 7258560143364232900}
   - component: {fileID: 8155744441628284445}
   - component: {fileID: 7652387372824701169}
-  - component: {fileID: 716770980222532213}
   - component: {fileID: 5970548844387056896}
   - component: {fileID: 1791815452123781007}
   - component: {fileID: 7917549674873784290}
+  - component: {fileID: 2005398428148740074}
   m_Layer: 0
   m_Name: Player Em Primeira Pessoa
   m_TagString: Untagged
@@ -1978,9 +1978,9 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7652387372824701169}
-  - {fileID: 716770980222532213}
   - {fileID: 1791815452123781007}
   - {fileID: 7917549674873784290}
+  - {fileID: 2005398428148740074}
   ForceRemoteRenderTimeframe: 0
 --- !u!143 &8155744441628284445
 CharacterController:
@@ -2026,29 +2026,6 @@ MonoBehaviour:
   StateHashes: 000000002b1a167c794069558b7cfd670f5f2b88
   TriggerHashes: 00000000
   TotalWords: 1
---- !u!114 &716770980222532213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076581854478548683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0650f79f10caf5b43af4e2a1b9f5f54b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  dropPoint: {fileID: 0}
-  itemIcon: {fileID: 0}
-  itemAtual: {fileID: 0}
-  tempoPressionado: 0
-  limiteMaxParaPointerDownIniciar: 5
-  prefabGameManager: {fileID: 0}
-  rayDistance: 100
 --- !u!95 &5970548844387056896
 Animator:
   serializedVersion: 5
@@ -2107,6 +2084,29 @@ MonoBehaviour:
   braking: 100
   maxSpeed: 4
   rotationSpeed: 15
+--- !u!114 &2005398428148740074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076581854478548683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6462105b42d92ee4e946fd9d94a8f377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  dropPoint: {fileID: 0}
+  itemIcon: {fileID: 0}
+  itemAtual: {fileID: 0}
+  tempoPressionado: 0
+  limiteMaxParaPointerDownIniciar: 0.5
+  prefabGameManager: {fileID: 0}
+  rayDistance: 100
 --- !u!1 &8180189612800446616
 GameObject:
   m_ObjectHideFlags: 0

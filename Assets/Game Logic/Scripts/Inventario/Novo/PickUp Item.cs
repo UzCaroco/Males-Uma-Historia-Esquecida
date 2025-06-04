@@ -6,7 +6,7 @@ using UnityEngine;
 public class PickUpItem : MonoBehaviour, IInteractable
 {
     [SerializeField] ItemData itemData;
-    public void OnInteractObject(Inven playerInventory)
+    public void RPC_OnInteractObject(Inven playerInventory)
     {
         if (playerInventory != null)
         {

@@ -40,7 +40,7 @@ public class BaseMirror : NetworkBehaviour, IInteractable
         rotacao = transform.eulerAngles.y;
         Debug.Log("Inicial" + rotacao);
     }
-    public void OnInteractObject(Inven playerInventory)
+    public void RPC_OnInteractObject(Inven playerInventory)
     {
 
         if (direcao && rotacao < 80)
