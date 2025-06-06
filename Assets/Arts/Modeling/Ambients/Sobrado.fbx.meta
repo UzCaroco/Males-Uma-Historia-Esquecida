@@ -3,7 +3,97 @@ guid: 46b218eb86e77544fbd921987face8e2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Escada Baixo
+    second: {fileID: 2100000, guid: 0366d73e5222b3a4792fc2f0255e0ca2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Escada Cima
+    second: {fileID: 2100000, guid: fc7b316923384e74d9354ded42134c2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: dc1054b3d6bca8f479b53d30713a09a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: e376dde6a2d9d8947a652b958597a0b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 80a2a0d34a8c985419f8031c34b9829b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Parede de Cimento
+    second: {fileID: 2100000, guid: 75a7cbfe0f2ed1a409eb15e66b88a059, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paredes Interiores
+    second: {fileID: 2100000, guid: acb9a6f999e14d14abc247fca83b8375, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piso de Taco
+    second: {fileID: 2100000, guid: b92c0fe9524bac24289877e745cb5adf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parede de Cimento lateral
+    second: {fileID: 2100000, guid: c4ac3a793d45b1c4dbbc1d5704d7d9ee, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: beige_wall_001_diff_1k
+    second: {fileID: 2800000, guid: 281619e512876b54fa488ebc45577986, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: beige_wall_001_nor_gl_1k
+    second: {fileID: 2800000, guid: fc5ce03cc7535a645b216de2fdc68d04, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: beige_wall_001_rough_1k
+    second: {fileID: 2800000, guid: 95f8ae5c345daee4f94f6a15e11d2f43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concrete_floor_worn_001_diff_1k
+    second: {fileID: 2800000, guid: c1cf6e594ae74544c8aeb11b23bd5e7e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concrete_floor_worn_001_nor_gl_1k
+    second: {fileID: 2800000, guid: 11b6b416108033546872e8d49bc60109, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concrete_floor_worn_001_rough_1k
+    second: {fileID: 2800000, guid: 3c0fd58514ad7874298832739ffa53d5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plank_flooring_diff_1k
+    second: {fileID: 2800000, guid: a2c122598010f434ba09e17b1c22d5a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plank_flooring_nor_gl_1k
+    second: {fileID: 2800000, guid: 39556256b0e6f2d40bf54ee5e68bc3e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plank_flooring_rough_1k
+    second: {fileID: 2800000, guid: 2672b4fd4feecd84986c5dd1863ecfad, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

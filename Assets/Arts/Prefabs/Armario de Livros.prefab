@@ -235,6 +235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -308,6 +313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -383,6 +393,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -456,6 +471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -531,6 +551,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -604,6 +629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -679,6 +709,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -752,6 +787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -827,6 +867,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -900,6 +945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -975,6 +1025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1048,6 +1103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1123,6 +1183,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1196,6 +1261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1271,6 +1341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1344,6 +1419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1419,6 +1499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1492,6 +1577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1567,6 +1657,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1640,6 +1735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1715,6 +1815,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1788,6 +1893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1863,6 +1973,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1936,6 +2051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2011,6 +2131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2084,6 +2209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2159,6 +2289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2232,6 +2367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2307,6 +2447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2380,6 +2525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2455,6 +2605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2528,6 +2683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2603,6 +2763,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2676,6 +2841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2751,6 +2921,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2824,6 +2999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2899,6 +3079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2973,10 +3158,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 760212521628908553}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5319598621238898676}
   m_SourcePrefab: {fileID: 100100000, guid: 2b020548122adb249972a25c54e814fd, type: 3}
 --- !u!4 &7142968187506488445 stripped
 Transform:
@@ -2984,6 +3182,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7253701159326585750}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7524172560218271431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7253701159326585750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &760212521628908553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7524172560218271431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 1570552390
+  ObjectInterest: 1
+  Flags: 131073
+  NestedObjects: []
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
+--- !u!65 &5319598621238898676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7524172560218271431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.050569594, y: 0.3296665, z: 0.2727333}
+  m_Center: {x: -0.000035852194, y: 0.1626783, z: -0.02507053}
 --- !u!1001 &7485718598856696547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3046,6 +3289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3121,6 +3369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3194,6 +3447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3269,6 +3527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3342,6 +3605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3419,6 +3687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f9486a17b7d167439f32e06e176c63a,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7f9486a17b7d167439f32e06e176c63a,
+        type: 3}
       propertyPath: m_TagString
       value: Estante
       objectReference: {fileID: 0}
@@ -3446,6 +3719,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2801384653411009604}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f9486a17b7d167439f32e06e176c63a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7983702784438076615}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f9486a17b7d167439f32e06e176c63a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6067662228775520194}
   m_SourcePrefab: {fileID: 100100000, guid: 7f9486a17b7d167439f32e06e176c63a, type: 3}
 --- !u!1 &7039068308068210357 stripped
 GameObject:
@@ -3474,6 +3755,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0653656, y: 2.5211017, z: 0.41470492}
   m_Center: {x: 0.027800322, y: 1.2590348, z: -0.0015160069}
+--- !u!114 &7983702784438076615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039068308068210357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3649269768
+  ObjectInterest: 1
+  Flags: 131073
+  NestedObjects:
+  - {fileID: 760212521628908553}
+  NetworkedBehaviours:
+  - {fileID: 6067662228775520194}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &6067662228775520194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039068308068210357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 1
 --- !u!4 &7702312016801549327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f9486a17b7d167439f32e06e176c63a,
@@ -3542,6 +3860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3617,6 +3940,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3690,6 +4018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3765,6 +4098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livros 01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd5fb0bdca4da8469bd5e5668af0638,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3838,6 +4176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Livros 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b020548122adb249972a25c54e814fd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

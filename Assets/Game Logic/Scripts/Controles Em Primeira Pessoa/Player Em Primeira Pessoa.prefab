@@ -2002,7 +2002,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.75
-  m_Radius: 0.26
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -2103,9 +2103,6 @@ MonoBehaviour:
   dropPoint: {fileID: 0}
   itemIcon: {fileID: 0}
   itemAtual: {fileID: 0}
-  tempoPressionado: 0
-  limiteMaxParaPointerDownIniciar: 0.5
-  prefabGameManager: {fileID: 0}
   rayDistance: 100
 --- !u!1 &8180189612800446616
 GameObject:

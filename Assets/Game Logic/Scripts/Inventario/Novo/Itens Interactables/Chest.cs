@@ -7,7 +7,7 @@ public class Chest : NetworkBehaviour, IInteractable
 {
     [Networked] int chestId { get; set; } = 0;
     [Networked] Vector3 chestState { get; set; }
-
+    NetworkBool open = false;
 
 
     public override void FixedUpdateNetwork()
@@ -38,24 +38,7 @@ public class Chest : NetworkBehaviour, IInteractable
         }
     }
 
-
-
-
-
-
-    NetworkTRSP networkT;
-    NetworkBool open = false;
-
-    private void Start()
-    {
-        networkT = GetComponent<NetworkTRSP>();
-        if (networkT == null)
-        {
-            Debug.LogError("NetworkTRSP component not found on the object.");
-        }
-    }
-
-
+    
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {

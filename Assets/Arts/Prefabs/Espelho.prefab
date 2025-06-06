@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5610897885231643530}
   - component: {fileID: 3720822845056046889}
   - component: {fileID: 5191690550541815745}
-  - component: {fileID: 7550257497607418527}
+  - component: {fileID: 6160032312868293954}
   m_Layer: 11
   m_Name: Espelho.002
   m_TagString: Finish
@@ -139,9 +139,9 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 3720822845056046889}
-  - {fileID: 7550257497607418527}
+  - {fileID: 6160032312868293954}
   ForceRemoteRenderTimeframe: 0
---- !u!114 &7550257497607418527
+--- !u!114 &6160032312868293954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,10 +150,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1365190332183834693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2038946961, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 1
 --- !u!1 &4644465957613405765
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +172,7 @@ GameObject:
   - component: {fileID: 2497395679820299946}
   - component: {fileID: 6360273032438433395}
   - component: {fileID: 5498076771135063038}
-  - component: {fileID: 6872130288820594918}
+  - component: {fileID: 4820339897057102870}
   m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
@@ -292,9 +296,9 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 2497395679820299946}
-  - {fileID: 6872130288820594918}
+  - {fileID: 4820339897057102870}
   ForceRemoteRenderTimeframe: 0
---- !u!114 &6872130288820594918
+--- !u!114 &4820339897057102870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,10 +307,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4644465957613405765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2038946961, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 1
 --- !u!1 &5586998881070237553
 GameObject:
   m_ObjectHideFlags: 0

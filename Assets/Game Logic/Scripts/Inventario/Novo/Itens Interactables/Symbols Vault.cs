@@ -1,37 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
 
-public class SymbolsVault : MonoBehaviour, IInteractable
+public class SymbolsVault : NetworkBehaviour, IInteractable
 {
-    //[Networked, OnChangedRender(nameof(RotateServerRPC))] 
-    public Quaternion codeVaultTransform { get; set; }
+    [Networked] float codeVaultRotation { get; set; }
+    [Networked] [SerializeField] int codeId { get; set; } = 0;
+    [SerializeField] DoorVault doorVault;
+
+    public override void Spawned()
+    {
+        
+    }
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    void RPC_ChangedVoid()
+    {
+        Debug.Log("Code state changed: " + codeVaultRotation);
+
+        transform.Rotate(Vector3.left * 60);
+        Debug.Log(transform.rotation.eulerAngles + "ROTACAO DO OBJETO");
+
+        doorVault.RPC_CodeChanged(codeId, codeVaultRotation);
+
+    }
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
-        Debug.Log("Interagindo com o símbolo");
-        codeVaultTransform = Quaternion.Euler(Vector3.right * 60);
+        Debug.Log("Interagindo com codigo");
 
-        transform.Rotate(Vector3.right * 60);
-
-        /*if (HasStateAuthority)
+        if (codeVaultRotation < 300)
         {
-            codeVaultTransform = Quaternion.Euler(Vector3.right * 60);
-            //RotateServerRPC();
-            Debug.Log("You have authority to rotate this object.");
+            codeVaultRotation += 60;
+            Debug.Log("Codigo do vault: " + codeVaultRotation);
         }
         else
         {
-            Debug.Log("You don't have authority to rotate this object.");
-        }*/
+            codeVaultRotation = 0;
+            Debug.Log("Codigo do vault: " + codeVaultRotation);
+        }
+
+        if (HasStateAuthority)
+            RPC_ChangedVoid();
 
     }
-
-    void RotateServerRPC()
-    {
-        Debug.Log("Rotating object on the server.");
-        transform.Rotate(codeVaultTransform.x, codeVaultTransform.y, codeVaultTransform.z);
-    }
-
-    
 }
