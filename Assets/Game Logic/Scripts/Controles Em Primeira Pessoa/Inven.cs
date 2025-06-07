@@ -12,6 +12,7 @@ public class Inven : NetworkBehaviour
     public Transform dropPoint;
     public Sprite itemIcon;
     public ItemData itemAtual = null;
+    [Networked] public int itemAtualID { get; set; } = -1; // ID do item atual, -1 significa que não há item selecionado
 
     public float rayDistance = 100f;
 
@@ -67,23 +68,18 @@ public class Inven : NetworkBehaviour
         {
             if (hit.collider.TryGetComponent(out NetworkObject netObj))
             {
-                if (netObj.TryGetComponent(out IInteractable interactable))
-                {
-                    interactable.RPC_OnInteractObject(this);
-                }
-
                 if (netObj.TryGetComponent(out PickUpItem pickUpItem))
                 {
                     if (pickUpItem != null)
                     {
-                        if (itemAtual == null)
+                        if (inventario.itemAtual == null)
                         {
                             inventario.itemAtual = pickUpItem.itemData;
+                            inventario.itemAtualID = pickUpItem.itemData.id; // Atualiza o ID do item atual
                             inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
                             inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
                             inventario.dropPoint = hit.transform; // Armazena a posição do item
 
-                            Runner.Despawn(netObj); // Despawna o objeto do mundo
                         }
                         else
                         {
@@ -91,8 +87,32 @@ public class Inven : NetworkBehaviour
                         }
                     }
                 }
+
+                
+
+                if (netObj.TryGetComponent(out IInteractable interactable))
+                {
+                    interactable.RPC_OnInteractObject(inventario);
+                }
             }
+
+            else if (inventario.itemAtual != null)
+            {
+                Runner.Spawn(inventario.itemAtual.itemPrefab, hit.point, Quaternion.identity, inputAuthority: Runner.LocalPlayer);
+                inventario.RPC_ResetValues(); // Reseta os valores do inventário após soltar o item
+            }
+
         }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_ResetValues()
+    {
+        itemAtual = null; // Reseta o item atual
+        itemAtualID = -1; // Reseta o ID do item atual
+        itemIcon = null; // Reseta o ícone do item
+        cam.GetComponent<FirstPersonCamera>().slotItem.sprite = null; // Reseta o ícone na câmera
+        dropPoint = null; // Reseta o ponto de queda
     }
 
 }

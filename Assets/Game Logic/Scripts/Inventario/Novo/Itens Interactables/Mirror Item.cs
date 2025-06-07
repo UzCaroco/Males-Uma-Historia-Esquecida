@@ -39,9 +39,9 @@ public class MirrorItem : NetworkBehaviour, IInteractable
     }
 
 
-    private void Start()
+    public override void Spawned()
     {
-        rotacao = transform.rotation.x;
+        rotacao = transform.eulerAngles.x;
         min = rotacao - 80;
         max = rotacao + 80;
         Debug.Log(this.gameObject.transform.parent.name);

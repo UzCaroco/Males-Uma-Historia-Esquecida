@@ -16,14 +16,16 @@ public class UseItem : NetworkBehaviour, IInteractable
     {
         if (playerInventory != null)
         {
-            if (playerInventory.itemAtual != null)
+            Debug.Log("Inventário do jogador não é nulo" + playerInventory.Object);
+            if (playerInventory.itemAtualID != -1)
             {
-                if (playerInventory.itemAtual == _data)
+                Debug.Log("tem item");
+                if (playerInventory.itemAtualID == _data.id)
                 {
+                    Debug.Log("item é igual");
                     transform.Rotate(Vector3.up, 90f); // uso do item
-                    playerInventory.itemAtual = null; // Limpa o item atual
-                    playerInventory.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = null; // Limpa o ícone do item na câmera
 
+                    playerInventory.RPC_ResetValues();
 
                     if (doorPadlock != null)
                     {
@@ -31,7 +33,19 @@ public class UseItem : NetworkBehaviour, IInteractable
                     }
 
                 }
+                else
+                {
+                    Debug.Log("item é diferente");
+                }
             }
+            else
+            {
+                Debug.Log("Não tem item");
+            }
+        }
+        else
+        {
+            Debug.Log("Inventário do jogador é nulo");
         }
     }
 }

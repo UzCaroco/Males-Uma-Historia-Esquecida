@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 
 public class DropItem : MonoBehaviour, IInteractable
 {
+
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
         if (playerInventory != null)

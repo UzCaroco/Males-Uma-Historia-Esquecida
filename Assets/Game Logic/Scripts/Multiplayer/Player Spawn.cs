@@ -88,7 +88,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     }
     private void SpawnarObjetosInterativos()
     {
-        Runner.Spawn(prefabSobrado, inputAuthority: runner.LocalPlayer);
+        Runner.Spawn(prefabSobrado, inputAuthority: Runner.LocalPlayer);
     }
 
     void OnVideoEnd(VideoPlayer vp)

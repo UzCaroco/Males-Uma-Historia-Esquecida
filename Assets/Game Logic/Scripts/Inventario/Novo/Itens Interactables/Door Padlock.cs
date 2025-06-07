@@ -1,3 +1,4 @@
+using System.Collections;
 using Fusion;
 using UnityEngine;
 
@@ -7,7 +8,12 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
     [SerializeField] NetworkObject doorLeft, doorRight;
 
 
-    [Networked][SerializeField] float locksOpens { get; set; }
+    [Networked][SerializeField] int locksOpens { get; set; }
+
+    public override void Spawned()
+    {
+
+    }
 
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
@@ -27,10 +33,12 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
         else
         {
             open = true;
-            
-            Runner.Despawn(Object); // Despawna a corrente
-            doorLeft.transform.Rotate(0, 0, -90);
-            doorRight.transform.Rotate(0, 0, 90);
+
+
+            doorLeft.transform.Rotate(0, 0, -120f);
+            doorRight.transform.Rotate(0, 0, 120f);
+
+            Runner.Despawn(Object); // Despawna a corrente e o cadeado
         }
     }
 }
