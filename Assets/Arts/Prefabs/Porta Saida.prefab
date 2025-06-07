@@ -490,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 0ad966eae7161bc4eb9ae985ac962af2, type: 2}
   slotVazio: {fileID: 21300000, guid: 3f929bc2e87f64441ba0a9c7a42516ca, type: 3}
+  doorPadlock: {fileID: 6569219077966895195}
 --- !u!1 &1418333236590113626
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +705,8 @@ GameObject:
   - component: {fileID: 8710590895388294453}
   - component: {fileID: 8665502679960742876}
   - component: {fileID: 156914647248385265}
+  - component: {fileID: 3828525563817663328}
+  - component: {fileID: 136817562247366227}
   m_Layer: 0
   m_Name: Porta.001
   m_TagString: Untagged
@@ -719,7 +722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2595571474799739006}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.5706181, y: 0.06077774, z: -0.11295187}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -727,7 +730,7 @@ Transform:
   - {fileID: 2763629828879512739}
   - {fileID: 5537997095989981494}
   m_Father: {fileID: 2108111732665523112}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8665502679960742876
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -778,6 +781,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3828525563817663328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595571474799739006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 0
+  ObjectInterest: 1
+  Flags: 131072
+  NestedObjects: []
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &136817562247366227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595571474799739006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 1
 --- !u!1 &3205928135445608106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 0ad966eae7161bc4eb9ae985ac962af2, type: 2}
   slotVazio: {fileID: 21300000, guid: 3f929bc2e87f64441ba0a9c7a42516ca, type: 3}
+  doorPadlock: {fileID: 6569219077966895195}
 --- !u!1 &3818057811973354688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1568,8 @@ GameObject:
   - component: {fileID: 8347445756605160913}
   - component: {fileID: 3011837445131992757}
   - component: {fileID: 6285425897560157774}
+  - component: {fileID: 2160855028918064157}
+  - component: {fileID: 8174474783293799284}
   m_Layer: 0
   m_Name: Porta.002
   m_TagString: Untagged
@@ -1544,7 +1585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5430797015622787402}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.5706181, y: 0.06077774, z: -0.11295187}
   m_LocalScale: {x: 114.123604, y: 144.89888, z: 99.59444}
   m_ConstrainProportionsScale: 0
@@ -1554,7 +1595,7 @@ Transform:
   - {fileID: 9208380314300444801}
   - {fileID: 4053076777708505416}
   m_Father: {fileID: 2108111732665523112}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3011837445131992757
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1605,6 +1646,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2160855028918064157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430797015622787402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 0
+  ObjectInterest: 1
+  Flags: 131072
+  NestedObjects: []
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &8174474783293799284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430797015622787402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 1
 --- !u!1 &5679453074234728203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1692,8 @@ GameObject:
   - component: {fileID: 1397624828633627843}
   - component: {fileID: 564027391445822923}
   - component: {fileID: 5746180960996762935}
+  - component: {fileID: 6569219077966895195}
+  - component: {fileID: 804819450243699774}
   m_Layer: 0
   m_Name: Ferro Cadeado.001
   m_TagString: Untagged
@@ -1688,6 +1766,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6569219077966895195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679453074234728203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0414671d86777b1468ec8b6178808edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorLeft: {fileID: 3828525563817663328}
+  doorRight: {fileID: 2160855028918064157}
+  _locksOpens: 0
+--- !u!114 &804819450243699774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679453074234728203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 0
+  ObjectInterest: 1
+  Flags: 131072
+  NestedObjects: []
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
 --- !u!1 &7062402495464323294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,3 +2744,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 0ad966eae7161bc4eb9ae985ac962af2, type: 2}
   slotVazio: {fileID: 21300000, guid: 3f929bc2e87f64441ba0a9c7a42516ca, type: 3}
+  doorPadlock: {fileID: 6569219077966895195}
