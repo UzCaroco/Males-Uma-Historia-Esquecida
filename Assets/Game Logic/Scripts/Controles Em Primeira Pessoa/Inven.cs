@@ -75,7 +75,7 @@ public class Inven : NetworkBehaviour
                         if (inventario.itemAtual == null)
                         {
                             inventario.itemAtual = pickUpItem.itemData;
-                            inventario.itemAtualID = pickUpItem.itemData.id; // Atualiza o ID do item atual
+                            inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
                             inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
                             inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
                             inventario.dropPoint = hit.transform; // Armazena a posição do item

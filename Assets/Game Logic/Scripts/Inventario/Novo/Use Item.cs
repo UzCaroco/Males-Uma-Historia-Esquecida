@@ -20,7 +20,7 @@ public class UseItem : NetworkBehaviour, IInteractable
             if (playerInventory.itemAtualID != -1)
             {
                 Debug.Log("tem item");
-                if (playerInventory.itemAtualID == _data.id)
+                if (playerInventory.itemAtualID == (int)_data.itemType)
                 {
                     Debug.Log("item é igual");
                     transform.Rotate(Vector3.up, 90f); // uso do item

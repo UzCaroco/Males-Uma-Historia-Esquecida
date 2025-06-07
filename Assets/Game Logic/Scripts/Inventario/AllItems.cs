@@ -3,7 +3,7 @@ using UnityEngine;
 public enum ItemType
 {
     Default,
-    Martelo,
+    LivroTrigger,
     Lanterna,
     ChaveSaida,
     ChaveQuarto,
