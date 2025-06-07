@@ -19,6 +19,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     [SerializeField] Transform cameraPivot;
     [SerializeField] Image mira;
+    public Image slotItem;
 
     [SerializeField] float tempoPressionado = 0f, limiteMaxParaPointerDownIniciar = 5f;
     [SerializeField] LayerMask interactableLayer;

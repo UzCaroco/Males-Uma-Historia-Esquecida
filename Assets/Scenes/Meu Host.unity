@@ -257,6 +257,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 3231811150
       objectReference: {fileID: 0}
+    - target: {fileID: 2318772797865618995, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 4033926815
+      objectReference: {fileID: 0}
     - target: {fileID: 2443196953142420268, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -497,10 +502,25 @@ PrefabInstance:
       propertyPath: SortKey
       value: 4008787308
       objectReference: {fileID: 0}
+    - target: {fileID: 9151840744393900394, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 246782287
+      objectReference: {fileID: 0}
     - target: {fileID: 9200516585858100522, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
       value: 667039988
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200516585858100522, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200516585858100522, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1875,6 +1895,7 @@ MonoBehaviour:
   sensibilidadeTouch: 0.1
   cameraPivot: {fileID: 595875872}
   mira: {fileID: 383285742}
+  slotItem: {fileID: 1243281167}
   tempoPressionado: 0
   limiteMaxParaPointerDownIniciar: 0.5
   interactableLayer:

@@ -5,8 +5,8 @@ public enum ItemType
     Default,
     Martelo,
     Lanterna,
-    Chave,
-    Tesoura,
+    ChaveSaida,
+    ChaveQuarto,
     Faca
 }
 

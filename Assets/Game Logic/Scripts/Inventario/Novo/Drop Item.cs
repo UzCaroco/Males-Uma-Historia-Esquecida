@@ -12,7 +12,7 @@ public class DropItem : MonoBehaviour, IInteractable
             {
                 Instantiate(playerInventory.itemAtual.itemPrefab, playerInventory.dropPoint);
                 playerInventory.itemAtual = null; // Limpa o item atual
-                playerInventory.itemIcon.sprite = null; // Limpa o ícone do item
+                playerInventory.itemIcon = null; // Limpa o ícone do item
             }
         }
     }

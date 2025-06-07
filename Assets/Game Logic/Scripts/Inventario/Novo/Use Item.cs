@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 
-public class UseItem : MonoBehaviour, IInteractable
+public class UseItem : NetworkBehaviour, IInteractable
 {
     [SerializeField] ItemData _data;
+
+    [SerializeField] Sprite slotVazio;
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
         if (playerInventory != null)
@@ -13,9 +18,9 @@ public class UseItem : MonoBehaviour, IInteractable
             {
                 if (playerInventory.itemAtual == _data)
                 {
-                    Destroy(gameObject);
+                    transform.Rotate(Vector3.up, 90f); // uso do item
                     playerInventory.itemAtual = null; // Limpa o item atual
-                    playerInventory.itemIcon.sprite = null; // Limpa o ícone do item
+                    playerInventory.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = null; // Limpa o ícone do item na câmera
                 }
             }
         }
