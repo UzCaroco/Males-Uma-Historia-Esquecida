@@ -72,18 +72,21 @@ public class Inven : NetworkBehaviour
                 {
                     if (pickUpItem != null)
                     {
-                        if (inventario.itemAtual == null)
+                        if (pickUpItem.enabled)
                         {
-                            inventario.itemAtual = pickUpItem.itemData;
-                            inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
-                            inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
-                            inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
-                            inventario.dropPoint = hit.transform; // Armazena a posição do item
+                            if (inventario.itemAtual == null)
+                            {
+                                inventario.itemAtual = pickUpItem.itemData;
+                                inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
+                                inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
+                                inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
+                                inventario.dropPoint = hit.transform; // Armazena a posição do item
 
-                        }
-                        else
-                        {
-                            Debug.Log("Inventário Cheio");
+                            }
+                            else
+                            {
+                                Debug.Log("Inventário Cheio");
+                            }
                         }
                     }
                 }

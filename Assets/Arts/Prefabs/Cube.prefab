@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8610946715437742943}
   - component: {fileID: 2065258038355644817}
   - component: {fileID: 3251427952724969963}
-  - component: {fileID: 1661938932857017433}
+  - component: {fileID: 8208326036580407908}
   m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e19b64f57dd444e971729489e131a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 0ad966eae7161bc4eb9ae985ac962af2, type: 2}
---- !u!114 &1661938932857017433
+  itemData: {fileID: 11400000, guid: 8bc3371993ba9354cbabedff795b3665, type: 2}
+--- !u!114 &8208326036580407908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2872950279983497115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad60b45a481298419a16085224d459c, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dadosDoItem: {fileID: 11400000, guid: 0ad966eae7161bc4eb9ae985ac962af2, type: 2}
+  SortKey: 2638341216
+  ObjectInterest: 1
+  Flags: 131073
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 3251427952724969963}
+  ForceRemoteRenderTimeframe: 0

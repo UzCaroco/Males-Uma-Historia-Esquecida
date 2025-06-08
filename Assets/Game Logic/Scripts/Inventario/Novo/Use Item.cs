@@ -10,6 +10,7 @@ public class UseItem : NetworkBehaviour, IInteractable
     [SerializeField] Sprite slotVazio;
 
     [SerializeField] DoorPadlock doorPadlock;
+    [SerializeField] NetworkObject lamparinaPickUp;
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
@@ -23,14 +24,27 @@ public class UseItem : NetworkBehaviour, IInteractable
                 if (playerInventory.itemAtualID == (int)_data.itemType)
                 {
                     Debug.Log("item é igual");
-                    transform.Rotate(Vector3.up, 90f); // uso do item
 
-                    playerInventory.RPC_ResetValues();
+                    if ((int)_data.itemType == 3) //Se for a chave de saida
+                    {
+                        transform.Rotate(Vector3.up, 90f); // uso do item
+                    }
 
-                    if (doorPadlock != null)
+                    if ((int)_data.itemType == 2) //Se for a caixa de fosforos
+                    {
+                        RPC_AcenderLamparina(); // Chama o RPC para acender a lamparina
+                    }
+                    else
+                    {
+                        Debug.Log("Item não é a caixa de fósforos");
+                    }
+
+                    if (doorPadlock != null) // Se for as travas da porta
                     {
                         doorPadlock.RPC_OpenLock(); // Chama o RPC para abrir a fechadura
                     }
+
+                    playerInventory.RPC_ResetValues();
 
                 }
                 else
@@ -47,5 +61,13 @@ public class UseItem : NetworkBehaviour, IInteractable
         {
             Debug.Log("Inventário do jogador é nulo");
         }
+    }
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AcenderLamparina()
+    {
+        Debug.Log("Acendendo a lamparina");
+        Runner.Spawn(lamparinaPickUp, transform.position, transform.rotation, inputAuthority: Runner.LocalPlayer); // Spawns a lamparina na posiçao do item
+        Runner.Despawn(Object); // Despawns o item
+        
     }
 }

@@ -4,10 +4,10 @@ public enum ItemType
 {
     Default,
     LivroTrigger,
-    Lanterna,
+    CaixaDeFosforos,
     ChaveSaida,
     ChaveQuarto,
-    Faca
+    LamparinaInterativa
 }
 
 [System.Serializable]

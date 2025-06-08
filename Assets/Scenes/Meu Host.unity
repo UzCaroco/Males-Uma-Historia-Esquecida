@@ -392,6 +392,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 2500846127
       objectReference: {fileID: 0}
+    - target: {fileID: 5023996050765724261, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 1517418836
+      objectReference: {fileID: 0}
     - target: {fileID: 5139087079343759027, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -462,6 +467,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1676874277
       objectReference: {fileID: 0}
+    - target: {fileID: 7348472003598017148, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 3862316934
+      objectReference: {fileID: 0}
     - target: {fileID: 7581327229585061004, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -522,6 +532,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 788188375
       objectReference: {fileID: 0}
+    - target: {fileID: 8731784914946954171, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 2086577430
+      objectReference: {fileID: 0}
     - target: {fileID: 9004867598244900523, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -546,7 +561,7 @@ PrefabInstance:
         type: 3}
       propertyPath: NetworkedBehaviours.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1090817719}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7616430855353090734, guid: c76e5025b7d5d4e4b98e4da1da3e6a04, type: 3}
@@ -1695,6 +1710,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208326036580407908, guid: b995e0c215bedef499ed6d619c602ce2,
+        type: 3}
+      propertyPath: SortKey
+      value: 917067780
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2879,6 +2899,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 176929895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090817719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1823501274111191530, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+    type: 3}
+  m_PrefabInstance: {fileID: 19140188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e19b64f57dd444e971729489e131a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1105251016
 GameObject:
   m_ObjectHideFlags: 0
