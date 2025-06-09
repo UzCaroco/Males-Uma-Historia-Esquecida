@@ -25,9 +25,16 @@ public class UseItem : NetworkBehaviour, IInteractable
                 {
                     Debug.Log("item é igual");
 
+
+
                     if ((int)_data.itemType == 3) //Se for a chave de saida
                     {
                         transform.Rotate(Vector3.up, 90f); // uso do item
+
+                        if (doorPadlock != null) // Se o padlock não for nulo
+                        {
+                            doorPadlock.RPC_OpenLock(); // Chama o RPC para abrir a fechadura
+                        }
                     }
 
                     if ((int)_data.itemType == 2) //Se for a caixa de fosforos
@@ -39,10 +46,7 @@ public class UseItem : NetworkBehaviour, IInteractable
                         Debug.Log("Item não é a caixa de fósforos");
                     }
 
-                    if (doorPadlock != null) // Se for as travas da porta
-                    {
-                        doorPadlock.RPC_OpenLock(); // Chama o RPC para abrir a fechadura
-                    }
+                    
 
                     playerInventory.RPC_ResetValues();
 

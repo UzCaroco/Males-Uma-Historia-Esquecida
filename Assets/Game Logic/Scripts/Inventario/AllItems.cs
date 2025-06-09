@@ -7,7 +7,8 @@ public enum ItemType
     CaixaDeFosforos,
     ChaveSaida,
     ChaveQuarto,
-    LamparinaInterativa
+    LamparinaInterativa,
+    EDeHabra
 }
 
 [System.Serializable]

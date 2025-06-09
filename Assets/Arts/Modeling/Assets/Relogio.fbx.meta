@@ -3,7 +3,12 @@ guid: 5d675ae4457428747b2df85cf2dbb712
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Relogio
+    second: {fileID: 2800000, guid: a3d2b1ee17ec23e4a934286787e8ca02, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

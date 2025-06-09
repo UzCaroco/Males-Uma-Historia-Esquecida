@@ -3,7 +3,37 @@ guid: 8fa515e6f5804d046a33dddbec85bac5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Amarelo
+    second: {fileID: 2100000, guid: b60c37fdd76209546824cea10f272bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Cadeado
+    second: {fileID: 2100000, guid: 3c5e16b706e49db4a803fc29baad801a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ferro Cadeado
+    second: {fileID: 2100000, guid: a25144ae3a4b264498f3243c470111b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira Clara
+    second: {fileID: 2100000, guid: d1ac7ed2cdc0e334d8db07f5833d41b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira Escura
+    second: {fileID: 2100000, guid: 766e8eb2ea41de246ba3bf359bf0b620, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trava
+    second: {fileID: 2100000, guid: fb59e75b928bd2d40ae045f269a832ff, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: 1b956405b550f5e489d1bf82395f4319
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_botica_moveis
+    second: {fileID: 2100000, guid: 8074f00d5dff30745b47650c23466d56, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

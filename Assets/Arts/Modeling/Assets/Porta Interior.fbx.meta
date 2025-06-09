@@ -3,7 +3,27 @@ guid: ce7b0dd6e54bcaf4284267ba8e34abfd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Amarelo
+    second: {fileID: 2100000, guid: 730551954728bda40a4d789b0aa5c2c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira Clara
+    second: {fileID: 2100000, guid: b722d6751cfda03489834d7bcf05770c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira Escura
+    second: {fileID: 2100000, guid: d47f9bff05aff144f8558bba5dba8216, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trava
+    second: {fileID: 2100000, guid: c34accefd5392484698037088fc27960, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

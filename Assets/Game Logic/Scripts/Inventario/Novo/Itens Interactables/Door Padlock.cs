@@ -28,13 +28,15 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
         Debug.Log("Tentando abrir a porta com a fechadura");
         if (locksOpens < 2)
         {
+            Debug.Log("A porta ainda está fechada, você precisa de mais chaves para abri-la.");
             locksOpens++;
+            Debug.Log("quantidade abertas" + locksOpens);
         }
         else
         {
             open = true;
 
-
+            Debug.Log("Porta aberta com sucesso!");
             doorLeft.transform.Rotate(0, 0, -120f);
             doorRight.transform.Rotate(0, 0, 120f);
 
