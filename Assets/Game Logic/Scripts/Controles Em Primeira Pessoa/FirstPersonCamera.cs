@@ -1,5 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System;
+using TMPro;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -23,6 +25,12 @@ public class FirstPersonCamera : MonoBehaviour
 
     [SerializeField] float tempoPressionado = 0f, limiteMaxParaPointerDownIniciar = 5f;
     [SerializeField] LayerMask interactableLayer;
+
+
+
+    [SerializeField] GameObject chestCode;
+    [SerializeField] TMP_InputField inputFieldChestCode;
+
     public RaycastHit hitInteract => Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, interactableLayer) ? hit : default;
     bool segurandoBotao;
 
@@ -151,4 +159,58 @@ public class FirstPersonCamera : MonoBehaviour
     }
 
 
+
+
+    public void AtivarChestCode()
+    {
+        if (chestCode != null)
+        {
+            if (chestCode.activeSelf)
+            {
+                chestCode.SetActive(false);
+            }
+            else
+            {
+                inputFieldChestCode.text = ""; // Limpa o campo de entrada antes de digitar o código
+                chestCode.SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Chest code object is not assigned in the inspector.");
+        }
+    }
+
+    public void FecharChestCode()
+    {
+        if (chestCode != null)
+        {
+            chestCode.SetActive(false);
+        }
+    }
+
+    public void VerificarChestCode()
+    {
+        try
+        {
+            if (Target.TryGetComponent(out Inven inventario))
+            {
+                string resposta = inputFieldChestCode.text;
+                inventario.RPC_VerificarChestCode(resposta);
+            }
+            else
+            {
+                Debug.LogError("Inven component not found on Target.");
+            }
+
+            if (chestCode != null)
+            {
+                chestCode.SetActive(false);
+            }
+        }
+        catch (Exception)
+        {
+            Debug.LogError("DEU ERRO");
+        }
+    }
 }

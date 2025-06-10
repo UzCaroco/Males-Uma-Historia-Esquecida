@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 2122657015
   ObjectInterest: 1
-  Flags: 131073
+  Flags: 524289
   NestedObjects:
   - {fileID: 2948063117750663933}
   NetworkedBehaviours:
@@ -1675,6 +1675,7 @@ GameObject:
   - component: {fileID: 2670090568372551826}
   - component: {fileID: 8898401382031153508}
   - component: {fileID: 2984518909735249707}
+  - component: {fileID: 3275227165181362485}
   m_Layer: 11
   m_Name: Fechadura03.002
   m_TagString: Untagged
@@ -1767,6 +1768,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 2670090568372551826}
+  - {fileID: 3275227165181362485}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &2670090568372551826
 MonoBehaviour:
@@ -3003,6 +3005,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0007740855, y: 0.00016573962, z: 0.0026411272}
   m_Center: {x: 0.000008261518, y: -0.00006550176, z: -0.0009032391}
+--- !u!114 &3275227165181362485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4209512973492003672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8863ce1ef3669d04ebefc3a95790de50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7039734636564920585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,7 +3353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 151866337
   ObjectInterest: 1
-  Flags: 131073
+  Flags: 524289
   NestedObjects:
   - {fileID: 670850673195680262}
   - {fileID: 2948063117750663933}

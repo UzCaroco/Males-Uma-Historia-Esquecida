@@ -17,7 +17,7 @@ public class Inven : NetworkBehaviour
     public float rayDistance = 100f;
 
     FirstPersonCamera cameraPessoal;
-    
+    public NetworkObject networkObjectInterativo;
 
     public override void Spawned()
     {
@@ -95,6 +95,7 @@ public class Inven : NetworkBehaviour
 
                 if (netObj.TryGetComponent(out IInteractable interactable))
                 {
+                    inventario.networkObjectInterativo = netObj; // Armazena o NetworkObject interativo
                     interactable.RPC_OnInteractObject(inventario);
                 }
             }
@@ -116,6 +117,32 @@ public class Inven : NetworkBehaviour
         itemIcon = null; // Reseta o ícone do item
         cam.GetComponent<FirstPersonCamera>().slotItem.sprite = null; // Reseta o ícone na câmera
         dropPoint = null; // Reseta o ponto de queda
+    }
+
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AtivarChestCode()
+    {
+        if (cam != null)
+        {
+            cam.GetComponent<FirstPersonCamera>().AtivarChestCode(); // Ativa o código do baú se a câmera estiver definida
+        }
+    }
+
+
+    public void RPC_VerificarChestCode(string resposta)
+    {
+        Debug.Log("entrou no rpc do inventario");
+        if (networkObjectInterativo != null && networkObjectInterativo.TryGetComponent(out ChestPadlock chestPadlock))
+        {
+            Debug.Log("Verificando código do ChestPadlock: " + resposta);
+            chestPadlock.RPC_VerificarCodigo(resposta); // Chama o método de verificação do código no ChestPadlock
+        }
+        else
+        {
+            Debug.LogWarning("NetworkObject interativo não encontrado ou não possui o componente ChestPadlock.");
+        }
     }
 
 }
