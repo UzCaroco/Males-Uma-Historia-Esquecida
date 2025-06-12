@@ -3,7 +3,32 @@ guid: 3bcd6c1ca14bac140b046d5ddbfa2576
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Cadeado
+    second: {fileID: 2100000, guid: 486f7aec4315c674cbc6713913faca31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ferro Cadeado
+    second: {fileID: 2100000, guid: 20332580f7fbf7f4987e3a23cfb19c2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: ea78d3b918af84a498f7af2658ea393e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: bfb0fba8b1315924b915759a6b492259, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trava
+    second: {fileID: 2100000, guid: 3ab7e74e0e20a3244ad8a0ae10e19b3f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

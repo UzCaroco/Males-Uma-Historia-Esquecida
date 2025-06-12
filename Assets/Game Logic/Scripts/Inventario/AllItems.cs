@@ -4,11 +4,14 @@ public enum ItemType
 {
     Default,
     LivroTrigger,
-    CaixaDeFosforos,
+    Isqueiro,
     ChaveSaida,
     ChaveQuarto,
     LamparinaInterativa,
-    EDeHabra
+    EDeHabra,
+    Tepetes,
+    Paes,
+    Castanhas
 }
 
 [System.Serializable]
