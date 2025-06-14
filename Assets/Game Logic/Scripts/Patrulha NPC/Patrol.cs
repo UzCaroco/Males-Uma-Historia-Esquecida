@@ -9,6 +9,8 @@ public class Patrol : NetworkBehaviour
     public Transform waypoint;
     public Transform pointLast;
 
+    public NetworkBool walk = true;
+
     private void Start()
     {
         cControler = GetComponent<CharacterController>();
@@ -23,6 +25,9 @@ public class Patrol : NetworkBehaviour
         Vector3 targetRotation = Quaternion.LookRotation(waypoint.position - transform.position).eulerAngles;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), velocityRotation);
 
-        cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+        if (walk)
+        {
+            cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+        }
     }
 }
