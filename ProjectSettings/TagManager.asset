@@ -10,6 +10,7 @@ TagManager:
   - CinemachineTarget
   - Estante
   - SpawnErrado
+  - Enemy
   layers:
   - Default
   - TransparentFX
