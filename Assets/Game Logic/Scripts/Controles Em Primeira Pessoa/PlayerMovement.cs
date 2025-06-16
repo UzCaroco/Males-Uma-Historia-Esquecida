@@ -7,7 +7,7 @@ public class PlayerMovement : NetworkBehaviour
     private NetworkCharacterController _controller;
     public Camera Cam;
     public float PlayerSpeed = 2f;
-
+    [SerializeField] ParticleSystem fireGun;
 
 
     private void Awake()
@@ -53,6 +53,11 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Update()
     {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            fireGun.Play();
+        }
+
         if (Input.touchCount > 0)
         {
             foreach (Touch x in Input.touches)

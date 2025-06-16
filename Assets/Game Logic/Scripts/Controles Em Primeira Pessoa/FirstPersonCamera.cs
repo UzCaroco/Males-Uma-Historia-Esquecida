@@ -28,8 +28,12 @@ public class FirstPersonCamera : MonoBehaviour
 
 
 
-    [SerializeField] GameObject chestCode, livro;
+    [SerializeField] GameObject chestCode, livro, missoes;
+    [SerializeField] TextMeshProUGUI textoMissoes;
+
     [SerializeField] TMP_InputField inputFieldChestCode;
+
+    public string stringMissoes;
 
     public RaycastHit hitInteract => Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, interactableLayer) ? hit : default;
     bool segurandoBotao;
@@ -242,6 +246,30 @@ public class FirstPersonCamera : MonoBehaviour
         if (chestCode != null)
         {
             livro.SetActive(false);
+        }
+    }
+
+
+
+
+
+
+    public void AtivarMissoes()
+    {
+        if (missoes != null)
+        {
+            if (missoes.activeSelf)
+            {
+                missoes.SetActive(false);
+            }
+            else
+            {
+                missoes.SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Chest code object is not assigned in the inspector.");
         }
     }
 }

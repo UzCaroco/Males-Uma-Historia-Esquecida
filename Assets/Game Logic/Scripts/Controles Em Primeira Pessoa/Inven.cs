@@ -91,13 +91,16 @@ public class Inven : NetworkBehaviour
                     }
                 }
 
-                
 
-                if (netObj.TryGetComponent(out IInteractable interactable))
+
+                IInteractable[] interacoes = netObj.GetComponents<IInteractable>();
+
+                foreach (var interactable in interacoes)
                 {
-                    inventario.networkObjectInterativo = netObj; // Armazena o NetworkObject interativo
                     interactable.RPC_OnInteractObject(inventario);
                 }
+
+                inventario.networkObjectInterativo = netObj; // Armazena uma vez só
             }
 
             else if (inventario.itemAtual != null)
@@ -153,6 +156,15 @@ public class Inven : NetworkBehaviour
         if (cam != null)
         {
             cam.GetComponent<FirstPersonCamera>().AtivarLivro(); // Ativa o código do baú se a câmera estiver definida
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AtivarMissoes()
+    {
+        if (cam != null)
+        {
+            cam.GetComponent<FirstPersonCamera>().AtivarMissoes(); // Ativa o código do baú se a câmera estiver definida
         }
     }
 

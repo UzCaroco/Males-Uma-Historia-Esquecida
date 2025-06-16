@@ -263,11 +263,11 @@
       "url": "https://packages.unity.com"
     },
     "com.veriorpies.parrelsync": {
-      "version": "https://github.com/UzCaroco/ParrelSync.git",
+      "version": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "81bbb0e7f103c4b533d8c59d92b0512164c7afc0"
+      "hash": "610157ad762084380380148ba8ce14e266a6da97"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

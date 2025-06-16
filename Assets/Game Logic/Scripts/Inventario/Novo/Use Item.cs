@@ -12,6 +12,9 @@ public class UseItem : NetworkBehaviour, IInteractable
     [SerializeField] DoorPadlock doorPadlock;
     [SerializeField] NetworkObject lamparinaPickUp;
 
+
+    [SerializeField] NetworkBool paes, tapetes, castanhas;
+
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
@@ -41,18 +44,26 @@ public class UseItem : NetworkBehaviour, IInteractable
                     {
                         RPC_AcenderLamparina(); // Chama o RPC para acender a lamparina
                     }
-                    else
-                    {
-                        Debug.Log("Item não é a caixa de fósforos");
-                    }
 
                     if ((int)_data.itemType == 4) // Se for a lanterna
                     {
                         transform.Rotate(Vector3.forward * -90f); // abrindo porta
                     }
-                    else
+
+                    if ((int)_data.itemType == 7) // Se for a lanterna
                     {
-                        Debug.Log("Item não é a chave do quarto");
+                        tapetes = true;
+                        Debug.Log("Pegou o tapete:");
+                    }
+                    if ((int)_data.itemType == 8) // Se for o pão
+                    {
+                        paes = true;
+                        Debug.Log("Pegou o pão:");
+                    }
+                    if ((int)_data.itemType == 9) // Se for a castanha
+                    {
+                        castanhas = true;
+                        Debug.Log("Pegou a castanha:");
                     }
 
 
