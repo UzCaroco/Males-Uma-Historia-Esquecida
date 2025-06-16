@@ -9,10 +9,12 @@ public class PlayerMovement : NetworkBehaviour
     public float PlayerSpeed = 2f;
     [SerializeField] ParticleSystem fireGun;
 
-
+    Animator ani;
+    int walkingHash = Animator.StringToHash("IsWalking");
     private void Awake()
     {
         _controller = GetComponent<NetworkCharacterController>();
+        ani = GetComponent<Animator>();
     }
 
     public override void Spawned()
@@ -98,7 +100,10 @@ public class PlayerMovement : NetworkBehaviour
 
                                 vetor = new Vector3(moveX, 0, moveY).normalized;
 
-
+                                if (ani.GetBool(walkingHash) == false)
+                                {
+                                    ani.SetBool(walkingHash, true);
+                                }
                             }
                         }
                         break;
@@ -112,6 +117,11 @@ public class PlayerMovement : NetworkBehaviour
 
                                 joystickPai.transform.position = posicaoPadraoJoystick;
                                 joystickFilho.transform.position = posicaoPadraoJoystick;
+
+                                if (ani.GetBool(walkingHash) == true)
+                                {
+                                    ani.SetBool(walkingHash, false);
+                                }
                             }
                         }
                         break;
@@ -125,6 +135,11 @@ public class PlayerMovement : NetworkBehaviour
 
                                 joystickPai.transform.position = posicaoPadraoJoystick;
                                 joystickFilho.transform.position = posicaoPadraoJoystick;
+
+                                if (ani.GetBool(walkingHash) == true)
+                                {
+                                    ani.SetBool(walkingHash, false);
+                                }
                             }
                         }
                         break;
