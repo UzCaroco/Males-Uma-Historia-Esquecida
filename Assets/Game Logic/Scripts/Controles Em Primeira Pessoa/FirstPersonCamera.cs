@@ -28,7 +28,7 @@ public class FirstPersonCamera : MonoBehaviour
 
 
 
-    [SerializeField] GameObject chestCode;
+    [SerializeField] GameObject chestCode, livro;
     [SerializeField] TMP_InputField inputFieldChestCode;
 
     public RaycastHit hitInteract => Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, interactableLayer) ? hit : default;
@@ -211,6 +211,37 @@ public class FirstPersonCamera : MonoBehaviour
         catch (Exception)
         {
             Debug.LogError("DEU ERRO");
+        }
+    }
+
+
+
+
+
+    public void AtivarLivro()
+    {
+        if (livro != null)
+        {
+            if (livro.activeSelf)
+            {
+                livro.SetActive(false);
+            }
+            else
+            {
+                livro.SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Chest code object is not assigned in the inspector.");
+        }
+    }
+
+    public void FecharLivro()
+    {
+        if (chestCode != null)
+        {
+            livro.SetActive(false);
         }
     }
 }

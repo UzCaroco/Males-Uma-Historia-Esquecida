@@ -11,7 +11,14 @@ public enum ItemType
     EDeHabra,
     Tepetes,
     Paes,
-    Castanhas
+    Castanhas,
+
+    Chave00,
+    Chave01,
+    Chave02,
+    Chave03,
+    Chave04,
+    Chave05
 }
 
 [System.Serializable]

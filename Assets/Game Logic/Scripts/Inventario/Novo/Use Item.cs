@@ -46,7 +46,16 @@ public class UseItem : NetworkBehaviour, IInteractable
                         Debug.Log("Item não é a caixa de fósforos");
                     }
 
-                    
+                    if ((int)_data.itemType == 4) // Se for a lanterna
+                    {
+                        transform.Rotate(Vector3.forward * -90f); // abrindo porta
+                    }
+                    else
+                    {
+                        Debug.Log("Item não é a chave do quarto");
+                    }
+
+
 
                     playerInventory.RPC_ResetValues();
 
