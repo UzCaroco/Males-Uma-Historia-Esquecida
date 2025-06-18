@@ -53,7 +53,7 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
                 RPC_ChangedVoid();
 
             doorId++;
-            Debug.Log("ID DO BAU " + doorId);
+            Debug.Log("ID DA PORTA " + doorId);
         }
         else
         {
@@ -64,8 +64,36 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
                 RPC_ChangedVoid();
 
             doorId++;
-            Debug.Log("ID DO BAU " + doorId);
+            Debug.Log("ID DA PORTA " + doorId);
         }
 
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Inimigo entrou no gatilho da porta");
+
+            if (!open)
+            {
+                doorState = -90;
+                open = true;
+
+                RPC_ChangedVoid();
+                doorId++;
+                Debug.Log("ID DA PORTA " + doorId);
+            }
+            else
+            {
+                doorState = 90;
+                open = false;
+
+                RPC_ChangedVoid();
+                doorId++;
+                Debug.Log("ID DA PORTA " + doorId);
+            }
+        }
     }
 }

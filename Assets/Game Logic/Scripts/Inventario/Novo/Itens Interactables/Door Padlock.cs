@@ -34,6 +34,32 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
         }
         else
         {
+            // Spawna a segunda fase
+            foreach (var x in Runner.ActivePlayers)
+            {
+                var networkObject = Runner.GetPlayerObject(x); //Percorre os objetos de rede ativos (Players)
+                if (networkObject != null) //Verifica se o objeto de rede não é nulo
+                {
+                    if (networkObject.HasStateAuthority)
+                    {
+                        Debug.Log("Encontrou o jogador com autoridade de estado: " + networkObject);
+
+                        // Pega o componente Inven a partir do NetworkObject do player
+                        var hostSpawnPhase = networkObject.GetComponent<SpawnNewPhase>();
+                        if (hostSpawnPhase != null)
+                        {
+                            Debug.Log("Chamando RPC para spawnar nova fase no jogador:");
+                            hostSpawnPhase.RPC_SpawnPhase(); // Chama o RPC para spawnar a nova fase
+                        }
+
+                        break; // Encerra o loop se encontrar o jogador com autoridade de estado
+                    }
+                }
+            }
+
+
+
+            // Abre as portas
             open = true;
 
             Debug.Log("Porta aberta com sucesso!");
@@ -41,6 +67,12 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
             doorRight.transform.Rotate(0, 0, 120f);
 
             Runner.Despawn(Object); // Despawna a corrente e o cadeado
+
+
+
+
+
+            
         }
     }
 }

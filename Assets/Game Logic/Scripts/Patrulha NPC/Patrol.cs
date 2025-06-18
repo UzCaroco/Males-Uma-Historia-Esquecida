@@ -30,4 +30,6 @@ public class Patrol : NetworkBehaviour
             cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
         }
     }
+
+
 }
