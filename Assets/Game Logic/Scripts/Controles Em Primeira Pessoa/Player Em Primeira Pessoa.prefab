@@ -6766,9 +6766,10 @@ GameObject:
   - component: {fileID: 1791815452123781007}
   - component: {fileID: 7917549674873784290}
   - component: {fileID: 2005398428148740074}
+  - component: {fileID: 4910262077418193279}
   m_Layer: 0
   m_Name: Player Em Primeira Pessoa
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6812,6 +6813,7 @@ MonoBehaviour:
   - {fileID: 1791815452123781007}
   - {fileID: 7917549674873784290}
   - {fileID: 2005398428148740074}
+  - {fileID: 4910262077418193279}
   ForceRemoteRenderTimeframe: 0
 --- !u!143 &8155744441628284445
 CharacterController:
@@ -6854,7 +6856,7 @@ MonoBehaviour:
   Animator: {fileID: 5970548844387056896}
   ApplyTiming: 2
   SyncSettings: 79
-  StateHashes: 000000002b1a167c794069558b7cfd670f5f2b88
+  StateHashes: 000000002b1a167c794069558b7cfd670f5f2b88ffa5af97210eeef495f5a874ed4ba015
   TriggerHashes: 00000000
   TotalWords: 1
 --- !u!95 &5970548844387056896
@@ -6938,6 +6940,22 @@ MonoBehaviour:
   _itemAtualID: -1
   rayDistance: 100
   networkObjectInterativo: {fileID: 0}
+--- !u!114 &4910262077418193279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076581854478548683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9490ab26790090d42af82f20683f6cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseToSpawn: 0
+  phasePrefab:
+  - {fileID: 7411598167709779781, guid: cf149ed5b2b4e1545a534414199a714b, type: 3}
+  - {fileID: 0}
 --- !u!1 &8180189612800446616
 GameObject:
   m_ObjectHideFlags: 0
