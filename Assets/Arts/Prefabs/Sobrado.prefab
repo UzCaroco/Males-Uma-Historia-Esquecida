@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playersQuePassaram: 0
-  quantidadeDePlayersParaSpawnarNovaPhase: 2
+  quantidadeDePlayersParaSpawnarNovaPhase: 1
 --- !u!114 &1203468333857756604
 MonoBehaviour:
   m_ObjectHideFlags: 0
