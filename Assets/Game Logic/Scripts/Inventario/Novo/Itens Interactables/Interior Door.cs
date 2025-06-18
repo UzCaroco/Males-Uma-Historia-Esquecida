@@ -70,30 +70,35 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_EnemyOpenDoor()
     {
-        if (other.CompareTag("Enemy"))
+        Debug.Log("Inimigo entrou no gatilho da porta");
+
+        if (!open)
         {
-            Debug.Log("Inimigo entrou no gatilho da porta");
+            doorState = -90;
+            open = true;
 
-            if (!open)
-            {
-                doorState = -90;
-                open = true;
+            RPC_ChangedVoid();
+            doorId++;
+            Debug.Log("ID DA PORTA " + doorId);
+        }
+    }
 
-                RPC_ChangedVoid();
-                doorId++;
-                Debug.Log("ID DA PORTA " + doorId);
-            }
-            else
-            {
-                doorState = 90;
-                open = false;
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_EnemyCloseDoor()
+    {
+        Debug.Log("Inimigo saiu no gatilho da porta");
 
-                RPC_ChangedVoid();
-                doorId++;
-                Debug.Log("ID DA PORTA " + doorId);
-            }
+        if (open)
+        {
+            doorState = 90;
+            open = false;
+
+            RPC_ChangedVoid();
+            doorId++;
+            Debug.Log("ID DA PORTA " + doorId);
         }
     }
 }

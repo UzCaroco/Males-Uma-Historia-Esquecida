@@ -217,7 +217,8 @@ MonoBehaviour:
   Flags: 131073
   NestedObjects:
   - {fileID: 5649536190899019925}
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 4358775201010957116}
   ForceRemoteRenderTimeframe: 0
 --- !u!1 &7290555014003393081
 GameObject:
@@ -230,6 +231,8 @@ GameObject:
   - component: {fileID: 42435870749483521}
   - component: {fileID: 4598847918284539675}
   - component: {fileID: 4848696220298361269}
+  - component: {fileID: 1170582273204316660}
+  - component: {fileID: 4358775201010957116}
   m_Layer: 0
   m_Name: Cube.012
   m_TagString: Untagged
@@ -302,6 +305,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1170582273204316660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290555014003393081}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012478395, y: 0.0045183357, z: 0.022522366}
+  m_Center: {x: -0.0000000037107486, y: 0.0011280181, z: 0.0112611735}
+--- !u!114 &4358775201010957116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290555014003393081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interiorDoor: {fileID: 5538051256493472}
 --- !u!1 &8203318493927073431
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +355,6 @@ GameObject:
   - component: {fileID: 5538051256493472}
   - component: {fileID: 3934897170744898666}
   - component: {fileID: 3635353771221751869}
-  - component: {fileID: 5282211606321095685}
   m_Layer: 11
   m_Name: Porta.004
   m_TagString: Untagged
@@ -3925,24 +3961,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01144531, y: 0.0007894192, z: 0.021984063}
   m_Center: {x: -0.0057226573, y: -0.00032152154, z: 0.010992042}
---- !u!65 &5282211606321095685
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8203318493927073431}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 4096
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 4095
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.011445311, y: 0.0038468502, z: 0.022676513}
-  m_Center: {x: -0.005722663, y: -0.0002312413, z: 0.011338252}
