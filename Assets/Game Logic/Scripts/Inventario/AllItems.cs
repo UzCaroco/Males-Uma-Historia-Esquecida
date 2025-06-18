@@ -18,7 +18,8 @@ public enum ItemType
     Chave02,
     Chave03,
     Chave04,
-    Chave05
+    Chave05,
+    Mosquete,
 }
 
 [System.Serializable]
