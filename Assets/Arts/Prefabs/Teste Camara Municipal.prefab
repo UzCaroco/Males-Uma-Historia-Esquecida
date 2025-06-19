@@ -1058,6 +1058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -1084,6 +1089,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 290313489099747745}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4380734252805232728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 290313489099747745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &382466280359134763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1690,6 +1707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -1716,6 +1738,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 564653841141244157}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4546970610866342148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 564653841141244157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &627747666110119242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1883,6 +1917,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -1910,6 +1949,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 703831154586501103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3533244022609401366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 703831154586501103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &780513803373621246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2136,6 +2187,9 @@ MonoBehaviour:
   pointLast: {fileID: 0}
   walk:
     _value: 1
+  lookPlayer:
+    _value: 0
+  playerEncontrado: {fileID: 0}
 --- !u!114 &8326760507160661867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2270,6 +2324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -2296,6 +2355,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 907441277305201224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3772882942432463793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 907441277305201224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &977669300538661812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2309,6 +2380,16 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1733206114
       objectReference: {fileID: 0}
+    - target: {fileID: 1896782977495724343, guid: cbbc75041f9c3e3499670c4e8c582db9,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896782977495724343, guid: cbbc75041f9c3e3499670c4e8c582db9,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[2]
+      value: 
+      objectReference: {fileID: 1648399939660911175}
     - target: {fileID: 4947139134959856649, guid: cbbc75041f9c3e3499670c4e8c582db9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2372,7 +2453,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5759000535890359987, guid: cbbc75041f9c3e3499670c4e8c582db9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1648399939660911175}
   m_SourcePrefab: {fileID: 100100000, guid: cbbc75041f9c3e3499670c4e8c582db9, type: 3}
 --- !u!114 &1712453200995068547 stripped
 MonoBehaviour:
@@ -2380,12 +2465,37 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 977669300538661812}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4791114724323241223}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4791114724323241223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5759000535890359987, guid: cbbc75041f9c3e3499670c4e8c582db9,
+    type: 3}
+  m_PrefabInstance: {fileID: 977669300538661812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648399939660911175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791114724323241223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e139d4172a50eb543a9306a1a8e7c549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolScript: {fileID: 6288951277378233819}
+  raioDeVisao: 0.25
+  distanciaDeVisao: 7
+  offset: {x: 0, y: 1.5, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!4 &5275586367351322557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4947139134959856649, guid: cbbc75041f9c3e3499670c4e8c582db9,
@@ -2398,7 +2508,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 977669300538661812}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4791114724323241223}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52dc654c413b57643ade096afec72d68, type: 3}
@@ -2966,7 +3076,7 @@ PrefabInstance:
     - target: {fileID: 5785952740721275247, guid: ba675ea9fd343be44a3e4687c47c93d9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.3414574
+      value: 6.454159
       objectReference: {fileID: 0}
     - target: {fileID: 5785952740721275247, guid: ba675ea9fd343be44a3e4687c47c93d9,
         type: 3}
@@ -3210,6 +3320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -3236,6 +3351,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1520491246019014899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3302764396355328266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1520491246019014899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1557861302536383756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3603,7 +3730,7 @@ PrefabInstance:
     - target: {fileID: 7096433215275129798, guid: a679c41cba8d2524ab503ba45fad3abc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.440802
+      value: 16.475798
       objectReference: {fileID: 0}
     - target: {fileID: 7096433215275129798, guid: a679c41cba8d2524ab503ba45fad3abc,
         type: 3}
@@ -3946,6 +4073,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -3972,6 +4104,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2138932221269401432}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2694027266752165537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138932221269401432}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2233201520245518249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5187,7 +5331,21 @@ MonoBehaviour:
   - {fileID: 7561021925736301488}
   - {fileID: 1311383965449840088}
   - {fileID: 2178463779757958079}
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 162545103734465304}
+  - {fileID: 8300814375003352469}
+  - {fileID: 7459296301329358599}
+  - {fileID: 5592465911973076293}
+  - {fileID: 113511014974460291}
+  - {fileID: 2694027266752165537}
+  - {fileID: 3772882942432463793}
+  - {fileID: 3533244022609401366}
+  - {fileID: 8203086187349855346}
+  - {fileID: 4546970610866342148}
+  - {fileID: 7959134944076711892}
+  - {fileID: 4380734252805232728}
+  - {fileID: 3302764396355328266}
+  - {fileID: 8956835864215241841}
   ForceRemoteRenderTimeframe: 0
 --- !u!1 &1316256263487881498 stripped
 GameObject:
@@ -8091,9 +8249,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e139d4172a50eb543a9306a1a8e7c549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raioDeVisao: 3
-  distanciaDeVisao: 5
+  patrolScript: {fileID: 7671497198228091587}
+  raioDeVisao: 0.25
+  distanciaDeVisao: 7
   offset: {x: 0, y: 1.5, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!1001 &3610347229884619757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9155,6 +9317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -9175,6 +9342,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c6e4ed2ae2449a46a990ae42e200ce3, type: 3}
+--- !u!114 &113511014974460291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4134125967326673018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3330906656405650384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1686207034417185706, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
@@ -9244,6 +9423,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -9264,6 +9448,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c6e4ed2ae2449a46a990ae42e200ce3, type: 3}
+--- !u!114 &162545103734465304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4219136085286882017}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3309017314975615307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1686207034417185706, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
@@ -9653,6 +9849,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -9679,6 +9880,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4936238486737628552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8956835864215241841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4936238486737628552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4938456751108206570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10080,6 +10293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -10106,6 +10324,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5267856345955706251}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8203086187349855346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5267856345955706251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5278761648725249569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10417,6 +10647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -10443,6 +10678,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5475940308142982252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8300814375003352469 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5475940308142982252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5508974110724951195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11869,6 +12116,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -11895,6 +12147,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6248919359877262893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7959134944076711892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6248919359877262893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6330622137074891862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12814,6 +13078,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -12840,6 +13109,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6865920650373232382}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7459296301329358599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6865920650373232382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6883949972123127655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13987,6 +14268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta Interior CIMA (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+        type: 3}
+      propertyPath: interiorDoor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358775201010957116, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
         type: 3}
       propertyPath: interiorDoor
@@ -14007,6 +14293,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c6e4ed2ae2449a46a990ae42e200ce3, type: 3}
+--- !u!114 &5592465911973076293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4092672563721595385, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8453386374534280380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c6b45b652aba64ca2ea4e4c0e4e88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7077101440275953430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1686207034417185706, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
@@ -14137,6 +14435,9 @@ MonoBehaviour:
   pointLast: {fileID: 0}
   walk:
     _value: 1
+  lookPlayer:
+    _value: 0
+  playerEncontrado: {fileID: 0}
 --- !u!114 &7290692397737217394
 MonoBehaviour:
   m_ObjectHideFlags: 0

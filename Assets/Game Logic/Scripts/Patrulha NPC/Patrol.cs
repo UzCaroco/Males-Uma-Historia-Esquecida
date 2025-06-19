@@ -9,7 +9,9 @@ public class Patrol : NetworkBehaviour
     public Transform waypoint;
     public Transform pointLast;
 
-    public NetworkBool walk = true;
+    public NetworkBool walk = true, lookPlayer = false;
+
+    public Transform playerEncontrado;
 
     private void Start()
     {
@@ -22,12 +24,25 @@ public class Patrol : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        Vector3 targetRotation = Quaternion.LookRotation(waypoint.position - transform.position).eulerAngles;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), velocityRotation);
-
-        if (walk)
+        if (!lookPlayer)
         {
-            cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+            Vector3 targetRotation = Quaternion.LookRotation(waypoint.position - transform.position).eulerAngles;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), velocityRotation);
+
+            if (walk)
+            {
+                cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+            }
+        }
+        else
+        {
+            Vector3 targetRotation = Quaternion.LookRotation(playerEncontrado.position - transform.position).eulerAngles;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), velocityRotation);
+
+            if (walk)
+            {
+                cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
+            }
         }
     }
 
