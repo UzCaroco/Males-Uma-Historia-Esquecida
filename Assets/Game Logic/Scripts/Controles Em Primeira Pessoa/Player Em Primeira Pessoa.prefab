@@ -6954,7 +6954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseToSpawn: 0
   phasePrefab:
-  - {fileID: 7411598167709779781, guid: cf149ed5b2b4e1545a534414199a714b, type: 3}
+  - {fileID: 320631509868168505, guid: d2ff584791e0a2742a5bc34328a08555, type: 3}
   - {fileID: 0}
 --- !u!1 &8180189612800446616
 GameObject:
