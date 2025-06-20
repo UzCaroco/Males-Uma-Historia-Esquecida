@@ -18,6 +18,20 @@ public class FollowPlayer : NetworkBehaviour
     [SerializeField] LayerMask layerMask;
     Vector3 left, right, top, down, topRight, topLeft, downLeft, downRight;
 
+
+    NetworkBool follow = false;
+
+    NetworkBool achouFoward => Physics.Raycast(origin, transform.forward, distanciaDeVisao, layerMask);
+    NetworkBool achouLeft => Physics.Raycast(origin, left, distanciaDeVisao, layerMask);
+    NetworkBool achouRight => Physics.Raycast(origin, right, distanciaDeVisao, layerMask);
+    NetworkBool achouTop => Physics.Raycast(origin, top, distanciaDeVisao, layerMask);
+    NetworkBool achouDown => Physics.Raycast(origin, down, distanciaDeVisao, layerMask);
+    NetworkBool achouTopRight => Physics.Raycast(origin, topRight, distanciaDeVisao, layerMask);
+    NetworkBool achouTopLeft => Physics.Raycast(origin, topLeft, distanciaDeVisao, layerMask);
+    NetworkBool achouDownLeft => Physics.Raycast(origin, downLeft, distanciaDeVisao, layerMask);
+    NetworkBool achouDownRight => Physics.Raycast(origin, downRight, distanciaDeVisao, layerMask);
+
+
     private void Update()
     {
         origin = transform.position + offset;
@@ -46,26 +60,38 @@ public class FollowPlayer : NetworkBehaviour
         {
             GameObject alvo = hit.collider.gameObject;
 
-            if (alvo.CompareTag("Player"))
+            if (alvo.CompareTag("Player") && !follow) //Se visualizar o player e não estiver procurando por ele, passa a procurar e seguir
             {
                 Debug.Log("Player detectado: " + alvo.name);
-                
+                follow = true; // Ativa a busca pelo player
+
                 patrolScript.lookPlayer = true; // Ativa a busca pelo player
-                patrolScript.playerEncontrado = alvo.transform; // Define o player encontrado
+                patrolScript.playerEncontrado = alvo.transform; // Define o transform do player para poder segui-lo
             }
         }
     }
+
+    
     public override void FixedUpdateNetwork()
     {
-        // Verifica cada direção
-        VerificarRay(origin, transform.forward);
-        VerificarRay(origin, left);
-        VerificarRay(origin, right);
-        VerificarRay(origin, top);
-        VerificarRay(origin, down);
-        VerificarRay(origin, topRight);
-        VerificarRay(origin, topLeft);
-        VerificarRay(origin, downLeft);
-        VerificarRay(origin, downRight);
+        if (achouFoward || achouLeft || achouRight || achouTop || achouDown || achouTopRight || achouTopLeft || achouDownLeft || achouDownRight)
+        {
+            // Se o raycast encontrar algo, Verifica cada direção
+            VerificarRay(origin, transform.forward);
+            VerificarRay(origin, left);
+            VerificarRay(origin, right);
+            VerificarRay(origin, top);
+            VerificarRay(origin, down);
+            VerificarRay(origin, topRight);
+            VerificarRay(origin, topLeft);
+            VerificarRay(origin, downLeft);
+            VerificarRay(origin, downRight);
+        }
+        else
+        {
+            Debug.Log("Player NÃO detectado: ");
+            follow = false; // Se o raycast não atingir mais o player, desativa a busca
+            patrolScript.lookPlayer = false; // Desativa a busca pelo player
+        }
     }
 }
