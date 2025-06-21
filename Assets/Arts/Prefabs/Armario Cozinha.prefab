@@ -1,0 +1,864 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &239882925000581761
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5358551917965638116}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1297847682544415520}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 102656236405908187}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4642859326574994028}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6856920449700976850}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5148980810706003366}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8512724823977655867}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 146553704277156338}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5122549099934430698}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4914131761599590836, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4308253176788219004}
+    - targetCorrespondingSourceObject: {fileID: 4914131761599590836, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3188001934251731037}
+  m_SourcePrefab: {fileID: 100100000, guid: 4ce3e07138e08f34e93e056338c142ad, type: 3}
+--- !u!4 &350864342363276650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ce3e07138e08f34e93e056338c142ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 239882925000581761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5145007375539557173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4914131761599590836, guid: 4ce3e07138e08f34e93e056338c142ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 239882925000581761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4308253176788219004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145007375539557173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.861678, y: 2.293208, z: 0.46404546}
+  m_Center: {x: 0.00029563904, y: 1.146604, z: -0.10026481}
+--- !u!65 &3188001934251731037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145007375539557173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.861678, y: 1.1057218, z: 0.14727995}
+  m_Center: {x: 0.00029563904, y: 0.5528609, z: 0.20453571}
+--- !u!1001 &1034589030914728721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 323411299355827056, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Portas (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.456
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6822
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1422
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1a3e8370ddad148a6b7c1b41467eb7, type: 3}
+--- !u!4 &102656236405908187 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1034589030914728721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2104814793664525034
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 323411299355827056, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Portas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1a3e8370ddad148a6b7c1b41467eb7, type: 3}
+--- !u!4 &1297847682544415520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104814793664525034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3330195599137742557
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Gaveta (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4596
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4b87775997e8b04bafa33fb9edd23b7, type: 3}
+--- !u!4 &146553704277156338 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3330195599137742557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5001892681276176430
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 323411299355827056, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Portas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1a3e8370ddad148a6b7c1b41467eb7, type: 3}
+--- !u!4 &5358551917965638116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5001892681276176430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5717763401403294630
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 323411299355827056, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Portas (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.456
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1327
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1422
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1a3e8370ddad148a6b7c1b41467eb7, type: 3}
+--- !u!4 &4642859326574994028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5717763401403294630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5773474679197669656
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 323411299355827056, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Portas (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.456
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9361
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1422
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1a3e8370ddad148a6b7c1b41467eb7, type: 3}
+--- !u!4 &6856920449700976850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1096393895526515146, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5773474679197669656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6493298622104322324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Gaveta (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.731
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4b87775997e8b04bafa33fb9edd23b7, type: 3}
+--- !u!4 &8512724823977655867 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6493298622104322324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7721810605888178885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Gaveta (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1885
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4b87775997e8b04bafa33fb9edd23b7, type: 3}
+--- !u!4 &5122549099934430698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7721810605888178885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7731352718672304777
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 350864342363276650}
+    m_Modifications:
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha Gaveta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9976505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4b87775997e8b04bafa33fb9edd23b7, type: 3}
+--- !u!4 &5148980810706003366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7731352718672304777}
+  m_PrefabAsset: {fileID: 0}

@@ -3857,6 +3857,104 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 513441000}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8847033531148423108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350864342363276650, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122898163600613328, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: m_Name
+      value: Armario Cozinha
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785184551612497017, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: SortKey
+      value: 1918842735
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785184551612497017, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785184551612497017, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379523268028436075, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: SortKey
+      value: 4165999803
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511649563206120486, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: SortKey
+      value: 4012537865
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769429160160644224, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: SortKey
+      value: 3909630829
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f63bc26f81f22d48a69a870b699ab12, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3867,3 +3965,4 @@ SceneRoots:
   - {fileID: 194670305}
   - {fileID: 2059934561}
   - {fileID: 101001027}
+  - {fileID: 8847033531148423108}
