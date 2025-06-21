@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 870fdd0ed7c247e42b08d2fe94dc8926
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BackgroundEraser_20250621_103958848_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 814
+        width: 3920
+        height: 671
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e073c270620998b439c7c34f6d15e7ba
+      internalID: 1290720433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BackgroundEraser_20250621_103958848_0: 112133303
+      BackgroundEraser_20250621_103958848_1: -1242568182
+      BackgroundEraser_20250621_103958848_10: -2060622033
+      BackgroundEraser_20250621_103958848_11: -1933275410
+      BackgroundEraser_20250621_103958848_12: -722135719
+      BackgroundEraser_20250621_103958848_13: 1290720433
+      BackgroundEraser_20250621_103958848_14: 567210988
+      BackgroundEraser_20250621_103958848_15: 1699247820
+      BackgroundEraser_20250621_103958848_16: -1531588390
+      BackgroundEraser_20250621_103958848_17: -805030335
+      BackgroundEraser_20250621_103958848_18: 276997468
+      BackgroundEraser_20250621_103958848_19: -1054840388
+      BackgroundEraser_20250621_103958848_2: -640878063
+      BackgroundEraser_20250621_103958848_20: 1030597053
+      BackgroundEraser_20250621_103958848_21: 652894990
+      BackgroundEraser_20250621_103958848_22: -1347900780
+      BackgroundEraser_20250621_103958848_23: 165386052
+      BackgroundEraser_20250621_103958848_24: 1262738127
+      BackgroundEraser_20250621_103958848_25: 2067647022
+      BackgroundEraser_20250621_103958848_26: 619663711
+      BackgroundEraser_20250621_103958848_27: 1131111584
+      BackgroundEraser_20250621_103958848_28: 1767511244
+      BackgroundEraser_20250621_103958848_29: -1934587697
+      BackgroundEraser_20250621_103958848_3: 2068263149
+      BackgroundEraser_20250621_103958848_30: 42224835
+      BackgroundEraser_20250621_103958848_31: -940647301
+      BackgroundEraser_20250621_103958848_32: -528409502
+      BackgroundEraser_20250621_103958848_33: -837285301
+      BackgroundEraser_20250621_103958848_34: -495328556
+      BackgroundEraser_20250621_103958848_35: -84690653
+      BackgroundEraser_20250621_103958848_36: 2138413946
+      BackgroundEraser_20250621_103958848_37: 1178750540
+      BackgroundEraser_20250621_103958848_38: 511129337
+      BackgroundEraser_20250621_103958848_4: 1810669388
+      BackgroundEraser_20250621_103958848_5: 2139270043
+      BackgroundEraser_20250621_103958848_6: 1262068680
+      BackgroundEraser_20250621_103958848_7: -87279437
+      BackgroundEraser_20250621_103958848_8: 1613778058
+      BackgroundEraser_20250621_103958848_9: -161759430
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
