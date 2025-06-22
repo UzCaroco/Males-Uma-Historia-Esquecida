@@ -148,6 +148,15 @@ public class FirstPersonCamera : MonoBehaviour
     }
 
 
+    public void Agachar()
+    {
+        if (Target.TryGetComponent(out PlayerMovement playerMovement))
+        {
+            playerMovement.RPC_Agachar();
+        }
+    }
+
+
     public void UpdateInteragir()
     {
         if (segurandoBotao && tempoPressionado < limiteMaxParaPointerDownIniciar)

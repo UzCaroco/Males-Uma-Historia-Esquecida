@@ -11,6 +11,9 @@ public class PlayerMovement : NetworkBehaviour
 
     Animator ani;
     int walkingHash = Animator.StringToHash("IsWalking");
+    int crouchHash = Animator.StringToHash("IsCrouching");
+
+    CharacterController cc;
     private void Awake()
     {
         _controller = GetComponent<NetworkCharacterController>();
@@ -24,6 +27,7 @@ public class PlayerMovement : NetworkBehaviour
             Cam = Camera.main;
             Cam.GetComponent<FirstPersonCamera>().Target = transform;
 
+            cc = GetComponent<CharacterController>();
 
             joystickPai = GameObject.Find("Joy Pai").GetComponent<Image>();
             joystickFilho = GameObject.Find("Joy Filho").GetComponent<Image>();
@@ -151,8 +155,22 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-
-
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_Agachar()
+    {
+        if (ani.GetBool(crouchHash) == false)
+        {
+            ani.SetBool(crouchHash, true);
+            cc.height = 1f;
+            cc.center = new Vector3(0, 0.6f, 0);
+        }
+        else
+        {
+            ani.SetBool(crouchHash, false);
+            cc.height = 1.75f;
+            cc.center = new Vector3(0, 0.91f, 0);
+        }
+    }
 
 
 
