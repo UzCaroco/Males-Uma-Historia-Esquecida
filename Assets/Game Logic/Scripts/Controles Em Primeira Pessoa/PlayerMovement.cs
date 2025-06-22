@@ -186,7 +186,11 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_DeathAndRespawnPlayer(Vector3 posicaoDeRespawn)
+    {
+        _controller.Teleport(posicaoDeRespawn);
+    }
 
 
 

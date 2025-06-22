@@ -15,21 +15,20 @@ public class FollowPlayer : NetworkBehaviour
 
     [SerializeField] Vector3 offset = new Vector3(0, 1.5f, 0);
     Vector3 origin;
-    [SerializeField] LayerMask layerMask;
     Vector3 left, right, top, down, topRight, topLeft, downLeft, downRight;
 
 
     NetworkBool follow = false;
 
-    NetworkBool achouFoward => Physics.Raycast(origin, transform.forward, distanciaDeVisao, layerMask);
-    NetworkBool achouLeft => Physics.Raycast(origin, left, distanciaDeVisao, layerMask);
-    NetworkBool achouRight => Physics.Raycast(origin, right, distanciaDeVisao, layerMask);
-    NetworkBool achouTop => Physics.Raycast(origin, top, distanciaDeVisao, layerMask);
-    NetworkBool achouDown => Physics.Raycast(origin, down, distanciaDeVisao, layerMask);
-    NetworkBool achouTopRight => Physics.Raycast(origin, topRight, distanciaDeVisao, layerMask);
-    NetworkBool achouTopLeft => Physics.Raycast(origin, topLeft, distanciaDeVisao, layerMask);
-    NetworkBool achouDownLeft => Physics.Raycast(origin, downLeft, distanciaDeVisao, layerMask);
-    NetworkBool achouDownRight => Physics.Raycast(origin, downRight, distanciaDeVisao, layerMask);
+    NetworkBool achouFoward => Physics.Raycast(origin, transform.forward, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouLeft => Physics.Raycast(origin, left, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouRight => Physics.Raycast(origin, right, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouTop => Physics.Raycast(origin, top, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouDown => Physics.Raycast(origin, down, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouTopRight => Physics.Raycast(origin, topRight, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouTopLeft => Physics.Raycast(origin, topLeft, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouDownLeft => Physics.Raycast(origin, downLeft, out RaycastHit hit, distanciaDeVisao);
+    NetworkBool achouDownRight => Physics.Raycast(origin, downRight, out RaycastHit hit, distanciaDeVisao);
 
 
     private void Update()
@@ -48,7 +47,7 @@ public class FollowPlayer : NetworkBehaviour
         
     }
 
-    void VerificarRay(Vector3 origem, Vector3 direcao)
+    bool VerificarRay(Vector3 origem, Vector3 direcao)
     {
         RaycastHit hit;
 
@@ -56,42 +55,42 @@ public class FollowPlayer : NetworkBehaviour
         Debug.DrawRay(origem, direcao * distanciaDeVisao, Color.red);
 
         // Faz o raycast
-        if (Physics.Raycast(origem, direcao, out hit, distanciaDeVisao, layerMask))
+        if (Physics.Raycast(origem, direcao, out hit, distanciaDeVisao))
         {
-            GameObject alvo = hit.collider.gameObject;
-
-            if (alvo.CompareTag("Player") && !follow) //Se visualizar o player e não estiver procurando por ele, passa a procurar e seguir
+            if (hit.collider.CompareTag("Player") && !follow) //Se visualizar o player e não estiver procurando por ele, passa a procurar e seguir
             {
-                Debug.Log("Player detectado: " + alvo.name);
+                Debug.Log("Player detectado: " + hit.collider.name);
                 follow = true; // Ativa a busca pelo player
 
                 patrolScript.lookPlayer = true; // Ativa a busca pelo player
-                patrolScript.playerEncontrado = alvo.transform; // Define o transform do player para poder segui-lo
+                patrolScript.playerEncontrado = hit.collider.transform; // Define o transform do player para poder segui-lo
             }
+            return true; // Retorna verdadeiro se o raycast encontrar algo
         }
+        return false;
     }
 
     
     public override void FixedUpdateNetwork()
     {
-        if (achouFoward || achouLeft || achouRight || achouTop || achouDown || achouTopRight || achouTopLeft || achouDownLeft || achouDownRight)
+        NetworkBool encontrouPlayer = false; // Variável para verificar se o player foi encontrado
+        // Se os raycast encontrar o player
+        encontrouPlayer |= VerificarRay(origin, transform.forward);
+        encontrouPlayer |= VerificarRay(origin, left);
+        encontrouPlayer |= VerificarRay(origin, right);
+        encontrouPlayer |= VerificarRay(origin, top);
+        encontrouPlayer |= VerificarRay(origin, down);
+        encontrouPlayer |= VerificarRay(origin, topRight);
+        encontrouPlayer |= VerificarRay(origin, topLeft);
+        encontrouPlayer |= VerificarRay(origin, downLeft);
+        encontrouPlayer |= VerificarRay(origin, downRight);
+
+
+        if (!encontrouPlayer && follow) // Se não encontrar o player e já estiver seguindo, desativa a busca
         {
-            // Se o raycast encontrar algo, Verifica cada direção
-            VerificarRay(origin, transform.forward);
-            VerificarRay(origin, left);
-            VerificarRay(origin, right);
-            VerificarRay(origin, top);
-            VerificarRay(origin, down);
-            VerificarRay(origin, topRight);
-            VerificarRay(origin, topLeft);
-            VerificarRay(origin, downLeft);
-            VerificarRay(origin, downRight);
-        }
-        else
-        {
-            Debug.Log("Player NÃO detectado: ");
-            follow = false; // Se o raycast não atingir mais o player, desativa a busca
+            follow = false; // Desativa a busca pelo player
             patrolScript.lookPlayer = false; // Desativa a busca pelo player
+            patrolScript.playerEncontrado = null; // Limpa o transform do player
         }
     }
 }

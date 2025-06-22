@@ -12,6 +12,7 @@ public class Patrol : NetworkBehaviour
     public NetworkBool walk = true, lookPlayer = false;
 
     public Transform playerEncontrado;
+    [SerializeField] Transform posicaoDeRespawnPlayer;
 
     private void Start()
     {
@@ -46,5 +47,15 @@ public class Patrol : NetworkBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && lookPlayer)
+        {
+            if (other.TryGetComponent(out PlayerMovement playerMovement))
+            {
+                playerMovement.RPC_DeathAndRespawnPlayer(posicaoDeRespawnPlayer.position);
+            }
+        }
+    }
 
 }

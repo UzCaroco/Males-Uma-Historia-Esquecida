@@ -11,6 +11,8 @@ public class PointPatrol : MonoBehaviour
     bool isResetting = false;
     [SerializeField] Transform[] pointsRotateAround = new Transform[2];
 
+    
+
 
     private void OnTriggerEnter(Collider other)
     {
