@@ -13,6 +13,10 @@ public class PlayerMovement : NetworkBehaviour
     int walkingHash = Animator.StringToHash("IsWalking");
     int crouchHash = Animator.StringToHash("IsCrouching");
 
+    [SerializeField] LayerMask mesaLayer;
+
+    bool sobMesa => Physics.Raycast(transform.position, Vector3.up, out RaycastHit hit, 3f, mesaLayer);
+
     CharacterController cc;
     private void Awake()
     {
@@ -152,6 +156,8 @@ public class PlayerMovement : NetworkBehaviour
 
             }
 
+
+
         }
     }
 
@@ -161,14 +167,22 @@ public class PlayerMovement : NetworkBehaviour
         if (ani.GetBool(crouchHash) == false)
         {
             ani.SetBool(crouchHash, true);
-            cc.height = 1f;
-            cc.center = new Vector3(0, 0.6f, 0);
+            cc.height = 0.75f;
+            cc.center = new Vector3(0, 0.47f, 0);
+
+            Cam.GetComponent<FirstPersonCamera>().estaAgachado = true;
         }
-        else
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_Levantar()
+    {
+        if (ani.GetBool(crouchHash) == true && !sobMesa)
         {
             ani.SetBool(crouchHash, false);
             cc.height = 1.75f;
-            cc.center = new Vector3(0, 0.91f, 0);
+            cc.center = new Vector3(0, 0.93f, 0);
+            Cam.GetComponent<FirstPersonCamera>().estaAgachado = false;
         }
     }
 

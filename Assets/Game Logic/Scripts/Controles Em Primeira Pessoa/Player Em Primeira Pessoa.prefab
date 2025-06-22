@@ -6895,6 +6895,9 @@ MonoBehaviour:
   Cam: {fileID: 0}
   PlayerSpeed: 10
   fireGun: {fileID: 3668031329079486148}
+  mesaLayer:
+    serializedVersion: 2
+    m_Bits: 32768
   porcentagem: 0.4
   velocity: 5
   joystickPai: {fileID: 0}

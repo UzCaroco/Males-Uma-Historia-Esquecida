@@ -17,12 +17,17 @@ public class Inven : NetworkBehaviour
     public float rayDistance = 100f;
 
     FirstPersonCamera cameraPessoal;
+    PlayerMovement playerMovement;
     public NetworkObject networkObjectInterativo;
+
+    [SerializeField] NetworkCharacterController controller;
 
     public override void Spawned()
     {
         cam = Camera.main;
         cameraPessoal = cam.GetComponent<FirstPersonCamera>();
+        controller = GetComponent<NetworkCharacterController>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
@@ -168,4 +173,20 @@ public class Inven : NetworkBehaviour
         }
     }
 
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_EntrarNoArmario(Vector3 posicao)
+    {
+        Debug.Log("Entrando do armário na posição: " + posicao);
+        controller.Teleport(posicao); // Teleporta o jogador para a posição do armário
+        playerMovement.RPC_Agachar(); // Chama o método de agachar no PlayerMovement
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_SairDoArmario(Vector3 posicao)
+    {
+        Debug.Log("Saindo do armário na posição: " + posicao);
+        controller.Teleport(posicao); // Teleporta o jogador para a posição de saída do armário
+        playerMovement.RPC_Levantar(); // Chama o método de levantar no PlayerMovement
+    }
 }

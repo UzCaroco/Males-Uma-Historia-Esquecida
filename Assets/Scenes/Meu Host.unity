@@ -557,6 +557,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 283481071
       objectReference: {fileID: 0}
+    - target: {fileID: 4014314383655342812, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 1081901590
+      objectReference: {fileID: 0}
     - target: {fileID: 4040274004168393538, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -796,6 +801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SortKey
       value: 415679409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952560645788098770, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 987783273
       objectReference: {fileID: 0}
     - target: {fileID: 7075755584104964795, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
@@ -2536,6 +2546,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 148035268510662040, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 4056105957
+      objectReference: {fileID: 0}
     - target: {fileID: 279148477230450059, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
       propertyPath: SortKey
@@ -2735,6 +2750,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SortKey
       value: 3410071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180115102520659862, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 2131562282
       objectReference: {fileID: 0}
     - target: {fileID: 6715061724196546550, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
@@ -3230,6 +3250,7 @@ MonoBehaviour:
   textoMissoes: {fileID: 301291182}
   inputFieldChestCode: {fileID: 1474682940}
   stringMissoes: 
+  estaAgachado: 0
 --- !u!114 &595875875
 MonoBehaviour:
   m_ObjectHideFlags: 0

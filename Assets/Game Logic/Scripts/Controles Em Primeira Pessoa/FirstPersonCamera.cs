@@ -38,6 +38,8 @@ public class FirstPersonCamera : MonoBehaviour
     public RaycastHit hitInteract => Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 5, interactableLayer) ? hit : default;
     bool segurandoBotao;
 
+    public bool estaAgachado = false;
+
     void Start()
     {
         divisaoCameraMovement = porcentagem * Screen.width;
@@ -113,7 +115,14 @@ public class FirstPersonCamera : MonoBehaviour
             return;
         }
 
-        transform.position = Target.position + Vector3.up * 1.6f;
+        if (!estaAgachado)
+        {
+            transform.position = Target.position + Vector3.up * 1.6f;
+        }
+        else
+        {
+            transform.position = Target.position + Vector3.up * 0.75f; // Ajusta a altura da câmera quando agachado
+        }
 
         /*float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
@@ -152,7 +161,14 @@ public class FirstPersonCamera : MonoBehaviour
     {
         if (Target.TryGetComponent(out PlayerMovement playerMovement))
         {
-            playerMovement.RPC_Agachar();
+            if (!estaAgachado)
+            {
+                playerMovement.RPC_Agachar();
+            }
+            else
+            {
+                playerMovement.RPC_Levantar();
+            }
         }
     }
 
