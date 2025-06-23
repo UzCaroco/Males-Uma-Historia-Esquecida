@@ -66,6 +66,11 @@ public class UseItem : NetworkBehaviour, IInteractable
                         Debug.Log("Pegou a castanha:");
                     }
 
+                    if ((int)_data.itemType == 6) //Se for igual ao É de Habra
+                    {
+                        RPC_AbrirGaveta();
+                    }
+
 
 
                     playerInventory.RPC_ResetValues();
@@ -93,5 +98,12 @@ public class UseItem : NetworkBehaviour, IInteractable
         Runner.Spawn(lamparinaPickUp, transform.position, transform.rotation, inputAuthority: Runner.LocalPlayer); // Spawns a lamparina na posiçao do item
         Runner.Despawn(Object); // Despawns o item
         
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AbrirGaveta()
+    {
+        Debug.Log("Abrindo gaveta");
+        transform.localPosition += new Vector3(0, 0, 0.5f); // Move a gaveta para fora
     }
 }

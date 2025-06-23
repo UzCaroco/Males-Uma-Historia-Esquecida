@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class ChestPadlock : NetworkBehaviour, IInteractable
 {
-    [Networked] int chestId { get; set; } = 0;
-    [Networked] Vector3 chestState { get; set; }
     NetworkBool open = false;
 
-    string codigoCorreto = "OI";
+    [SerializeField] string codigoCorreto = "OI";
+
+    [SerializeField] Chest chest;
 
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
-        playerInventory.RPC_AtivarChestCode();
+        if (!open)
+        {
+            playerInventory.RPC_AtivarChestCode();
+        }
 
     }
 
@@ -27,7 +30,11 @@ public class ChestPadlock : NetworkBehaviour, IInteractable
         if (resposta.ToUpper() == codigoCorreto.ToUpper())
         {
             Debug.Log("CÓDIGO CORRETO! ABRINDO O BAÚ...");
-
+            if (chest != null && !open)
+            {
+                chest.RPC_AbrirBau(); // Chama o RPC para abrir o baú
+                open = true; // Marca o baú como aberto
+            }
         }
         else
         {

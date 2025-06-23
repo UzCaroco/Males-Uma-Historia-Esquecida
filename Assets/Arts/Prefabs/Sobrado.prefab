@@ -19120,6 +19120,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1799947368
       objectReference: {fileID: 0}
+    - target: {fileID: 1176107087884047862, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      propertyPath: NetworkedBehaviours.Array.data[1]
+      value: 
+      objectReference: {fileID: 7697769732435927932}
     - target: {fileID: 1256457148177444633, guid: 2f63bc26f81f22d48a69a870b699ab12,
         type: 3}
       propertyPath: SortKey
@@ -19205,10 +19210,15 @@ PrefabInstance:
       propertyPath: SortKey
       value: 3557606323
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9046164316612102619, guid: 2f63bc26f81f22d48a69a870b699ab12, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9036638182932096129, guid: 2f63bc26f81f22d48a69a870b699ab12,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7697769732435927932}
   m_SourcePrefab: {fileID: 100100000, guid: 2f63bc26f81f22d48a69a870b699ab12, type: 3}
 --- !u!114 &493142022358595607 stripped
 MonoBehaviour:
@@ -19270,6 +19280,34 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2441353719659112624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9036638182932096129, guid: 2f63bc26f81f22d48a69a870b699ab12,
+    type: 3}
+  m_PrefabInstance: {fileID: 6668134267454360625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7697769732435927932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441353719659112624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81872a33469e0343ad518caf0321442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 9802bf2779d62634eb29f2bd9c0b9b4d, type: 2}
+  slotVazio: {fileID: 0}
+  doorPadlock: {fileID: 0}
+  lamparinaPickUp: {fileID: 0}
+  paes:
+    _value: 0
+  tapetes:
+    _value: 0
+  castanhas:
+    _value: 0
 --- !u!114 &2682664965506711729 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8769429160160644224, guid: 2f63bc26f81f22d48a69a870b699ab12,
@@ -19336,7 +19374,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6668134267454360625}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2441353719659112624}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
