@@ -18335,6 +18335,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 3275227165181362485, guid: 2952d6f75e007e644bc3c6ff28dcae37,
+        type: 3}
+      propertyPath: codigoCorreto
+      value: Licutan
+      objectReference: {fileID: 0}
     - target: {fileID: 4542998524029349208, guid: 2952d6f75e007e644bc3c6ff28dcae37,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
