@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Chave Saida
   itemType: 3
   id: 1
-  icon: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  icon: {fileID: 21300000, guid: b93f60ee414f9e740a365d3ffe81be2a, type: 3}
   itemPrefab: {fileID: 6131219643253322588, guid: 6bfe4c5ca46b90d46a0970a9768183e9,
     type: 3}
   position: {x: 0, y: 0, z: 0}

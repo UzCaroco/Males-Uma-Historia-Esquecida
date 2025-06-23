@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Chave Quarto
   itemType: 4
   id: 1
-  icon: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  icon: {fileID: 21300000, guid: 931ca9c8a1d982345904ff20d72bf517, type: 3}
   itemPrefab: {fileID: 5032091379590664373, guid: 7809534c50f4d384ea695223ba6f71d4,
     type: 3}
   position: {x: 0, y: 0, z: 0}

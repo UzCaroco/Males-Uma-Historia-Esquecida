@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Lamparina Interativa
   itemType: 5
   id: 1
-  icon: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  icon: {fileID: 21300000, guid: b31d9dd269bc93f4d88b3d7c4838ca1f, type: 3}
   itemPrefab: {fileID: 3536048611149561914, guid: ea510b37dd5c8654aa60b8b8be89125d,
     type: 3}
   position: {x: 0, y: 0, z: 0}
