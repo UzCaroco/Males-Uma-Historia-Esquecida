@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Tapetes
   itemType: 7
   id: 1
-  icon: {fileID: 21300000, guid: 1cb1b1bf7bfc6574a95f9a2bc7421c60, type: 3}
+  icon: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
   itemPrefab: {fileID: 2040376999479843118, guid: 919877ced85123343970b7239616239c,
     type: 3}
   position: {x: 0, y: 0, z: 0}

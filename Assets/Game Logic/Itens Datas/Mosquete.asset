@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Mosquete
   itemType: 16
   id: 1
-  icon: {fileID: 21300000, guid: dd6818d48a9501449b38f2c52186d13c, type: 3}
+  icon: {fileID: 21300000, guid: 11277a3f23988ec47908362d708edaa8, type: 3}
   itemPrefab: {fileID: 2007343402196472895, guid: 8d50aab068143b241b55e78c9887e3dc,
     type: 3}
   position: {x: 0, y: 0, z: 0}
