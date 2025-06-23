@@ -28,7 +28,7 @@ public class FirstPersonCamera : MonoBehaviour
 
 
 
-    [SerializeField] GameObject chestCode, livro, missoes;
+    [SerializeField] GameObject chestCode, livro, missoes, frase;
     [SerializeField] TextMeshProUGUI textoMissoes;
 
     [SerializeField] TMP_InputField inputFieldChestCode;
@@ -266,16 +266,43 @@ public class FirstPersonCamera : MonoBehaviour
         }
     }
 
+    
+
     public void FecharLivro()
     {
-        if (chestCode != null)
+        if (livro != null)
         {
             livro.SetActive(false);
         }
     }
 
 
+    public void AtivarFrase()
+    {
+        if (frase != null)
+        {
+            if (frase.activeSelf)
+            {
+                frase.SetActive(false);
+            }
+            else
+            {
+                frase.SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Chest code object is not assigned in the inspector.");
+        }
+    }
 
+    public void FecharFrase()
+    {
+        if (frase != null)
+        {
+            frase.SetActive(false);
+        }
+    }
 
 
 

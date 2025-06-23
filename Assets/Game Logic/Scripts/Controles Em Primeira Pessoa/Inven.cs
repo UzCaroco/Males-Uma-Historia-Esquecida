@@ -165,6 +165,15 @@ public class Inven : NetworkBehaviour
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AtivarFrase()
+    {
+        if (cam != null)
+        {
+            cam.GetComponent<FirstPersonCamera>().AtivarFrase(); // Ativa o código do baú se a câmera estiver definida
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_AtivarMissoes()
     {
         if (cam != null)
