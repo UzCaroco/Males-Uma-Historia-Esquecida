@@ -6477,6 +6477,9 @@ MonoBehaviour:
   slotVazio: {fileID: 0}
   doorPadlock: {fileID: 0}
   lamparinaPickUp: {fileID: 0}
+  portaCamara: {fileID: 0}
+  doorPrision: {fileID: 0}
+  ferroCadeado: {fileID: 0}
   paes:
     _value: 0
   tapetes:
@@ -7159,6 +7162,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5869151433418053503}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46b218eb86e77544fbd921987face8e2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1772222412287469187}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46b218eb86e77544fbd921987face8e2,
         type: 3}
@@ -7969,6 +7976,7 @@ MonoBehaviour:
   - {fileID: 6952560645788098770}
   - {fileID: 4014314383655342812}
   - {fileID: 3017361620487229739}
+  - {fileID: 4748779939187243883}
   NetworkedBehaviours: []
   ForceRemoteRenderTimeframe: 0
 --- !u!1 &7384355175132966636 stripped
@@ -11846,6 +11854,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1107208189391578360}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d8782680e5efe2940891b283ae8056a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8628758191597513345}
   m_SourcePrefab: {fileID: 100100000, guid: d8782680e5efe2940891b283ae8056a5, type: 3}
 --- !u!1 &6186918157362993106 stripped
 GameObject:
@@ -18072,6 +18084,7 @@ MonoBehaviour:
   - {fileID: 4144894093584424013}
   - {fileID: 2624290914718992155}
   - {fileID: 1107208189391578360}
+  - {fileID: 8628758191597513345}
   ForceRemoteRenderTimeframe: 0
 --- !u!82 &4622422500787746945
 AudioSource:
@@ -18185,6 +18198,9 @@ MonoBehaviour:
   slotVazio: {fileID: 0}
   doorPadlock: {fileID: 0}
   lamparinaPickUp: {fileID: 0}
+  portaCamara: {fileID: 0}
+  doorPrision: {fileID: 0}
+  ferroCadeado: {fileID: 0}
   paes:
     _value: 0
   tapetes:
@@ -18207,6 +18223,9 @@ MonoBehaviour:
   slotVazio: {fileID: 0}
   doorPadlock: {fileID: 0}
   lamparinaPickUp: {fileID: 0}
+  portaCamara: {fileID: 0}
+  doorPrision: {fileID: 0}
+  ferroCadeado: {fileID: 0}
   paes:
     _value: 0
   tapetes:
@@ -18229,6 +18248,34 @@ MonoBehaviour:
   slotVazio: {fileID: 0}
   doorPadlock: {fileID: 0}
   lamparinaPickUp: {fileID: 0}
+  portaCamara: {fileID: 0}
+  doorPrision: {fileID: 0}
+  ferroCadeado: {fileID: 0}
+  paes:
+    _value: 0
+  tapetes:
+    _value: 0
+  castanhas:
+    _value: 0
+--- !u!114 &8628758191597513345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186918157362993106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81872a33469e0343ad518caf0321442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 0e6b6da8f3ff55b4b8a471d2b4edaa2e, type: 2}
+  slotVazio: {fileID: 0}
+  doorPadlock: {fileID: 0}
+  lamparinaPickUp: {fileID: 0}
+  portaCamara: {fileID: 0}
+  doorPrision: {fileID: 0}
+  ferroCadeado: {fileID: 0}
   paes:
     _value: 0
   tapetes:
@@ -19307,6 +19354,9 @@ MonoBehaviour:
   slotVazio: {fileID: 0}
   doorPadlock: {fileID: 0}
   lamparinaPickUp: {fileID: 0}
+  portaCamara: {fileID: 0}
+  doorPrision: {fileID: 0}
+  ferroCadeado: {fileID: 0}
   paes:
     _value: 0
   tapetes:
@@ -22027,6 +22077,107 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c20f6bfa57cf5474285aa45015afd601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8847520203021494415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3870215733374349863}
+    m_Modifications:
+    - target: {fileID: 4264832492599612388, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: Flags
+      value: 524289
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264832492599612388, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: SortKey
+      value: 3730426128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.544337
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18813935
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.6964235
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0016691122
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0003009932
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0011898335
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573742821335700662, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+        type: 3}
+      propertyPath: m_Name
+      value: Livros Alcorao PickUp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd7158ce0d1bff24ba9bb142e252dcd7, type: 3}
+--- !u!4 &1772222412287469187 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7084309941121535500, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8847520203021494415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4748779939187243883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4264832492599612388, guid: dd7158ce0d1bff24ba9bb142e252dcd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8847520203021494415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8992212839629996778

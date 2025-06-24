@@ -632,6 +632,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1177630119
       objectReference: {fileID: 0}
+    - target: {fileID: 4748779939187243883, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 205531685
+      objectReference: {fileID: 0}
     - target: {fileID: 4766531272422444831, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -1693,7 +1698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.438965, y: 67.46153}
+  m_AnchoredPosition: {x: -78, y: 87}
   m_SizeDelta: {x: 250, y: 50.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277045297
@@ -1925,8 +1930,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.790924, y: -21.3703}
-  m_SizeDelta: {x: 385.7, y: 110.4}
+  m_AnchoredPosition: {x: 14, y: -20.685303}
+  m_SizeDelta: {x: 385.7, y: 151.7706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301291182
 MonoBehaviour:
@@ -1948,7 +1953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Buscar Castanhas\n- Buscar Tapetes\n- Buscar P\xE3es"
+  m_text: "- Buscar Castanhas\n- Buscar Tapetes\n- Buscar P\xE3es\n- Livros do Alcor\xE3o"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 614cf8a07d3affc4ca9906044e01b3ac, type: 2}
   m_sharedMaterial: {fileID: -6421736077371606235, guid: 614cf8a07d3affc4ca9906044e01b3ac,
@@ -2661,6 +2666,16 @@ PrefabInstance:
       propertyPath: SortKey
       value: 2200655413
       objectReference: {fileID: 0}
+    - target: {fileID: 2929349479677316900, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 3837379083
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945461149403414173, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 2073923894
+      objectReference: {fileID: 0}
     - target: {fileID: 3201539310499693059, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
       propertyPath: SortKey
@@ -2726,6 +2741,16 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1727366425
       objectReference: {fileID: 0}
+    - target: {fileID: 4653579525799034916, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 470029551
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031752766445275003, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 3623109697
+      objectReference: {fileID: 0}
     - target: {fileID: 5214037132441862119, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
       propertyPath: SortKey
@@ -2781,6 +2806,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 2579768583
       objectReference: {fileID: 0}
+    - target: {fileID: 6846850218690617042, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 1010017593
+      objectReference: {fileID: 0}
     - target: {fileID: 6862768612336080055, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
       propertyPath: SortKey
@@ -2820,6 +2850,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SortKey
       value: 2413598702
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513623836800101029, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 435695372
       objectReference: {fileID: 0}
     - target: {fileID: 7573467307871828432, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
@@ -2871,6 +2906,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 4097759656
       objectReference: {fileID: 0}
+    - target: {fileID: 8334521486867671028, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 2294508444
+      objectReference: {fileID: 0}
     - target: {fileID: 8461013513080465663, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
       propertyPath: SortKey
@@ -2895,6 +2935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SortKey
       value: 1698651933
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910062441348211195, guid: d2ff584791e0a2742a5bc34328a08555,
+        type: 3}
+      propertyPath: SortKey
+      value: 3009324516
       objectReference: {fileID: 0}
     - target: {fileID: 8925853420626086462, guid: d2ff584791e0a2742a5bc34328a08555,
         type: 3}
@@ -7320,8 +7365,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -747.62103, y: 361.88696}
-  m_SizeDelta: {x: 450, y: 200}
+  m_AnchoredPosition: {x: -747.62103, y: 337.19812}
+  m_SizeDelta: {x: 450, y: 249.3777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726092602
 MonoBehaviour:
