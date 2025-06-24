@@ -7,11 +7,9 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
     [Networked] float doorState { get; set; }
     NetworkBool open = false;
 
+    [SerializeField] bool portaDaCamara = false;
+    public NetworkBool destravado = false;
 
-    public override void FixedUpdateNetwork()
-    {
-
-    }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     void RPC_ChangedVoid()
@@ -44,27 +42,58 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
         Debug.Log("Received DealDamageRpc on StateAuthority, modifying Networked variable");
         Debug.Log("Interagindo com o porta do baú");
 
-        if (!open)
+        if (!portaDaCamara)
         {
-            doorState = -90;
-            open = true;
+            if (!open)
+            {
+                doorState = -90;
+                open = true;
 
-            if (HasStateAuthority)
-                RPC_ChangedVoid();
+                if (HasStateAuthority)
+                    RPC_ChangedVoid();
 
-            doorId++;
-            Debug.Log("ID DA PORTA " + doorId);
+                doorId++;
+                Debug.Log("ID DA PORTA " + doorId);
+            }
+            else
+            {
+                doorState = 90;
+                open = false;
+
+                if (HasStateAuthority)
+                    RPC_ChangedVoid();
+
+                doorId++;
+                Debug.Log("ID DA PORTA " + doorId);
+            }
         }
         else
         {
-            doorState = 90;
-            open = false;
+            if (destravado)
+            {
+                if (!open)
+                {
+                    doorState = -90;
+                    open = true;
 
-            if (HasStateAuthority)
-                RPC_ChangedVoid();
+                    if (HasStateAuthority)
+                        RPC_ChangedVoid();
 
-            doorId++;
-            Debug.Log("ID DA PORTA " + doorId);
+                    doorId++;
+                    Debug.Log("ID DA PORTA " + doorId);
+                }
+                else
+                {
+                    doorState = 90;
+                    open = false;
+
+                    if (HasStateAuthority)
+                        RPC_ChangedVoid();
+
+                    doorId++;
+                    Debug.Log("ID DA PORTA " + doorId);
+                }
+            }
         }
 
     }

@@ -11,6 +11,7 @@ public class UseItem : NetworkBehaviour, IInteractable
 
     [SerializeField] DoorPadlock doorPadlock;
     [SerializeField] NetworkObject lamparinaPickUp;
+    [SerializeField] InteriorDoor portaCamara;
 
 
     [SerializeField] NetworkBool paes, tapetes, castanhas;
@@ -70,6 +71,19 @@ public class UseItem : NetworkBehaviour, IInteractable
                     {
                         RPC_AbrirGaveta();
                     }
+
+
+
+                    //Se for qualquer chave da camara
+                    if ((int)_data.itemType == 10 || (int)_data.itemType == 11 || (int)_data.itemType == 12 || (int)_data.itemType == 13 || (int)_data.itemType == 14 || (int)_data.itemType == 15)
+                    {
+                        if (portaCamara != null) // Se a porta da câmara não for nula
+                        {
+                            portaCamara.destravado = true; // Marca a porta como destravada
+                            this.enabled = false; // Desabilita o script para não permitir mais interações com este item
+                        }
+                    }
+
 
 
 

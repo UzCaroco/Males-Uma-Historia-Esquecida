@@ -13,12 +13,12 @@ public enum ItemType
     Paes,
     Castanhas,
 
-    Chave00,
-    Chave01,
-    Chave02,
-    Chave03,
-    Chave04,
-    Chave05,
+    ChaveE01,
+    ChaveE02,
+    ChaveE03,
+    ChaveD01,
+    ChaveD02,
+    ChaveD03,
     Mosquete
 }
 
