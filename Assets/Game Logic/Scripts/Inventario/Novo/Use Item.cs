@@ -12,6 +12,8 @@ public class UseItem : NetworkBehaviour, IInteractable
     [SerializeField] DoorPadlock doorPadlock;
     [SerializeField] NetworkObject lamparinaPickUp;
     [SerializeField] InteriorDoor portaCamara;
+    [SerializeField] DoorPrision doorPrision;
+    [SerializeField] GameObject ferroCadeado;
 
 
     [SerializeField] NetworkBool paes, tapetes, castanhas;
@@ -84,7 +86,16 @@ public class UseItem : NetworkBehaviour, IInteractable
                         }
                     }
 
-
+                    //Se for a chave do cadeado da prisao
+                    if ((int)_data.itemType == 12)
+                    {
+                        if (doorPrision != null) // Se a porta da prisão não for nula
+                        {
+                            doorPrision.RPC_OpenDoorPrision(); //Abre a porta da prisão e salva licutan
+                            Runner.Despawn(Object); // Despawns o item
+                            ferroCadeado.SetActive(false); // Desativa a corrente
+                        }
+                    }
 
 
                     playerInventory.RPC_ResetValues();

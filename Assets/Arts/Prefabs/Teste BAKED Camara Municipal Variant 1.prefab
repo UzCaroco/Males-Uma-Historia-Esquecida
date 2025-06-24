@@ -478,6 +478,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 2845207958872458503, guid: cf149ed5b2b4e1545a534414199a714b,
+        type: 3}
+      propertyPath: SortKey
+      value: 2580089475
+      objectReference: {fileID: 0}
     - target: {fileID: 2901484866846379545, guid: cf149ed5b2b4e1545a534414199a714b,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1171,7 +1176,7 @@ PrefabInstance:
     - target: {fileID: 7411598167709779781, guid: cf149ed5b2b4e1545a534414199a714b,
         type: 3}
       propertyPath: NestedObjects.Array.size
-      value: 75
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 7560129067296112758, guid: cf149ed5b2b4e1545a534414199a714b,
         type: 3}
