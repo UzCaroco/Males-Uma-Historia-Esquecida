@@ -198,7 +198,6 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        Debug.Log(Cam.transform.rotation.eulerAngles.y);
         // FixedUpdateNetwork is only executed on the StateAuthority
         
         Quaternion cameraRotationY = Quaternion.Euler(0, Cam.transform.rotation.eulerAngles.y, 0);
