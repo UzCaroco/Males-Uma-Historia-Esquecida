@@ -198,14 +198,26 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
+        Debug.Log(Cam.transform.rotation.eulerAngles.y);
         // FixedUpdateNetwork is only executed on the StateAuthority
         
         Quaternion cameraRotationY = Quaternion.Euler(0, Cam.transform.rotation.eulerAngles.y, 0);
         Vector3 move = cameraRotationY * vetor * Runner.DeltaTime * PlayerSpeed;
 
+        
+
         _controller.Move(move);
 
-        if (move != Vector3.zero)
+
+
+        if (move == Vector3.zero)
+        {
+            Vector3 cameraForward = Cam.transform.forward;
+            cameraForward.y = 0; // Zera o Y pra não inclinar
+
+            gameObject.transform.forward = cameraForward;
+        }
+        else
         {
             gameObject.transform.forward = move;
         }
