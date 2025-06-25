@@ -18,7 +18,7 @@ public class SymbolsVault : NetworkBehaviour, IInteractable
     {
         Debug.Log("Code state changed: " + codeVaultRotation);
 
-        transform.Rotate(Vector3.left * 60);
+        transform.Rotate(Vector3.left * 45);
         Debug.Log(transform.rotation.eulerAngles + "ROTACAO DO OBJETO");
 
         doorVault.RPC_CodeChanged(codeId, codeVaultRotation);
@@ -31,9 +31,9 @@ public class SymbolsVault : NetworkBehaviour, IInteractable
     {
         Debug.Log("Interagindo com codigo");
 
-        if (codeVaultRotation < 300)
+        if (codeVaultRotation < 345)
         {
-            codeVaultRotation += 60;
+            codeVaultRotation += 45;
             Debug.Log("Codigo do vault: " + codeVaultRotation);
         }
         else
