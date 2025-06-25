@@ -1,3 +1,4 @@
+using System.Collections;
 using Fusion;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class SymbolsVault : NetworkBehaviour, IInteractable
     [Networked] float codeVaultRotation { get; set; }
     [Networked] [SerializeField] int codeId { get; set; } = 0;
     [SerializeField] DoorVault doorVault;
+
+    [Networked] bool countdown { get; set; } = false;
 
     public override void Spawned()
     {
@@ -29,21 +32,32 @@ public class SymbolsVault : NetworkBehaviour, IInteractable
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
-        Debug.Log("Interagindo com codigo");
-
-        if (codeVaultRotation < 345)
+        if (!countdown)
         {
-            codeVaultRotation += 45;
-            Debug.Log("Codigo do vault: " + codeVaultRotation);
-        }
-        else
-        {
-            codeVaultRotation = 0;
-            Debug.Log("Codigo do vault: " + codeVaultRotation);
-        }
+            countdown = true;
+            Debug.Log("Interagindo com codigo");
 
-        if (HasStateAuthority)
-            RPC_ChangedVoid();
+            if (codeVaultRotation < 345)
+            {
+                codeVaultRotation += 45;
+                Debug.Log("Codigo do vault: " + codeVaultRotation);
+            }
+            else
+            {
+                codeVaultRotation = 0;
+                Debug.Log("Codigo do vault: " + codeVaultRotation);
+            }
 
+            if (HasStateAuthority)
+                RPC_ChangedVoid();
+
+            StartCoroutine(CoultdownRotate());
+        }
+    }
+
+    IEnumerator CoultdownRotate()
+    {
+        yield return new WaitForSeconds(2f);
+        countdown = false;
     }
 }

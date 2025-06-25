@@ -21660,7 +21660,7 @@ PrefabInstance:
     - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
         type: 3}
       propertyPath: NestedObjects.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
         type: 3}
@@ -21682,6 +21682,26 @@ PrefabInstance:
       propertyPath: NestedObjects.Array.data[3]
       value: 
       objectReference: {fileID: 5231370078891174638}
+    - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
+        type: 3}
+      propertyPath: NestedObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 8875437655325234495}
+    - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
+        type: 3}
+      propertyPath: NestedObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 3096779107111887104}
+    - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
+        type: 3}
+      propertyPath: NestedObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 1225885527173718281}
+    - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
+        type: 3}
+      propertyPath: NestedObjects.Array.data[7]
+      value: 
+      objectReference: {fileID: 5847350317913825898}
     - target: {fileID: 9010218254731644621, guid: edead4a7844682640b8529d35af548d5,
         type: 3}
       propertyPath: NetworkedBehaviours.Array.size
