@@ -28,6 +28,14 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
     NetworkBool entregouTapete;
     NetworkBool entregouCastanhas;
 
+    string[] charadas = new string[4]
+    {
+        "01.: \"Tenho rumo certo, mas nunca caminho. Sou chão para o sagrado, mas não suporto sapato. Me estendo para quem se curva, e descanso quando termina o chamado.\"",
+        "02.: \"Sou feito de muitos, mas ando em círculo. Cada passo que dou é uma lembrança, cada volta, um silêncio que fala alto. Sou pequena, mas carrego grandes nomes.\"",
+        "03.: \"Negra como a noite, imóvel como o tempo, sou buscada por milhões que jamais me tocaram. Todos se voltam pra mim, mesmo sem saber o caminho.\"",
+        "04.: \"Carrego a ausência plena e a promessa do retorno. Ao meu lado, a centelha imóvel no vazio. Sou lido por quem observa o alto, mas pertenço ao chão das nações. Aponto sem direção, ilumino sem brilhar.\""
+    };
+
     [Networked] int itemCount { get; set; } = 0; // Contador de itens entregues
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
@@ -70,6 +78,8 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
                 AtivarFala(falaPrimeiraCharada); // Ativa a fala inicial
                 itemCount++;
                 entregouAgua = true; // Marca que a água foi entregue
+
+                playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[0]);
             }
             else if ((int)playerInventory.itemAtual.itemType == 8 && entregouAgua) //Se for the paes
             {
@@ -77,6 +87,8 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
                 AtivarFala(falaSegundaCharada);
                 itemCount++;
                 entregouPao = true; // Marca que o pão foi entregue
+
+                playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[1]);
             }
             else if (entregouPao && (int)playerInventory.itemAtual.itemType == 7) //Se for the tapete
             {
@@ -84,6 +96,8 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
                 AtivarFala(falaTerceiraCharada);
                 itemCount++;
                 entregouTapete = true; // Marca que o tapete foi entregue
+
+                playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[2]);
             }
             else if (entregouTapete && (int)playerInventory.itemAtual.itemType == 9) // Se for castanhas
             {
@@ -91,6 +105,8 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
                 AtivarFala(falaQuartaCharada);
                 itemCount++;
                 entregouCastanhas = true; // Marca que as castanhas foram entregues
+
+                playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[3]);
             }
         }
 

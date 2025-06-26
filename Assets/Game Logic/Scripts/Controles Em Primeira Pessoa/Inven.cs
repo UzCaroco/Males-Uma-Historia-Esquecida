@@ -198,4 +198,13 @@ public class Inven : NetworkBehaviour
         controller.Teleport(posicao); // Teleporta o jogador para a posição de saída do armário
         playerMovement.RPC_Levantar(); // Chama o método de levantar no PlayerMovement
     }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AdicionarNovoTextoDaCharada(string charada)
+    {
+        if (cam != null)
+        {
+            cam.GetComponent<TrocarEnigma>().NovaCharada(charada); // Adiciona um novo texto da charada se a câmera estiver definida
+        }
+    }
 }

@@ -23,4 +23,14 @@ public class TrocarEnigma : MonoBehaviour
             texto.text = charadas[index];
         }
     }
+
+    public void NovaCharada(string charada)
+    {
+        charadas.Add(charada);
+
+        if (charadas.Count == 1)
+        {
+            texto.text = charada; // Se for a primeira charada, exibe-a imediatamente
+        }
+    }
 }
