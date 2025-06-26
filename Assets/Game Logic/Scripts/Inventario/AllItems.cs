@@ -20,7 +20,8 @@ public enum ItemType
     ChaveD02,
     ChaveD03,
     Mosquete,
-    LivrosAlcorao
+    LivrosAlcorao,
+    Agua
 }
 
 [System.Serializable]
