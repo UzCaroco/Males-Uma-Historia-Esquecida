@@ -123,6 +123,9 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
     private IEnumerator PedirAgua()
     {
         yield return new WaitWhile(() => audioSource.isPlaying);
-        AtivarFala(falaPedirAgua);
+        if (!entregouAgua)
+        {
+            AtivarFala(falaPedirAgua);
+        }
     }
 }
