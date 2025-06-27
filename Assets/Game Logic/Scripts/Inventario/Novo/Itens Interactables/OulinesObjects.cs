@@ -4,29 +4,40 @@ public class OulinesObjects : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
 
-    RaycastHit hit => Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, 100f, layerMask) ? hitInfo : default;
     GameObject currentObject;
     private void Update()
     {
-        if (hit.collider != null)
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100f, layerMask))
         {
-            if (hit.collider.TryGetComponent<Outline>(out Outline outline))
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (hitObject != currentObject)
             {
-                if (!outline.enabled)
+                // Desativa o anterior
+                if (currentObject != null && currentObject.TryGetComponent<Outline>(out Outline currentOutline))
                 {
-                    currentObject = hit.collider.gameObject;
-                    outline.enabled = true;
+                    currentOutline.enabled = false;
+                }
+
+                if (hitObject.TryGetComponent<Outline>(out Outline newOutline))
+                {
+                    // Ativa o novo
+                    newOutline.enabled = true;
+                    currentObject = hitObject;
                 }
             }
+            else
+            {
+                currentObject = null;
+            }
+
         }
         else
         {
-            if (currentObject != null)
+            if (currentObject != null && currentObject.TryGetComponent<Outline>(out Outline currentOutline))
             {
-                if (currentObject.TryGetComponent<Outline>(out Outline outline))
-                {
-                    outline.enabled = false;
-                }
+                // Desativa o objeto atual se não houver hit
+                currentOutline.enabled = false;
                 currentObject = null;
             }
         }
