@@ -21,6 +21,9 @@ public class UseItem : NetworkBehaviour, IInteractable
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
+        Debug.Log("Esta ativado?: " + this.enabled);
+        if (!this.enabled) return; // Verifica se o script está habilitado, se não estiver, não faz nada
+
         if (playerInventory != null)
         {
             Debug.Log("Inventário do jogador não é nulo" + playerInventory.Object);
