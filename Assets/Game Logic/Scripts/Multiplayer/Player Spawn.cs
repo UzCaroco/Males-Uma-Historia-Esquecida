@@ -8,8 +8,11 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 {
     [SerializeField] VideoPlayer videoPlayer;
     public GameObject playerPrefab;
-    public GameObject spawnPoint, canvasVideo;
+    public GameObject spawnPoint, rawImage;
     [SerializeField] private NetworkRunner runner;
+    [SerializeField] sbyte quantidadeDePlayersParaIniciarCutscene = 2; // Quantidade de players para iniciar a cutscene
+    [Tooltip("Valor em porcentagem (0 a 100)")]
+    [SerializeField] float cutsceneDuration = 9f; // Duração da cutscene em segundos
 
 
     [SerializeField] NetworkObject prefabSobrado;
@@ -19,10 +22,11 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     public override void FixedUpdateNetwork()
     {
 
-        if (runner.ActivePlayers.Count() > 1 && runner.ActivePlayers.Count() < 3 && !ativouVideo)
+        if (runner.ActivePlayers.Count() == quantidadeDePlayersParaIniciarCutscene && !ativouVideo)
         {
             ativouVideo = true;
 
+            rawImage.SetActive(true); // Ativa o canvas do vídeo
             videoPlayer.gameObject.SetActive(true);
             videoPlayer.loopPointReached += OnVideoEnd;
         }
@@ -31,33 +35,16 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 
         if (videoPlayer.isPlaying && !jaChegouEm90)
         {
-            double progresso = videoPlayer.time / videoPlayer.length;
-
-            if (progresso >= 0.9)
+            
+            double progresso = (videoPlayer.time / videoPlayer.length) * 100;
+            Debug.Log("Progresso do vídeo: " + progresso);
+            if (progresso >= cutsceneDuration)
             {
                 jaChegouEm90 = true;
                 Debug.Log("Chegou em 90% do vídeo!");
 
-                canvasVideo.SetActive(false);
-
-                foreach (var x in runner.ActivePlayers)
-                {
-                    Debug.Log("Checando player: " + x);
-                    var networkObject = runner.GetPlayerObject(x); //Percorre os objetos de rede ativos (Players)
-                    Debug.Log("NETWORKOBJECT VAZIO??: " + x);
-
-                    if (networkObject != null) //Verifica se o objeto de rede não é nulo
-                    {
-                        Debug.Log("EXISTE O NETWORKOBJECT");
-
-                        Camera cam = networkObject.GetComponentInChildren<Camera>();
-
-                        if (cam != null)
-                        {
-                            cam.enabled = true; //Ativa a câmera do jogador
-                        }
-                    }
-                }
+                rawImage.SetActive(false);
+                videoPlayer.gameObject.SetActive(false);
             }
         }
     }
