@@ -7,74 +7,52 @@ public class MirrorItem : NetworkBehaviour, IInteractable
 {
     NetworkBool direcao = true;
     [Networked] float rotacao { get; set; } = 0;
+    [Networked] float rotacaoMinima { get; set; }
+    [Networked] float rotacaoMaxima { get; set; }
 
-    [Networked] float min { get; set; }
-    [Networked] float max { get; set; }
-
-    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
-    void RPC_ChangedVoid()
+    void ChangedVoid(float valor)
     {
         Debug.Log("Interagindo com o espelho");
-        if (direcao && rotacao < max)
-        {
-            transform.Rotate(Vector3.right * 0.5f);
-            Debug.Log(rotacao);
-        }
-        else if (direcao && rotacao >= max)
-        {
-            direcao = false;
-            transform.Rotate(Vector3.left * -0.5f);
-        }
-        else if (!direcao && rotacao > min)
-        {
-            transform.Rotate(Vector3.right * -0.5f);
-            Debug.Log(rotacao);
-        }
-        else if (!direcao && rotacao <= min)
-        {
-            direcao = true;
-            transform.Rotate(Vector3.left * 0.5f);
-        }
-
+        transform.Rotate(Vector3.left * valor);
     }
-
 
     public override void Spawned()
     {
-        rotacao = transform.eulerAngles.x;
-        min = rotacao - 80;
-        max = rotacao + 80;
-        Debug.Log(this.gameObject.transform.parent.name);
-        Debug.Log(min + " " + max);
+        rotacao = transform.parent.rotation.eulerAngles.y;
+        rotacaoMinima = rotacao - 80;
+        rotacaoMaxima = rotacao + 80;
+
+        Debug.Log("Inicial" + rotacao);
     }
+
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
-        if (direcao && rotacao < max)
-        {
-            rotacao += 1;
-            if (HasStateAuthority)
-                RPC_ChangedVoid();
-        }
-        else if (direcao && rotacao >= max)
-        {
-            rotacao -= 1;
-            if (HasStateAuthority)
-                RPC_ChangedVoid();
-        }
-        else if (!direcao && rotacao > min)
-        {
-            rotacao -= 1;
-            if (HasStateAuthority)
-                RPC_ChangedVoid();
-        }
-        else if (!direcao && rotacao <= min)
-        {
-            rotacao += 1;
-            if (HasStateAuthority)
-                RPC_ChangedVoid();
-        }
 
+        if (direcao && rotacao < rotacaoMaxima)
+        {
+            rotacao += 1;
+            ChangedVoid(1);
+        }
+        else if (direcao && rotacao >= rotacaoMaxima)
+        {
+            direcao = !direcao;
+
+            rotacao -= 1;
+            ChangedVoid(-1);
+        }
+        else if (!direcao && rotacao > rotacaoMinima)
+        {
+            rotacao -= 1;
+            ChangedVoid(-1);
+        }
+        else if (!direcao && rotacao <= rotacaoMinima)
+        {
+            direcao = !direcao;
+
+            rotacao += 1;
+            ChangedVoid(1);
+        }
     }
 }

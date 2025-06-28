@@ -306,18 +306,12 @@ public class FirstPersonCamera : MonoBehaviour
 
 
 
-    public void AtivarMissoes()
+    public void AtivarMissoes(string missao)
     {
         if (missoes != null)
         {
-            if (missoes.activeSelf)
-            {
-                missoes.SetActive(false);
-            }
-            else
-            {
-                missoes.SetActive(true);
-            }
+            textoMissoes.text = missao; // Atualiza o texto das missões com a nova missão
+            missoes.SetActive(true);
         }
         else
         {

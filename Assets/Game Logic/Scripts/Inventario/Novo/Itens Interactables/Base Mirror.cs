@@ -5,59 +5,54 @@ using UnityEngine;
 
 public class BaseMirror : NetworkBehaviour, IInteractable
 {
-    NetworkTRSP NetworkTRSP;
     NetworkBool direcao = true;
-    [Networked, OnChangedRender(nameof(ChangedVoid))] float rotacao { get; set; } = 0;
+    [Networked] float rotacao { get; set; } = 0;
+    [Networked] float rotacaoMinima { get; set; }
+    [Networked] float rotacaoMaxima { get; set; }
 
-    void ChangedVoid()
+    void ChangedVoid(float valor)
     {
         Debug.Log("Interagindo com o espelho");
-        if (direcao && rotacao < 80)
-        {
-            NetworkTRSP.transform.parent.Rotate(Vector3.up * 1);
-            Debug.Log(rotacao);
-        }
-        else if (direcao && rotacao >= 80)
-        {
-            direcao = false;
-            NetworkTRSP.transform.parent.Rotate(Vector3.up * -1);
-        }
-        else if (!direcao && rotacao > -80)
-        {
-            NetworkTRSP.transform.parent.Rotate(Vector3.up * -1);
-            Debug.Log(rotacao);
-        }
-        else if (!direcao && rotacao <= -80)
-        {
-            direcao = true;
-            NetworkTRSP.transform.parent.Rotate(Vector3.up * 1);
-        }
+        transform.parent.Rotate(Vector3.up * valor);
     }
 
-    private void Start()
+    public override void Spawned()
     {
-        NetworkTRSP = GetComponent<NetworkTRSP>();
-        rotacao = transform.eulerAngles.y;
+        rotacao = transform.parent.rotation.eulerAngles.y;
+        rotacaoMinima = rotacao - 80;
+        rotacaoMaxima = rotacao + 80;
+
         Debug.Log("Inicial" + rotacao);
     }
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
 
-        if (direcao && rotacao < 80)
+        if (direcao && rotacao < rotacaoMaxima)
         {
             rotacao += 1;
+            ChangedVoid(1);
         }
-        else if (direcao && rotacao >= 80)
+        else if (direcao && rotacao >= rotacaoMaxima)
+        {
+            direcao = !direcao;
+
+            rotacao -= 1;
+            ChangedVoid(-1);
+        }
+        else if (!direcao && rotacao > rotacaoMinima)
         {
             rotacao -= 1;
+            ChangedVoid(-1);
         }
-        else if (!direcao && rotacao > -80)
+        else if (!direcao && rotacao <= rotacaoMinima)
         {
-            rotacao -= 1;
-        }
-        else if (!direcao && rotacao <= -80)
-        {
+            direcao = !direcao;
+
             rotacao += 1;
+            ChangedVoid(1);
         }
     }
 }

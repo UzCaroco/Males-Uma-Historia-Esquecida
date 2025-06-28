@@ -17,8 +17,10 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
     [SerializeField] AudioClip falaCastanhas;
     [SerializeField] AudioClip falaAlcorao;
     [SerializeField] AudioClip entregaDeTodosOsItens;
-
+    string missaoPedidos = "- Buscar Castanhas\r\n- Buscar Tapetes\r\n- Buscar Pães\r\n- Livros do Alcorão";
     [Networked] int itemCount { get; set; } = 0; // Contador de itens entregues
+    [SerializeField] GameObject[] itensASerEntregues = new GameObject[4]; // Referência ao NetworkObject que contém os itens a serem entregues
+    [SerializeField] GameObject canvasLuiza;
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
@@ -29,7 +31,15 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
 
             AtivarFala(falaInicial); // Ativa a fala inicial
 
-            playerInventory.RPC_AtivarMissoes(); // Chama o RPC para ativar as missões
+            playerInventory.RPC_AtivarMissoes(missaoPedidos); // Chama o RPC para ativar as missões
+
+            for (int i = 0; i < itensASerEntregues.Length; i++)
+            {
+                if (itensASerEntregues[i] != null)
+                {
+                    itensASerEntregues[i].SetActive(true); // Ativa os itens a serem entregues
+                }
+            }
         }
 
         if ((int)playerInventory.itemAtual.itemType == 7) //Se for the tapete
@@ -78,6 +88,10 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
 
         if (itemCount == 4)
         {
+            if (canvasLuiza != null)
+            {
+                canvasLuiza.SetActive(false); // Ativa o canvas da Luiza
+            }
             audioSource.clip = entregaDeTodosOsItens;
             audioSource.Play();
         }

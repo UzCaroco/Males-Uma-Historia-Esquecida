@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 3595165543
   ObjectInterest: 1
-  Flags: 262145
+  Flags: 524289
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 3720822845056046889}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 534798246
   ObjectInterest: 1
-  Flags: 262145
+  Flags: 524289
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 2497395679820299946}
@@ -1031,7 +1031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5413738615706552112}
   - component: {fileID: 5231244035837943530}
-  - component: {fileID: 2582334599699198501}
+  - component: {fileID: 5081639963699953135}
   m_Layer: 0
   m_Name: Espelho
   m_TagString: Untagged
@@ -1072,13 +1072,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 811314483
   ObjectInterest: 1
-  Flags: 262145
+  Flags: 524289
   NestedObjects:
   - {fileID: 5191690550541815745}
   - {fileID: 5498076771135063038}
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 5081639963699953135}
   ForceRemoteRenderTimeframe: 0
---- !u!114 &2582334599699198501
+--- !u!114 &5081639963699953135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1087,10 +1088,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6250904750888981571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PreferredRunner: 0
-  Components:
-  - {fileID: 5413738615706552112}
-  _guid: 53cef6ec-c29b-42bf-
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 1
