@@ -42,14 +42,14 @@ public class Reflexionteste : MonoBehaviour
                 }
                 else
                 {
-                    // Chegou num destino (tipo a parede falsa)
-                    if (hit.collider.CompareTag("Estante"))
-                    {
-                        Debug.Log("Acertou o Estante!");
+                    //// Chegou num destino (tipo a parede falsa)
+                    //if (hit.collider.CompareTag("Estante"))
+                    //{
+                    //    Debug.Log("Acertou o Estante!");
 
-                        hit.collider.gameObject.SetActive(false); // Desativa o objeto do livro
-                        // Aqui você chama o método pra abrir a parede
-                    }
+                    //    hit.collider.gameObject.SetActive(false); // Desativa o objeto do livro
+                    //    // Aqui você chama o método pra abrir a parede
+                    //}
                     break;
                 }
             }
