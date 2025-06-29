@@ -26,6 +26,9 @@ public class ClosetDoor : NetworkBehaviour, IInteractable
     {
         if (isOpen) return;
         isOpen = true;
+
+        GetComponent<AudioSource>().Play();
+
         portaDireita.transform.localRotation = Quaternion.Euler(0, 90, 0);
         portaEsquerda.transform.localRotation = Quaternion.Euler(0, -90, 0);
     }
@@ -35,6 +38,9 @@ public class ClosetDoor : NetworkBehaviour, IInteractable
     {
         if (!isOpen) return;
         isOpen = false;
+
+        GetComponent<AudioSource>().Play();
+
         portaDireita.transform.localRotation = Quaternion.Euler(0, 0, 0);
         portaEsquerda.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }

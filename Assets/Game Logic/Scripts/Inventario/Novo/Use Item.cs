@@ -38,6 +38,8 @@ public class UseItem : NetworkBehaviour, IInteractable
 
                     if ((int)_data.itemType == 3) //Se for a chave de saida
                     {
+                        GetComponent<AudioSource>().Play(); // Toca o som do uso do item
+
                         transform.Rotate(Vector3.up, 90f); // uso do item
 
                         if (doorPadlock != null) // Se o padlock não for nulo

@@ -11,6 +11,7 @@ public class PickUpItem : NetworkBehaviour, IInteractable
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
     {
+        playerInventory.RPC_AtivarSomDePickUp(); // Play pickup sound
         Runner.Despawn(Object); // Despawns the network object
     }
 }

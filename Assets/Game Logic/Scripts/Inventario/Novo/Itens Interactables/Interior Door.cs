@@ -10,6 +10,13 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
     [SerializeField] bool portaDaCamara = false;
     public NetworkBool destravado = false;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip abrirPorta, fecharPorta;
+
+    public override void Spawned()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     void RPC_ChangedVoid()
@@ -20,6 +27,8 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
         {
             Debug.Log(doorState);
 
+            audioSource.PlayOneShot(abrirPorta);
+
             transform.Rotate(Vector3.forward * doorState);
             Debug.Log(transform.rotation.eulerAngles + "ROTACAO DO OBJETO");
 
@@ -27,6 +36,8 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
         else
         {
             Debug.Log(doorState);
+
+            audioSource.PlayOneShot(fecharPorta);
 
             transform.Rotate(Vector3.forward * doorState);
             Debug.Log(transform.rotation.eulerAngles + "ROTACAO DO OBJETO");

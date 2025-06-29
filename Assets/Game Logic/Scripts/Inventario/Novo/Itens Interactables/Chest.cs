@@ -38,6 +38,8 @@ public class Chest : NetworkBehaviour, IInteractable
     {
         if (!open)
         {
+            GetComponent<AudioSource>().Play();
+
             RPC_ChangedVoid();
             open = true;
         }

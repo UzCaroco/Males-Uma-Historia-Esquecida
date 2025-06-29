@@ -68,15 +68,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6411628473482186691, guid: d738c9e371f1340428187f541b9de727,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -4153407208917498463, guid: d738c9e371f1340428187f541b9de727,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d738c9e371f1340428187f541b9de727,
         type: 3}
       propertyPath: m_Name
       value: Mosquete
       objectReference: {fileID: 0}
+    - target: {fileID: 3045922526303148756, guid: d738c9e371f1340428187f541b9de727,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4318055704609249530, guid: d738c9e371f1340428187f541b9de727,
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318055704609249530, guid: d738c9e371f1340428187f541b9de727,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408963371526313926, guid: d738c9e371f1340428187f541b9de727,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

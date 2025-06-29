@@ -15,12 +15,17 @@ public class Drawer : NetworkBehaviour, IInteractable
         if (!open)
         {
             open = true;
+
+            GetComponent<AudioSource>().Play();
+
             transform.localPosition += new Vector3(0, 0, 0.5f); // Move a gaveta para fora
             Debug.Log("Gaveta aberta com sucesso!" + open);
         }
         else
         {
             open = false;
+
+            GetComponent<AudioSource>().Play();
             transform.localPosition += new Vector3(0, 0, -0.5f); // Move a gaveta de volta
             Debug.Log("Gaveta fechada com sucesso!" + open);
         }

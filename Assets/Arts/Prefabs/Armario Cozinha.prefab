@@ -63,6 +63,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armario Cozinha
       objectReference: {fileID: 0}
+    - target: {fileID: 1807783909916309549, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914131761599590836, guid: 4ce3e07138e08f34e93e056338c142ad,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -239,6 +249,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1253690885941382540, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918111023058757266, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -313,6 +333,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1253690885941382540, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918111023058757266, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -336,6 +366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Armario Cozinha Gaveta (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
         type: 3}
@@ -461,6 +496,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1253690885941382540, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918111023058757266, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -544,6 +589,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253690885941382540, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918111023058757266, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -629,6 +684,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1253690885941382540, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918111023058757266, guid: fb1a3e8370ddad148a6b7c1b41467eb7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -652,6 +717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Armario Cozinha Gaveta (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
         type: 3}
@@ -727,6 +797,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armario Cozinha Gaveta (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -800,6 +875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Armario Cozinha Gaveta
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842970094645667221, guid: d4b87775997e8b04bafa33fb9edd23b7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3188428215301029679, guid: d4b87775997e8b04bafa33fb9edd23b7,
         type: 3}

@@ -68,10 +68,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8146344808228187787, guid: 2ed801e737ef0db418cd01ae132e867b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 2ed801e737ef0db418cd01ae132e867b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -4057648705345666087, guid: 2ed801e737ef0db418cd01ae132e867b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2ed801e737ef0db418cd01ae132e867b,
         type: 3}
       propertyPath: m_Name
       value: Cadeira Presidencial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033808489147615172, guid: 2ed801e737ef0db418cd01ae132e867b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971997641574595848, guid: 2ed801e737ef0db418cd01ae132e867b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

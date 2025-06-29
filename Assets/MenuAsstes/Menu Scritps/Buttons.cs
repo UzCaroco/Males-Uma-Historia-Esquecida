@@ -14,6 +14,9 @@ public class Buttons : MonoBehaviour
 
     public TextMeshProUGUI pressButton;
 
+    [SerializeField] AudioSource fx;
+    [SerializeField] AudioClip selectButton, clickButton;
+
     float alpha = 0;
     bool alphaBool = false;
     private void Start()
@@ -27,6 +30,8 @@ public class Buttons : MonoBehaviour
     }
     public void StartButton()
     {
+        ClickButtonSound();
+
         SceneManager.LoadScene("Meu Host");
     }
     public void PressBUtton()
@@ -82,20 +87,25 @@ public class Buttons : MonoBehaviour
         if (creditosPanel.activeSelf)
         {
             creditosPanel.SetActive(false);
+            ClickButtonSound();
         }
         else
         {
             creditosPanel.SetActive(true);
+            ClickButtonSound();
         }
     }
 
     public void ExitButton()
     {
+        ClickButtonSound();
         Application.Quit();
+
     }
 
     public void PlayPointerEnter()
     {
+        SelectButtonSound();
         play.image.color = new Color(1, 1, 1, 1f);
     }
     public void PlayPointerExit()
@@ -104,6 +114,7 @@ public class Buttons : MonoBehaviour
     }
     public void SairPointerEnter()
     {
+        SelectButtonSound();
         sair.image.color = new Color(1, 1, 1, 1f);
     }
     public void SairPointerExit()
@@ -112,6 +123,7 @@ public class Buttons : MonoBehaviour
     }
     public void CreditPointerEnter()
     {
+        SelectButtonSound();
         creditos.image.color = new Color(1, 1, 1, 1f);
     }
     public void CreditPointerExit()
@@ -119,4 +131,13 @@ public class Buttons : MonoBehaviour
         creditos.image.color = new Color(1, 1, 1, 0f);
     }
 
+
+    public void ClickButtonSound()
+    {
+        fx.PlayOneShot(clickButton);
+    }
+    public void SelectButtonSound()
+    {
+        fx.PlayOneShot(selectButton);
+    }
 }

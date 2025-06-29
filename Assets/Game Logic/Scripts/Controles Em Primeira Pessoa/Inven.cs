@@ -110,6 +110,8 @@ public class Inven : NetworkBehaviour
 
             else if (inventario.itemAtual != null)
             {
+                RPC_AtivarSomDeDrop(); // Ativa o som de drop
+
                 Runner.Spawn(inventario.itemAtual.itemPrefab, hit.point, Quaternion.identity, inputAuthority: Runner.LocalPlayer);
                 inventario.RPC_ResetValues(); // Reseta os valores do inventário após soltar o item
             }
@@ -205,6 +207,42 @@ public class Inven : NetworkBehaviour
         if (cam != null)
         {
             cam.GetComponent<TrocarEnigma>().NovaCharada(charada); // Adiciona um novo texto da charada se a câmera estiver definida
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AtivarSomDePickUp()
+    {
+        if (cam != null)
+        {
+            if (cam.TryGetComponent<FxSounds>(out FxSounds fxSounds))
+            {
+                fxSounds.PlayPickUpSound(); // Ativa o som de pick up se o componente FxSounds estiver presente na câmera
+            }
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_AtivarSomDeDrop()
+    {
+        if (cam != null)
+        {
+            if (cam.TryGetComponent<FxSounds>(out FxSounds fxSounds))
+            {
+                fxSounds.PlayDropSound(); // Ativa o som de drop se o componente FxSounds estiver presente na câmera
+            }
         }
     }
 }
