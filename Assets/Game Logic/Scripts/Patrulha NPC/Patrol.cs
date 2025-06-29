@@ -52,6 +52,11 @@ public class Patrol : NetworkBehaviour
                 networkCharacterController.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
+
+        if (transform.position.x > -38.357f)
+        {
+            lookPlayer = false;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -60,6 +65,7 @@ public class Patrol : NetworkBehaviour
         {
             if (other.TryGetComponent(out PlayerMovement playerMovement))
             {
+                lookPlayer = false;
                 playerMovement.RPC_DeathAndRespawnPlayer(posicaoDeRespawnPlayer.position);
             }
         }

@@ -11,7 +11,6 @@ public class PointPatrol : MonoBehaviour
     bool isResetting = false;
     [SerializeField] Transform[] pointsRotateAround = new Transform[2];
 
-    
 
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +30,17 @@ public class PointPatrol : MonoBehaviour
                 else
                 {
                     Debug.Log("sorteiou olhar ao redor");
-                    OlharAoRedor();
+                    if (other.GetComponent<Patrol>().lookPlayer == false)
+                    {
+                        OlharAoRedor();
+                    }
+                    else
+                    {
+                        //ja está seguindo o player, então não para o inimigo e não sorteia novo ponto
+                        SortearNovo();
+                    }
+                    
+                    
                 }
             }
             isResetting = true;
