@@ -4,6 +4,7 @@ using UnityEngine;
 public class Patrol : NetworkBehaviour
 {
     CharacterController cControler;
+    NetworkCharacterController networkCharacterController;
 
     [SerializeField] float velocity = 5, velocityRotation;
     public Transform waypoint;
@@ -17,10 +18,12 @@ public class Patrol : NetworkBehaviour
     private void Start()
     {
         cControler = GetComponent<CharacterController>();
+        networkCharacterController = GetComponent<NetworkCharacterController>();
     }
     public override void Spawned()
     {
         cControler = GetComponent<CharacterController>();
+        networkCharacterController = GetComponent<NetworkCharacterController>();
     }
 
     public override void FixedUpdateNetwork()
@@ -32,7 +35,8 @@ public class Patrol : NetworkBehaviour
 
             if (walk)
             {
-                cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+                //cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+                networkCharacterController.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
         else
@@ -42,7 +46,8 @@ public class Patrol : NetworkBehaviour
 
             if (walk)
             {
-                cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
+                //cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
+                networkCharacterController.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
     }

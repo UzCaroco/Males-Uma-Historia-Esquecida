@@ -19,6 +19,13 @@ public class TriggerSpawnNewPhase : NetworkBehaviour
             Debug.Log("Player entrou no trigger");
             playerAtual = other.GetComponent<NetworkObject>();
 
+            PularVideo pular = FindAnyObjectByType<PularVideo>();
+            if (pular != null)
+            {
+                pular.NovaCutscene(2); // Inicia a cutscene quando o player entra no trigger
+                Debug.Log("Nova cutscene iniciada para o player: " + playerAtual);
+            }
+
             if (playerQuePassou == null || playerQuePassou != playerAtual)
             {
 
@@ -30,7 +37,7 @@ public class TriggerSpawnNewPhase : NetworkBehaviour
 
                 if (playersQuePassaram >= quantidadeDePlayersParaSpawnarNovaPhase)
                 {
-
+                    
 
                     foreach (var x in Runner.ActivePlayers)
                     {

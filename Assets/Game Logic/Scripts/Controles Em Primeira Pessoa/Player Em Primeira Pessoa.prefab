@@ -6943,6 +6943,7 @@ MonoBehaviour:
   _itemAtualID: -1
   rayDistance: 100
   networkObjectInterativo: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!114 &4910262077418193279
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,9 +15,10 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     [SerializeField] float cutsceneDuration = 9f; // Duração da cutscene em segundos
 
 
-    [SerializeField] NetworkObject prefabSobrado;
+    [SerializeField] NetworkObject prefabSobrado, prefabCamara;
 
-    bool jaChegouEm90 = false, ativouVideo = false;
+    public bool jaChegouEm90 = false;
+    bool ativouVideo = false;
 
     public override void FixedUpdateNetwork()
     {
@@ -76,6 +77,11 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     private void SpawnarObjetosInterativos()
     {
         Runner.Spawn(prefabSobrado, inputAuthority: Runner.LocalPlayer);
+    }
+
+    public void SpawnaCaralho()
+    {
+        Runner.Spawn(prefabCamara, inputAuthority: Runner.LocalPlayer);
     }
 
     void OnVideoEnd(VideoPlayer vp)
