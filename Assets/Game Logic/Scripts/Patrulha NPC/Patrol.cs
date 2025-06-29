@@ -15,6 +15,8 @@ public class Patrol : NetworkBehaviour
     public Transform playerEncontrado;
     [SerializeField] Transform posicaoDeRespawnPlayer;
 
+    [SerializeField] AudioSource audioSource;
+
     private void Start()
     {
         cControler = GetComponent<CharacterController>();
@@ -61,6 +63,11 @@ public class Patrol : NetworkBehaviour
                 playerMovement.RPC_DeathAndRespawnPlayer(posicaoDeRespawnPlayer.position);
             }
         }
+    }
+
+    public void FootSteps()
+    {
+        audioSource.Play();
     }
 
 }
