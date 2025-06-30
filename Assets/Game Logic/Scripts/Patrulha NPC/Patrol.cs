@@ -15,7 +15,8 @@ public class Patrol : NetworkBehaviour
     public Transform playerEncontrado;
     [SerializeField] Transform posicaoDeRespawnPlayer;
 
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip somPassos;
 
     private void Start()
     {
@@ -26,10 +27,18 @@ public class Patrol : NetworkBehaviour
     {
         cControler = GetComponent<CharacterController>();
         networkCharacterController = GetComponent<NetworkCharacterController>();
+
+        
     }
 
     public override void FixedUpdateNetwork()
     {
+        if (aud == null)
+        {
+            Debug.LogWarning("AUDIOSOURCE NAO ENCONTRADO BBBBBBBBBBBB: " + aud);
+            aud = GetComponent<AudioSource>();
+        }
+
         if (!lookPlayer)
         {
             Vector3 targetRotation = Quaternion.LookRotation(waypoint.position - transform.position).eulerAngles;
@@ -71,9 +80,9 @@ public class Patrol : NetworkBehaviour
         }
     }
 
-    public void FootSteps()
+    public void SomPasso()
     {
-        audioSource.Play();
+        aud.PlayOneShot(somPassos);
     }
 
 }

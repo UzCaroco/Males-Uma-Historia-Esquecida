@@ -29,7 +29,6 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 
             rawImage.SetActive(true); // Ativa o canvas do vídeo
             videoPlayer.gameObject.SetActive(true);
-            videoPlayer.loopPointReached += OnVideoEnd;
         }
 
 
@@ -81,16 +80,10 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 
     public void SpawnaCaralho()
     {
+        Debug.Log("Spawna o caralho");
         Runner.Spawn(prefabCamara, inputAuthority: Runner.LocalPlayer);
     }
 
-    void OnVideoEnd(VideoPlayer vp)
-    {
-        Debug.Log("O vídeo terminou!");
-        // Faz o que quiser aqui, tipo mudar de cena, esconder o vídeo, etc.
-    }
-
-    
 
 
 }

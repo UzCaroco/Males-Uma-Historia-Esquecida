@@ -258,6 +258,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1019486595
       objectReference: {fileID: 0}
+    - target: {fileID: 2615906244787453766, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 1015416190
+      objectReference: {fileID: 0}
     - target: {fileID: 2650700829528096191, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -583,6 +588,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 2580721626
       objectReference: {fileID: 0}
+    - target: {fileID: 5500549315878011731, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 3151868477
+      objectReference: {fileID: 0}
     - target: {fileID: 5538204761005742535, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey
@@ -823,6 +833,11 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1772630576
       objectReference: {fileID: 0}
+    - target: {fileID: 8119865715545095168, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 398578879
+      objectReference: {fileID: 0}
     - target: {fileID: 8135260173670277692, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: m_Lightmapping
@@ -937,6 +952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SortKey
       value: 2696839945
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082864985773635994, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: SortKey
+      value: 148044985
       objectReference: {fileID: 0}
     - target: {fileID: 9200516585858100522, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}

@@ -26,7 +26,7 @@ public class SpawnNewPhase : NetworkBehaviour
         Debug.Log("Chamando RPC para despawnar a fase anterior: ");
         if (phaseToSpawn == 1)
         {
-            NetworkObject networkObject = GameObject.Find("Sobrado(Clone)").GetComponent<NetworkObject>();
+            NetworkObject networkObject = GameObject.Find("Bake Sobrado(Clone)").GetComponent<NetworkObject>();
             Debug.Log("BUSCANDO");
             if (networkObject != null)
             {

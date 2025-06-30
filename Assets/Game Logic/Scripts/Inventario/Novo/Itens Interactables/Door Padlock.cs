@@ -34,8 +34,9 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
         }
         else
         {
-            PlayerSpawn playerSpawn = FindObjectOfType<PlayerSpawn>();
-            playerSpawn.SpawnaCaralho();
+            //PlayerSpawn playerSpawn = FindObjectOfType<PlayerSpawn>();
+            //Debug.Log("playerSpawn: " + playerSpawn);
+            //playerSpawn.SpawnaCaralho();
 
             // Spawna a segunda fase
             foreach (var x in Runner.ActivePlayers)
@@ -52,7 +53,7 @@ public class DoorPadlock : NetworkBehaviour, IInteractable
                         if (hostSpawnPhase != null)
                         {
                             Debug.Log("Chamando RPC para spawnar nova fase no jogador:");
-                            //hostSpawnPhase.RPC_SpawnPhase(); // Chama o RPC para spawnar a nova fase
+                            hostSpawnPhase.RPC_SpawnPhase(); // Chama o RPC para spawnar a nova fase
                         }
 
                         break; // Encerra o loop se encontrar o jogador com autoridade de estado

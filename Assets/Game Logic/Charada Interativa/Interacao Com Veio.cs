@@ -30,6 +30,8 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
     NetworkBool entregouTapete;
     NetworkBool entregouCastanhas;
 
+    [SerializeField] GameObject[] itensASerEntregues = new GameObject[4]; // Referência ao NetworkObject que contém os itens a serem entregues
+
     string[] charadas = new string[4]
     {
         "01.: \"Tenho rumo certo, mas nunca caminho. Sou chão para o sagrado, mas não suporto sapato. Me estendo para quem se curva, e descanso quando termina o chamado.\"",
@@ -58,6 +60,11 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
 
             AtivarFala(falaInicial); // Ativa a fala inicial
             useItems[0].enabled = true; // Ativa a agua
+
+            if (itensASerEntregues[0] != null)
+            {
+                itensASerEntregues[0].SetActive(true); // Ativa os itens a serem entregues
+            }
         }
 
         
@@ -67,6 +74,11 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             Debug.Log("Pediu o pão");
             AtivarFala(falaPedirPao); // Pede o pão
             useItems[1].enabled = true; //Ativa o pao
+
+            if (itensASerEntregues[1] != null)
+            {
+                itensASerEntregues[1].SetActive(true); // Ativa os itens a serem entregues
+            }
         }
        
 
@@ -75,6 +87,11 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             Debug.Log("Pediu o tapete");
             AtivarFala(falaPedirTapete); // Pede o tapete
             useItems[2].enabled = true; // Ativa o tapete
+
+            if (itensASerEntregues[2] != null)
+            {
+                itensASerEntregues[2].SetActive(true); // Ativa os itens a serem entregues
+            }
         }
         
 
@@ -83,6 +100,11 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             Debug.Log("Pediu as castanhas");
             AtivarFala(falaPedirCastanhas); // Pede as castanhas
             useItems[3].enabled = true; // Ativa as castanhas
+
+            if (itensASerEntregues[3] != null)
+            {
+                itensASerEntregues[3].SetActive(true); // Ativa os itens a serem entregues
+            }
         }
         
         else if (playerInventory.itemAtual != null)

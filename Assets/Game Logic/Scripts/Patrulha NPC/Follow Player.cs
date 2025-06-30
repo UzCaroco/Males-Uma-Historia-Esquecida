@@ -31,6 +31,8 @@ public class FollowPlayer : NetworkBehaviour
     NetworkBool achouDownRight => Physics.Raycast(origin, downRight, out RaycastHit hit, distanciaDeVisao);
 
 
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip somPassos;
     private void Update()
     {
         origin = transform.position + offset;
@@ -44,7 +46,11 @@ public class FollowPlayer : NetworkBehaviour
         downLeft = transform.forward + transform.TransformDirection(-raioDeVisao, -raioDeVisao, 0);
         downRight = transform.forward + transform.TransformDirection(raioDeVisao, -raioDeVisao, 0);
 
-        
+        if (aud == null)
+        {
+            Debug.LogWarning("AUDIOSOURCE NAO ENCONTRADO AAAAAAAAAAAA: " + aud);
+            aud = GetComponent<AudioSource>();
+        }
     }
 
     bool VerificarRay(Vector3 origem, Vector3 direcao)
@@ -92,5 +98,10 @@ public class FollowPlayer : NetworkBehaviour
             patrolScript.lookPlayer = false; // Desativa a busca pelo player
             patrolScript.playerEncontrado = null; // Limpa o transform do player
         }
+    }
+
+    public void SomPassos()
+    {
+        aud.PlayOneShot(somPassos);
     }
 }
