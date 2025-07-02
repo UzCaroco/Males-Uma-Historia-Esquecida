@@ -6767,6 +6767,7 @@ GameObject:
   - component: {fileID: 7917549674873784290}
   - component: {fileID: 2005398428148740074}
   - component: {fileID: 4910262077418193279}
+  - component: {fileID: 5628818287154477352}
   m_Layer: 3
   m_Name: Player Em Primeira Pessoa
   m_TagString: Player
@@ -6960,6 +6961,18 @@ MonoBehaviour:
   phasePrefab:
   - {fileID: 4396012032626374306, guid: 6ddc2ed89b2290646afe526d492934f8, type: 3}
   - {fileID: 0}
+--- !u!114 &5628818287154477352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076581854478548683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2db431ce44b1ea4784ab49a8c37a00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8180189612800446616
 GameObject:
   m_ObjectHideFlags: 0

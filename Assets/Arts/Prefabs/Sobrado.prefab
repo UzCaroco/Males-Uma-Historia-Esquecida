@@ -1773,8 +1773,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2060311150209143}
   - component: {fileID: 4992619265991616671}
-  - component: {fileID: 180372303166316560}
   - component: {fileID: 9082864985773635994}
+  - component: {fileID: 3178511519935222556}
   m_Layer: 0
   m_Name: Trigger Despawn
   m_TagString: Untagged
@@ -1818,20 +1818,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &180372303166316560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540386545619410700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a888e1c66b01114c9ac7951fd9d15eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playersQuePassaram: 0
-  quantidadeDePlayersParaSpawnarNovaPhase: 2
 --- !u!114 &9082864985773635994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,8 +1835,22 @@ MonoBehaviour:
   Flags: 524289
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 180372303166316560}
+  - {fileID: 3178511519935222556}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &3178511519935222556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540386545619410700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef602b16398b9ff46ad5a4a6313f9364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playersQuePassaram: 0
+  quantidadeDePlayersParaSpawnarNovaPhase: 1
 --- !u!1 &6306604918336993347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5333,6 +5333,8 @@ MonoBehaviour:
   - {fileID: 5123152569306151687}
   - {fileID: 7282828453855082556}
   canvasLuiza: {fileID: 8085679699840312491}
+  fase2: 0
+  canvasCronometro: {fileID: 0}
 --- !u!114 &8965627683730327559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5358,6 +5360,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &6312560567382790727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,6 +5386,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &6870043799990437247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5408,6 +5412,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &4955142061842440453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5433,6 +5438,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &8536954677885612675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19293,6 +19299,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &7075755584104964795 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5649536190899019925, guid: 0c6e4ed2ae2449a46a990ae42e200ce3,
@@ -23895,6 +23902,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &6962362968842813725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23920,6 +23928,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &6381346457098949662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23945,6 +23954,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &2700750651491211989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23970,6 +23980,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!4 &4055177659329544510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8770923666082715105, guid: 75cc3e89c0517d246a4a28daf893028d,
@@ -29065,6 +29076,7 @@ MonoBehaviour:
     _value: 0
   castanhas:
     _value: 0
+  videoClipPrisao: {fileID: 0}
 --- !u!114 &2682664965506711729 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8769429160160644224, guid: 2f63bc26f81f22d48a69a870b699ab12,

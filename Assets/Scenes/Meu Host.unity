@@ -1812,6 +1812,7 @@ MonoBehaviour:
   inputFieldChestCode: {fileID: 1474682940}
   stringMissoes: 
   estaAgachado: 0
+  videoPrisao: {fileID: 32900000, guid: dd0ddd80f006a48458e3916064cbd489, type: 3}
 --- !u!114 &595875875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3289,6 +3290,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7809534c50f4d384ea695223ba6f71d4, type: 3}
+--- !u!1 &991710140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991710144}
+  - component: {fileID: 991710143}
+  - component: {fileID: 991710142}
+  m_Layer: 0
+  m_Name: Trigger Despawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &991710142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991710140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a888e1c66b01114c9ac7951fd9d15eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene2: {fileID: 32900000, guid: 3b688f454d3d05840ac9a180651dbf5a, type: 3}
+  rawImage: {fileID: 1977005824}
+  videoPlayer: {fileID: 1335870593}
+--- !u!65 &991710143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991710140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 8192
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6383474, y: 1, z: 1}
+  m_Center: {x: 0.1808263, y: 7.289273e-20, z: 0}
+--- !u!4 &991710144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991710140}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -1.412559e-11, w: 1}
+  m_LocalPosition: {x: -9.690599, y: 8.5395, z: 9.6255}
+  m_LocalScale: {x: 0.31, y: 1.7199999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044304209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,7 +4990,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 55d4a391bef7b4c48b3c9fda2c24a5a8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6122,94 +6192,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646870183}
   m_CullTransparentMesh: 1
---- !u!1 &1660389658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1660389662}
-  - component: {fileID: 1660389661}
-  - component: {fileID: 1660389660}
-  - component: {fileID: 1660389659}
-  m_Layer: 0
-  m_Name: Trigger Despawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1660389659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660389658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 4037491418
-  ObjectInterest: 1
-  Flags: 524289
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1660389660}
-  ForceRemoteRenderTimeframe: 0
---- !u!114 &1660389660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660389658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a888e1c66b01114c9ac7951fd9d15eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playersQuePassaram: 0
-  quantidadeDePlayersParaSpawnarNovaPhase: 1
---- !u!65 &1660389661
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660389658}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8192
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1660389662
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660389658}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -1.412559e-11, w: 1}
-  m_LocalPosition: {x: -9.690599, y: 8.5395, z: 9.6255}
-  m_LocalScale: {x: 0.31, y: 1.7199999, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690051583
 GameObject:
   m_ObjectHideFlags: 0
@@ -8999,6 +8981,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 991710144}
   - {fileID: 1777312520}
   - {fileID: 382880549}
   - {fileID: 2101318406388659141}
@@ -9016,4 +8999,3 @@ SceneRoots:
   - {fileID: 1521945880}
   - {fileID: 752033164}
   - {fileID: 1153309316}
-  - {fileID: 1660389662}

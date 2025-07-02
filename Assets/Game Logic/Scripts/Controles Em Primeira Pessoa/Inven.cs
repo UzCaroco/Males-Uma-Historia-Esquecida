@@ -253,4 +253,11 @@ public class Inven : NetworkBehaviour
             }
         }
     }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_MissaoConcluidaTeleportePlayer()
+    {
+        Debug.Log("Missão concluída, teleportando jogador para a posição de conclusão.");
+        GetComponent<PlayerMovement>().RPC_DeathAndRespawnPlayer(new Vector3(-18.4103f, 7.5825f, 13.5f));
+    }
 }

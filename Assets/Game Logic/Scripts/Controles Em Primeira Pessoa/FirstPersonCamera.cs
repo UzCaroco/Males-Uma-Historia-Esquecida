@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.Video;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class FirstPersonCamera : MonoBehaviour
     bool segurandoBotao;
 
     public bool estaAgachado = false;
+
+    [SerializeField] VideoClip videoPrisao;
 
     void Start()
     {
@@ -139,7 +142,44 @@ public class FirstPersonCamera : MonoBehaviour
     {
         Debug.Log("Clicou para Interagir primeiramente");
         cam = Camera.main;
+
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 100))
+        {
+            Debug.Log("Raycast atingiu: " + hit.collider.name);
+            if (hit.collider.TryGetComponent(out UseItem useItem))
+            {
+                Debug.Log("Interagindo com: " + useItem._data.itemName);
+                if ((int)useItem._data.itemType == 12)
+                {
+                    Debug.Log("Item é a chave do cadeado da prisão");
+                    if (Target.gameObject.TryGetComponent(out Inven inven))
+                    {
+                        Debug.Log("Inven encontrado no jogador");
+                        if ((int)inven.itemAtual.itemType == 12)
+                        {
+                            Debug.Log("Item atual é a chave do cadeado da prisão");
+                            GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
+                            Debug.Log("RawImage encontrada: " + raw.name);
+                            raw.gameObject.SetActive(true); // Ativa a RawImage
+                            var videoPlayer = GameObject.Find("Video").GetComponent<VideoPlayer>();
+                            Debug.Log("VideoPlayer encontrado: " + videoPlayer.name);
+                            videoPlayer.clip = videoPrisao;
+                            videoPlayer.Play(); // <- essa linha é importante
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("Nada para interagir");
+            }
+        }
+
         Target.gameObject.GetComponent<Inven>().RPC_HandleHit(cam.transform.position, cam.transform.forward);
+
+        
     }
 
     public void OnPointerDown()

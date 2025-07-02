@@ -8,7 +8,6 @@ public class CronometroFase2 : MonoBehaviour
     [SerializeField] int tempoLimite = 600; // Tempo limite em segundos (10 minutos)
     void Start()
     {
-        tempoLimite = 600; // Define o tempo limite para 10 minutos
         StartCoroutine(Temporizador()); // Inicia o temporizador
     }
 
@@ -25,6 +24,11 @@ public class CronometroFase2 : MonoBehaviour
             yield return new WaitForSeconds(1);
             tempoLimite--;
             AtualizarTexto();
+        }
+
+        if (tempoLimite <= 0)
+        {
+            Debug.Log("Tempo esgotado!");
         }
     }
 

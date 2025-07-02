@@ -63,7 +63,9 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 
             //playerObj.GetComponentInChildren<Camera>().enabled = false;
 
-
+            var localId = playerObj.GetComponent<PlayerLocalIdentifier>();
+            if (localId != null)
+                localId.isLocalPlayer = true;
 
 
         }

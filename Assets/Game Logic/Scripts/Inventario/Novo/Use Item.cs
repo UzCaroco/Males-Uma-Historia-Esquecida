@@ -7,7 +7,7 @@ using UnityEngine.Video;
 
 public class UseItem : NetworkBehaviour, IInteractable
 {
-    [SerializeField] ItemData _data;
+    [SerializeField] public ItemData _data;
 
     [SerializeField] Sprite slotVazio;
 
@@ -103,13 +103,13 @@ public class UseItem : NetworkBehaviour, IInteractable
                         if (doorPrision != null) // Se a porta da prisão não for nula
                         {
                             doorPrision.RPC_OpenDoorPrision(); //Abre a porta da prisão e salva licutan
-                            Runner.Despawn(Object); // Despawns o item
-                            ferroCadeado.SetActive(false); // Desativa a corrente
+                            playerInventory.RPC_MissaoConcluidaTeleportePlayer();
 
-                            GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
-                            Debug.Log("RawImage encontrada: " + raw.name);
-                            raw.gameObject.SetActive(true); // Ativa a RawImage
-                            GameObject.Find("Video").GetComponent<VideoPlayer>().clip = videoClipPrisao; // Define o vídeo da prisão
+                            ferroCadeado.SetActive(false); // Desativa a corrente
+                            Runner.Despawn(Object); // Despawns o item
+                            
+
+                            
                         }
                     }
 
