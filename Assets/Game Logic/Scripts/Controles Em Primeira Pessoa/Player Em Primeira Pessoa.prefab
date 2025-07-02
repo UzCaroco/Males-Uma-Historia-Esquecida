@@ -6961,6 +6961,8 @@ MonoBehaviour:
   phasePrefab:
   - {fileID: 4396012032626374306, guid: 6ddc2ed89b2290646afe526d492934f8, type: 3}
   - {fileID: 0}
+  canvasTemporizador: {fileID: 176164545876132879, guid: 9aa0325a5ea65a64595ac9ab211de3cc,
+    type: 3}
 --- !u!114 &5628818287154477352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6973,6 +6975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2db431ce44b1ea4784ab49a8c37a00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLocalPlayer: 0
 --- !u!1 &8180189612800446616
 GameObject:
   m_ObjectHideFlags: 0
