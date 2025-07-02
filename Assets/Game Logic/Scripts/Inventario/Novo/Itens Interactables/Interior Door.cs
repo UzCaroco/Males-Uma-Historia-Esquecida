@@ -141,4 +141,11 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
             Debug.Log("ID DA PORTA " + doorId);
         }
     }
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_MostrarOutline()
+    {
+        GetComponent<Outline>().enabled = true;
+    }
 }

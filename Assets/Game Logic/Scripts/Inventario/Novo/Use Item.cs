@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Fusion;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class UseItem : NetworkBehaviour, IInteractable
 {
@@ -17,6 +19,9 @@ public class UseItem : NetworkBehaviour, IInteractable
 
 
     [SerializeField] NetworkBool paes, tapetes, castanhas;
+
+
+    [SerializeField] VideoClip videoClipPrisao;
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
@@ -87,6 +92,7 @@ public class UseItem : NetworkBehaviour, IInteractable
                         if (portaCamara != null) // Se a porta da câmara não for nula
                         {
                             portaCamara.destravado = true; // Marca a porta como destravada
+                            GetComponent<Outline>().OutlineMode = Outline.Mode.OutlineVisible; // Ativa o outline
                             this.enabled = false; // Desabilita o script para não permitir mais interações com este item
                         }
                     }
@@ -99,6 +105,11 @@ public class UseItem : NetworkBehaviour, IInteractable
                             doorPrision.RPC_OpenDoorPrision(); //Abre a porta da prisão e salva licutan
                             Runner.Despawn(Object); // Despawns o item
                             ferroCadeado.SetActive(false); // Desativa a corrente
+
+                            GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
+                            Debug.Log("RawImage encontrada: " + raw.name);
+                            raw.gameObject.SetActive(true); // Ativa a RawImage
+                            GameObject.Find("Video").GetComponent<VideoPlayer>().clip = videoClipPrisao; // Define o vídeo da prisão
                         }
                     }
 
@@ -135,5 +146,13 @@ public class UseItem : NetworkBehaviour, IInteractable
     {
         Debug.Log("Abrindo gaveta");
         transform.localPosition += new Vector3(0, 0, 0.5f); // Move a gaveta para fora
+    }
+
+
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_MostrarOutline()
+    {
+        GetComponent<Outline>().enabled = true;
     }
 }

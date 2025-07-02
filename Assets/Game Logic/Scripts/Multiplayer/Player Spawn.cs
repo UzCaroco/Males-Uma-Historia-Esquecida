@@ -2,6 +2,7 @@
 using System.Linq;
 using Fusion;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
@@ -29,6 +30,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
 
             rawImage.SetActive(true); // Ativa o canvas do vídeo
             videoPlayer.gameObject.SetActive(true);
+            videoPlayer.loopPointReached += OnVideoFinished;
         }
 
 
@@ -43,8 +45,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
                 jaChegouEm90 = true;
                 Debug.Log("Chegou em 90% do vídeo!");
 
-                rawImage.SetActive(false);
-                videoPlayer.gameObject.SetActive(false);
+                rawImage.GetComponent<RawImage>().color = new Color(1, 1, 1, 0);
             }
         }
     }
@@ -84,6 +85,11 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
         Runner.Spawn(prefabCamara, inputAuthority: Runner.LocalPlayer);
     }
 
-
+    void OnVideoFinished(VideoPlayer vp)
+    {
+        Debug.Log("Cutscene finished, disabling video player and raw image.");
+        rawImage.gameObject.SetActive(false);
+        vp.gameObject.SetActive(false);
+    }
 
 }

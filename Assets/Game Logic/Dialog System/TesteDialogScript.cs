@@ -18,9 +18,14 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
     [SerializeField] AudioClip falaAlcorao;
     [SerializeField] AudioClip entregaDeTodosOsItens;
     string missaoPedidos = "- Buscar Castanhas\r\n- Buscar Tapetes\r\n- Buscar Pães\r\n- Livros do Alcorão";
+    string encontrarChaves = "Encontre as chaves douradas";
+    string missoesFase2 = "- Liberte os prisioneiros\r\n- Busque armamentos";
     [Networked] int itemCount { get; set; } = 0; // Contador de itens entregues
     [SerializeField] GameObject[] itensASerEntregues = new GameObject[4]; // Referência ao NetworkObject que contém os itens a serem entregues
     [SerializeField] GameObject canvasLuiza;
+
+    [SerializeField] bool fase2 = false; // Flag para verificar se o jogador já interagiu com o NPC
+    [SerializeField] GameObject canvasCronometro; // Referência ao NetworkObject do canvas do cronômetro
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
@@ -30,6 +35,14 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
             dialogoInicial = true;
 
             AtivarFala(falaInicial); // Ativa a fala inicial
+
+
+            if (fase2)
+            {
+                StartCoroutine(WaitForDialogEnd()); // Espera o diálogo terminar antes de despawnar o NPC
+                playerInventory.RPC_AtivarMissoes(missoesFase2); // Chama o RPC para ativar as missões
+                return;
+            }
 
             playerInventory.RPC_AtivarMissoes(missaoPedidos); // Chama o RPC para ativar as missões
 
@@ -66,7 +79,10 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
             itemCount++;
         }
 
-
+        if (itemCount == 4)
+        {
+            playerInventory.RPC_AtivarMissoes(encontrarChaves); // Chama o RPC para ativar as missões
+        }
 
 
     }
@@ -94,6 +110,18 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
             }
             audioSource.clip = entregaDeTodosOsItens;
             audioSource.Play();
+        }
+    }
+
+    IEnumerator WaitForDialogEnd()
+    {
+        // Espera o diálogo terminar
+        yield return new WaitWhile(() => audioSource.isPlaying);
+
+        Runner.Despawn(Object); // Despawns the NPC after the dialog ends
+        if (canvasCronometro != null)
+        {
+            canvasCronometro.SetActive(true); // Ativa o canvas do cronômetro
         }
     }
 }

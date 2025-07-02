@@ -39,6 +39,10 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
         "03.: \"Negra como a noite, imóvel como o tempo, sou buscada por milhões que jamais me tocaram. Todos se voltam pra mim, mesmo sem saber o caminho.\"",
         "04.: \"Carrego a ausência plena e a promessa do retorno. Ao meu lado, a centelha imóvel no vazio. Sou lido por quem observa o alto, mas pertenço ao chão das nações. Aponto sem direção, ilumino sem brilhar.\""
     };
+    string pedindoAgua = "- Encontre o copo d'água";
+    string pedindoPao = "- Encontre o pão";
+    string pedindoTapete = "- Encontre o tapete";
+    string pedindoCastanhas = "- Encontre as castanhas";
 
     [Networked] int itemCount { get; set; } = 0; // Contador de itens entregues
 
@@ -64,12 +68,13 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             if (itensASerEntregues[0] != null)
             {
                 itensASerEntregues[0].SetActive(true); // Ativa os itens a serem entregues
+                playerInventory.RPC_AtivarMissoes(pedindoAgua); // Chama o RPC para ativar as missões
             }
         }
 
         
 
-        else if (entregouAgua && playerInventory.itemAtual == null && itemCount == 1)
+        else if (entregouAgua && !entregouPao && playerInventory.itemAtual == null && itemCount == 1)
         {
             Debug.Log("Pediu o pão");
             AtivarFala(falaPedirPao); // Pede o pão
@@ -78,11 +83,12 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             if (itensASerEntregues[1] != null)
             {
                 itensASerEntregues[1].SetActive(true); // Ativa os itens a serem entregues
+                playerInventory.RPC_AtivarMissoes(pedindoPao); // Chama o RPC para ativar as missões
             }
         }
        
 
-        else if (entregouPao && playerInventory.itemAtual == null && itemCount == 2)
+        else if (entregouPao && !entregouTapete && playerInventory.itemAtual == null && itemCount == 2)
         {
             Debug.Log("Pediu o tapete");
             AtivarFala(falaPedirTapete); // Pede o tapete
@@ -91,11 +97,12 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             if (itensASerEntregues[2] != null)
             {
                 itensASerEntregues[2].SetActive(true); // Ativa os itens a serem entregues
+                playerInventory.RPC_AtivarMissoes(pedindoTapete); // Chama o RPC para ativar as missões
             }
         }
         
 
-        else if (entregouTapete && playerInventory.itemAtual == null && itemCount == 3)
+        else if (entregouTapete && !entregouCastanhas && playerInventory.itemAtual == null && itemCount == 3)
         {
             Debug.Log("Pediu as castanhas");
             AtivarFala(falaPedirCastanhas); // Pede as castanhas
@@ -104,6 +111,7 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
             if (itensASerEntregues[3] != null)
             {
                 itensASerEntregues[3].SetActive(true); // Ativa os itens a serem entregues
+                playerInventory.RPC_AtivarMissoes(pedindoCastanhas); // Chama o RPC para ativar as missões
             }
         }
         
@@ -120,7 +128,7 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
 
                 playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[0]);
             }
-            else if ((int)playerInventory.itemAtual.itemType == 8 && entregouAgua) //Se for the paes
+            else if ((int)playerInventory.itemAtual.itemType == 8 && entregouAgua && !entregouPao) //Se for the paes
             {
                 Debug.Log("Entregou o pão");
                 AtivarFala(falaSegundaCharada);
@@ -131,7 +139,7 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
 
                 playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[1]);
             }
-            else if (entregouPao && (int)playerInventory.itemAtual.itemType == 7) //Se for the tapete
+            else if (entregouPao && entregouAgua && !entregouTapete && (int)playerInventory.itemAtual.itemType == 7) //Se for the tapete
             {
                 Debug.Log("Entregou o tapete");
                 AtivarFala(falaTerceiraCharada);
@@ -142,7 +150,7 @@ public class InteracaoComVeio : NetworkBehaviour, IInteractable
 
                 playerInventory.RPC_AdicionarNovoTextoDaCharada(charadas[2]);
             }
-            else if (entregouTapete && (int)playerInventory.itemAtual.itemType == 9) // Se for castanhas
+            else if (entregouTapete && entregouAgua && entregouPao && !entregouCastanhas && (int)playerInventory.itemAtual.itemType == 9) // Se for castanhas
             {
                 Debug.Log("Entregou as castanhas");
                 AtivarFala(falaQuartaCharada);

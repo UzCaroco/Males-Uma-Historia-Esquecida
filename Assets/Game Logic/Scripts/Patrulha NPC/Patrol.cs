@@ -33,11 +33,6 @@ public class Patrol : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        if (aud == null)
-        {
-            Debug.LogWarning("AUDIOSOURCE NAO ENCONTRADO BBBBBBBBBBBB: " + aud);
-            aud = GetComponent<AudioSource>();
-        }
 
         if (!lookPlayer)
         {
@@ -47,7 +42,7 @@ public class Patrol : NetworkBehaviour
             if (walk)
             {
                 //cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
-                networkCharacterController.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
+                cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
         else
@@ -58,7 +53,7 @@ public class Patrol : NetworkBehaviour
             if (walk)
             {
                 //cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
-                networkCharacterController.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
+                cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
 
@@ -75,6 +70,7 @@ public class Patrol : NetworkBehaviour
             if (other.TryGetComponent(out PlayerMovement playerMovement))
             {
                 lookPlayer = false;
+                waypoint = pointLast;
                 playerMovement.RPC_DeathAndRespawnPlayer(posicaoDeRespawnPlayer.position);
             }
         }

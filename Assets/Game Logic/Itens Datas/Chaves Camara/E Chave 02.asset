@@ -16,5 +16,6 @@ MonoBehaviour:
   itemType: 11
   id: 1
   icon: {fileID: 21300000, guid: 931ca9c8a1d982345904ff20d72bf517, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 3098937137120643501, guid: e8bad712efc8ed6488fd5d29edf70cbd,
+    type: 3}
   position: {x: 0, y: 0, z: 0}

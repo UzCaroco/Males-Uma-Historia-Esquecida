@@ -74,13 +74,18 @@ public class Inven : NetworkBehaviour
             if (hit.collider.TryGetComponent(out NetworkObject netObj))
             {
                 if (netObj.TryGetComponent(out PickUpItem pickUpItem))
-                {
+                { 
                     if (pickUpItem != null)
                     {
                         if (pickUpItem.enabled)
                         {
                             if (inventario.itemAtual == null)
                             {
+                                if (netObj.TryGetComponent(out IInteractable interactable))
+                                {
+                                    interactable.RPC_OnInteractObject(inventario); // Chama o método de interação do objeto
+                                }
+
                                 inventario.itemAtual = pickUpItem.itemData;
                                 inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
                                 inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
@@ -98,14 +103,17 @@ public class Inven : NetworkBehaviour
 
 
 
-                IInteractable[] interacoes = netObj.GetComponents<IInteractable>();
-
-                foreach (var interactable in interacoes)
+                else // Se o objeto interativo não for um PickUpItem, PEGA TODOS OS COMPONENTES IInteractable
                 {
-                    interactable.RPC_OnInteractObject(inventario);
-                }
+                    IInteractable[] interacoes = netObj.GetComponents<IInteractable>();
 
-                inventario.networkObjectInterativo = netObj; // Armazena uma vez só
+                    foreach (var interactable in interacoes)
+                    {
+                        interactable.RPC_OnInteractObject(inventario);
+                    }
+
+                    inventario.networkObjectInterativo = netObj; // Armazena uma vez só
+                }
             }
 
             else if (inventario.itemAtual != null)

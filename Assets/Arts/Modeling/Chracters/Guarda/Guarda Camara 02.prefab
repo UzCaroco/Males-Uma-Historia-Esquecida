@@ -1870,10 +1870,10 @@ GameObject:
   - component: {fileID: 6938616104142263757}
   - component: {fileID: 5769620364008590029}
   - component: {fileID: 509188367662534694}
-  - component: {fileID: 8934357958132869967}
   - component: {fileID: 3814386670864146776}
   - component: {fileID: 1675686052745536022}
   - component: {fileID: 473596090147555883}
+  - component: {fileID: 1798059167891473394}
   m_Layer: 12
   m_Name: Guarda Camara 02
   m_TagString: Enemy
@@ -1922,8 +1922,8 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 5769620364008590029}
-  - {fileID: 8934357958132869967}
   - {fileID: 1675686052745536022}
+  - {fileID: 1798059167891473394}
   ForceRemoteRenderTimeframe: 0
 --- !u!82 &6938616104142263757
 AudioSource:
@@ -2071,25 +2071,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.065, z: 0}
---- !u!114 &8934357958132869967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6860657851667027505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  gravity: -20
-  jumpImpulse: 8
-  acceleration: 1000
-  braking: 1000
-  maxSpeed: 3
-  rotationSpeed: 15
 --- !u!65 &3814386670864146776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2150,6 +2131,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1798059167891473394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860657851667027505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  gravity: -20
+  jumpImpulse: 8
+  acceleration: 1000
+  braking: 1000
+  maxSpeed: 3
+  rotationSpeed: 15
 --- !u!1 &6915640130694132071
 GameObject:
   m_ObjectHideFlags: 0

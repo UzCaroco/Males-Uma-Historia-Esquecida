@@ -942,7 +942,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301291180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00000044703478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -950,7 +950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.661621, y: -20.685303}
+  m_AnchoredPosition: {x: 14.808442, y: -11.688049}
   m_SizeDelta: {x: 385.7, y: 151.7706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301291182
@@ -983,8 +983,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281019179
+  m_fontColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5253,7 +5253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1014.6039, y: 305.86316}
+  m_AnchoredPosition: {x: -1014.6039, y: 210.35748}
   m_SizeDelta: {x: 395.1, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534426597
@@ -5304,8 +5304,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5340,7 +5340,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 163.93274, z: 0, w: 0}
+  m_margin: {x: -44.079453, y: 163.93274, z: -210.60193, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8889,7 +8889,7 @@ PrefabInstance:
     - target: {fileID: 3287776273468563337, guid: f0f41560519682d43afb9c05960f333c,
         type: 3}
       propertyPath: cutsceneDuration
-      value: 5
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 3287776273468563337, guid: f0f41560519682d43afb9c05960f333c,
         type: 3}
