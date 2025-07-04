@@ -7,8 +7,10 @@ public class Patrol : NetworkBehaviour
     NetworkCharacterController networkCharacterController;
 
     [SerializeField] float velocity = 5, velocityRotation;
-    public Transform waypoint;
-    public Transform pointLast;
+
+    [SerializeField] NetworkObject wayInicial;
+    [Networked] public NetworkId WaypointId { get; set; }
+    [Networked] public NetworkId PointLastId { get; set; }
 
     public NetworkBool walk = true, lookPlayer = false;
 
@@ -23,16 +25,19 @@ public class Patrol : NetworkBehaviour
         cControler = GetComponent<CharacterController>();
         networkCharacterController = GetComponent<NetworkCharacterController>();
     }
+
     public override void Spawned()
     {
         cControler = GetComponent<CharacterController>();
         networkCharacterController = GetComponent<NetworkCharacterController>();
-
-        
+        WaypointId = wayInicial.Id;
     }
 
     public override void FixedUpdateNetwork()
     {
+        Transform waypoint = Runner.FindObject(WaypointId)?.transform;
+
+        if (waypoint == null) return;
 
         if (!lookPlayer)
         {
@@ -41,7 +46,6 @@ public class Patrol : NetworkBehaviour
 
             if (walk)
             {
-                //cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
                 cControler.Move((waypoint.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
@@ -52,7 +56,6 @@ public class Patrol : NetworkBehaviour
 
             if (walk)
             {
-                //cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
                 cControler.Move((playerEncontrado.position - transform.position).normalized * Runner.DeltaTime * velocity);
             }
         }
@@ -70,7 +73,7 @@ public class Patrol : NetworkBehaviour
             if (other.TryGetComponent(out PlayerMovement playerMovement))
             {
                 lookPlayer = false;
-                waypoint = pointLast;
+                WaypointId = PointLastId;
                 playerMovement.RPC_DeathAndRespawnPlayer(posicaoDeRespawnPlayer.position);
             }
         }
@@ -80,5 +83,4 @@ public class Patrol : NetworkBehaviour
     {
         aud.PlayOneShot(somPassos);
     }
-
 }

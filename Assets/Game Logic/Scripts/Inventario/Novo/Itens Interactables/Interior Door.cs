@@ -10,7 +10,7 @@ public class InteriorDoor : NetworkBehaviour, IInteractable
     [SerializeField] bool portaDaCamara = false;
     public NetworkBool destravado = false;
 
-    AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip abrirPorta, fecharPorta;
 
     public override void Spawned()

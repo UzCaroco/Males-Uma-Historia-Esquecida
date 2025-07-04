@@ -9,6 +9,28 @@ public class OpenDoors : NetworkBehaviour
     [SerializeField] InteriorDoor interiorDoor;
 
     [SerializeField] NetworkBool activateTrigger = false;
+    [SerializeField] NetworkObject guarda;
+
+    //public override void FixedUpdateNetwork()
+    //{
+    //    float distance = Vector3.Distance(transform.position, guarda.transform.position);
+
+        
+
+    //    if (distance < 10f && !activateTrigger)
+    //    {
+    //        Debug.Log("ABRIUUUUUUU");
+    //        activateTrigger = true;
+    //        interiorDoor.RPC_EnemyOpenDoor();
+    //        StartCoroutine(WaitForDoorOpen());
+    //    }
+    //    else if (distance >= 10f && activateTrigger)
+    //    {
+    //        Debug.Log("FECHOOOOOU");
+    //        activateTrigger = false;
+    //        interiorDoor.RPC_EnemyCloseDoor();
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

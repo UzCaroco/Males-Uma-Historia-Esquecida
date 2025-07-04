@@ -1,67 +1,62 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class PointPatrol : MonoBehaviour
+public class PointPatrol : NetworkBehaviour
 {
-    [SerializeField] Transform[] waypoints;
-
+    [SerializeField] NetworkObject[] waypoints;
     [SerializeField] Patrol enemyPatrol;
 
-    bool isResetting = false;
-    [SerializeField] Transform[] pointsRotateAround = new Transform[2];
+    NetworkBool isResetting = false;
+    [SerializeField] NetworkObject[] pointsRotateAround = new NetworkObject[2];
 
-
+    public override void Spawned()
+    {
+        Debug.Log(Object.name + Object.Id);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !isResetting)
         {
-            if (!isResetting)
-            {
-                sbyte sorteio = (sbyte)Random.Range(0, 2);
+            if (!enemyPatrol.HasStateAuthority) return;
 
-                if (sorteio == 0)
+            sbyte sorteio = (sbyte)Random.Range(0, 2);
+
+            if (sorteio == 0)
+            {
+                Debug.Log("sorteou novo ponto de patrulha");
+                SortearNovo();
+            }
+            else
+            {
+                Debug.Log("sorteou olhar ao redor");
+                if (!enemyPatrol.lookPlayer)
                 {
-                    Debug.Log("sorteiou novo ponto de patrulha");
-                    SortearNovo();
+                    OlharAoRedor();
                 }
                 else
                 {
-                    Debug.Log("sorteiou olhar ao redor");
-                    if (other.GetComponent<Patrol>().lookPlayer == false)
-                    {
-                        OlharAoRedor();
-                    }
-                    else
-                    {
-                        //ja está seguindo o player, então não para o inimigo e não sorteia novo ponto
-                        SortearNovo();
-                    }
-                    
-                    
+                    SortearNovo();
                 }
             }
-            isResetting = true;
 
+            isResetting = true;
         }
     }
 
     IEnumerator Resetar()
     {
         yield return new WaitForSeconds(2f);
-        isResetting = false; // Reseta o estado de isResetting após um curto período
+        isResetting = false;
     }
-
 
     void SortearNovo()
     {
-        
         if (waypoints.Length == 1)
         {
-            enemyPatrol.waypoint = waypoints[0];
-            enemyPatrol.pointLast = gameObject.transform; // Define o ponto atual como o último ponto visitado pelo inimigo
+            enemyPatrol.WaypointId = waypoints[0].Id;
+            enemyPatrol.PointLastId = Object.Id;
         }
         else if (waypoints.Length > 1)
         {
@@ -69,34 +64,30 @@ public class PointPatrol : MonoBehaviour
             do
             {
                 x = Random.Range(0, waypoints.Length);
-            } while (enemyPatrol.pointLast == waypoints[x]); // Enquanto o ponto anterior for igual ao ponto sorteado, sorteia um novo ponto
+            } while (waypoints[x].Id == enemyPatrol.PointLastId);
 
-            enemyPatrol.waypoint = waypoints[x];
-            enemyPatrol.pointLast = gameObject.transform; // Define o ponto atual como o último ponto visitado pelo inimigo
+            enemyPatrol.WaypointId = waypoints[x].Id;
+            enemyPatrol.PointLastId = Object.Id;
         }
 
-        enemyPatrol.walk = true; // Permite o inimigo se mover
-        StartCoroutine(Resetar()); // Inicia a coroutine para resetar o estado de isResetting após um curto período
+        enemyPatrol.walk = true;
+        StartCoroutine(Resetar());
     }
 
     void OlharAoRedor()
     {
-        enemyPatrol.walk = false; // Para o inimigo de se mover enquanto ele olha ao redor
-
-        StartCoroutine(Olhando()); // Inicia a coroutine que faz o inimigo olhar ao redor
-
+        enemyPatrol.walk = false;
+        StartCoroutine(Olhando());
     }
 
     IEnumerator Olhando()
     {
-        enemyPatrol.waypoint = pointsRotateAround[0];
-        yield return new WaitForSeconds(2f); // Aguarda 2 segundos enquanto o inimigo olha ao redor
+        enemyPatrol.WaypointId = pointsRotateAround[0].Id;
+        yield return new WaitForSeconds(2f);
 
-        enemyPatrol.waypoint = pointsRotateAround[1];
-        yield return new WaitForSeconds(2f); // Aguarda 2 segundos enquanto o inimigo olha ao redor
+        enemyPatrol.WaypointId = pointsRotateAround[1].Id;
+        yield return new WaitForSeconds(2f);
 
-        
         SortearNovo();
-        
     }
 }
