@@ -14,12 +14,13 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     [SerializeField] sbyte quantidadeDePlayersParaIniciarCutscene = 2; // Quantidade de players para iniciar a cutscene
     [Tooltip("Valor em porcentagem (0 a 100)")]
     [SerializeField] float cutsceneDuration = 9f; // Duração da cutscene em segundos
+    [SerializeField] GameObject telaDeLoading;
 
 
     [SerializeField] NetworkObject prefabSobrado, prefabCamara;
 
     public bool jaChegouEm90 = false;
-    bool ativouVideo = false;
+    NetworkBool ativouVideo = false;
 
     public override void FixedUpdateNetwork()
     {
@@ -27,6 +28,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
         if (runner.ActivePlayers.Count() == quantidadeDePlayersParaIniciarCutscene && !ativouVideo)
         {
             ativouVideo = true;
+            telaDeLoading.SetActive(false); // Desativa a tela de loading quando a cutscene começa
 
             rawImage.SetActive(true); // Ativa o canvas do vídeo
             videoPlayer.gameObject.SetActive(true);
