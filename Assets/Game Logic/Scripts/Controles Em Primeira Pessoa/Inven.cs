@@ -1,5 +1,6 @@
 
 using Fusion;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ public class Inven : NetworkBehaviour
     public NetworkObject networkObjectInterativo;
 
     [SerializeField] NetworkCharacterController controller;
+    [SerializeField] NetworkObject lamparina;
 
     public override void Spawned()
     {
@@ -269,5 +271,11 @@ public class Inven : NetworkBehaviour
     {
         Debug.Log("Missão concluída, teleportando jogador para a posição de conclusão.");
         GetComponent<PlayerMovement>().RPC_DeathAndRespawnPlayer(new Vector3(-18.4103f, 7.5825f, 13.5f));
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_SpawnarLamparinaComRaio(Vector3 posicao)
+    {
+        Runner.Spawn(lamparina, posicao, Quaternion.identity, inputAuthority: Runner.LocalPlayer);
     }
 }

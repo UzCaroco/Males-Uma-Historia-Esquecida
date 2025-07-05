@@ -6899,6 +6899,7 @@ MonoBehaviour:
   mesaLayer:
     serializedVersion: 2
     m_Bits: 32768
+  localId: {fileID: 0}
   porcentagem: 0.4
   velocity: 5
   joystickPai: {fileID: 0}
@@ -6945,6 +6946,8 @@ MonoBehaviour:
   rayDistance: 100
   networkObjectInterativo: {fileID: 0}
   controller: {fileID: 0}
+  lamparina: {fileID: 5692466117788689097, guid: 5dd2d85af9c94ab4eb0ee2f1f9ac9478,
+    type: 3}
 --- !u!114 &4910262077418193279
 MonoBehaviour:
   m_ObjectHideFlags: 0

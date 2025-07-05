@@ -136,7 +136,28 @@ public class UseItem : NetworkBehaviour, IInteractable
     public void RPC_AcenderLamparina()
     {
         Debug.Log("Acendendo a lamparina");
-        Runner.Spawn(lamparinaPickUp, transform.position, transform.rotation, inputAuthority: Runner.LocalPlayer); // Spawns a lamparina na posiçao do item
+
+        foreach (var x in Runner.ActivePlayers)
+        {
+            var networkObject = Runner.GetPlayerObject(x); // Percorre os objetos de rede ativos (Players)
+            if (networkObject != null) // Verifica se o objeto de rede não é nulo
+            {
+                if (networkObject.HasStateAuthority)
+                {
+                    Debug.Log("Encontrou o jogador com autoridade de estado: " + networkObject);
+                    // Pega o componente Inven a partir do NetworkObject do player
+                    var playerInventory = networkObject.GetComponent<Inven>();
+                    if (playerInventory != null)
+                    {
+                        Debug.Log("Chamando RPC para acender a lamparina no jogador:");
+                        playerInventory.RPC_SpawnarLamparinaComRaio(transform.position); // Chama o RPC para acender a lamparina
+                    }
+                    break; // Encerra o loop se encontrar o jogador com autoridade de estado
+                }
+            }
+        }
+
+        //Runner.Spawn(lamparinaPickUp, transform.position, transform.rotation, inputAuthority: Runner.LocalPlayer); // Spawns a lamparina na posiçao do item
         Runner.Despawn(Object); // Despawns o item
         
     }

@@ -783,6 +783,16 @@ PrefabInstance:
       propertyPath: SortKey
       value: 2793389529
       objectReference: {fileID: 0}
+    - target: {fileID: 5698005581555455166, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698005581555455166, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.48231596
+      objectReference: {fileID: 0}
     - target: {fileID: 5717452340208395791, guid: c76e5025b7d5d4e4b98e4da1da3e6a04,
         type: 3}
       propertyPath: SortKey

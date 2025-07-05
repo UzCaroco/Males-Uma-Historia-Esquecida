@@ -68,6 +68,10 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
             var localId = playerObj.GetComponent<PlayerLocalIdentifier>();
             if (localId != null)
                 localId.isLocalPlayer = true;
+            var playerMovement = playerObj.GetComponent<PlayerMovement>();
+            if (playerMovement != null)
+                playerMovement.localId = localId; // Passa a referência do PlayerLocalIdentifier
+            
 
 
         }

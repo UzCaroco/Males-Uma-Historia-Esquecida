@@ -18,6 +18,9 @@ public class PlayerMovement : NetworkBehaviour
     bool sobMesa => Physics.Raycast(transform.position, Vector3.up, out RaycastHit hit, 3f, mesaLayer);
 
     CharacterController cc;
+
+    public PlayerLocalIdentifier localId; // Referência ao script que identifica o jogador local
+
     private void Awake()
     {
         _controller = GetComponent<NetworkCharacterController>();
@@ -63,6 +66,11 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Update()
     {
+        if (localId == null || !localId.isLocalPlayer)
+        {
+            return; // Se não for o jogador local, não processa os controles
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             fireGun.Play();
