@@ -10,8 +10,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 209018357232735058, guid: ea510b37dd5c8654aa60b8b8be89125d,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b82736068edeb3e4e94e33d33c153d95, type: 2}
+    - target: {fileID: 209018357232735058, guid: ea510b37dd5c8654aa60b8b8be89125d,
+        type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.6455814
+      value: 0.033337772
       objectReference: {fileID: 0}
     - target: {fileID: 447039660541425722, guid: ea510b37dd5c8654aa60b8b8be89125d,
         type: 3}

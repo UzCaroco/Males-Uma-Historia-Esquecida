@@ -4,6 +4,7 @@ using System;
 using TMPro;
 using UnityEngine.Video;
 using Fusion;
+using System.Collections;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class FirstPersonCamera : MonoBehaviour
     [SerializeField] TextMeshProUGUI textoMissoes;
 
     [SerializeField] TMP_InputField inputFieldChestCode;
+    [SerializeField] TextMeshProUGUI textoDoQuePrecisa;
 
     public string stringMissoes;
 
@@ -186,6 +188,27 @@ public class FirstPersonCamera : MonoBehaviour
                             }
                         }
                     }
+                }
+
+                if (useItem._data.itemType == ItemType.Isqueiro)
+                {
+                    textoDoQuePrecisa.text = "Você precisa de um isqueiro para acender a lamparina.";
+                    StartCoroutine(ResetarTexto());
+                }
+                else if (useItem._data.itemType == ItemType.EDeHabra)
+                {
+                    textoDoQuePrecisa.text = "Você precisa de um Pé de cabra para abrir a gaveta";
+                    StartCoroutine(ResetarTexto());
+                }
+                else if (useItem._data.itemType == ItemType.ChaveQuarto)
+                {
+                    textoDoQuePrecisa.text = "Você precisa de uma chave prateada para abrir a porta";
+                    StartCoroutine(ResetarTexto());
+                }
+                else if (useItem._data.itemType == ItemType.ChaveSaida)
+                {
+                    textoDoQuePrecisa.text = "Você precisa de uma chave dourada para abrir o cadeado";
+                    StartCoroutine(ResetarTexto());
                 }
             }
             else //Aqui verifica se pegou todos os mosquestes, mas ainda não salvou os prisioneiros
@@ -394,5 +417,12 @@ public class FirstPersonCamera : MonoBehaviour
         {
             Debug.LogWarning("Chest code object is not assigned in the inspector.");
         }
+    }
+
+
+    IEnumerator ResetarTexto()
+    {
+        yield return new WaitForSeconds(5f);
+        textoDoQuePrecisa.text = "";
     }
 }
