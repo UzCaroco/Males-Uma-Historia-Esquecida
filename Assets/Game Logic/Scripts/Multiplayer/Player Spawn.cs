@@ -25,7 +25,7 @@ public class PlayerSpawn : SimulationBehaviour, IPlayerJoined
     public override void FixedUpdateNetwork()
     {
 
-        if (runner.ActivePlayers.Count() == quantidadeDePlayersParaIniciarCutscene && !ativouVideo)
+        if (runner.ActivePlayers.Count() >= quantidadeDePlayersParaIniciarCutscene && !ativouVideo)
         {
             ativouVideo = true;
             telaDeLoading.SetActive(false); // Desativa a tela de loading quando a cutscene começa

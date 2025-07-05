@@ -6,6 +6,7 @@ public class PickUpItem : NetworkBehaviour, IInteractable
     public ItemData itemData;
     [SerializeField] InteriorDoor interiorDoor;
     [SerializeField] UseItem useItem;
+    [SerializeField] PickMosquetes pickMosquetes;
     public override void Spawned()
     {
     }
@@ -18,6 +19,7 @@ public class PickUpItem : NetworkBehaviour, IInteractable
             playerInventory.RPC_AtivarSomDePickUp(); // Play pickup sound
 
 
+
             if (itemData != null)
             {
                 if (interiorDoor != null)
@@ -28,6 +30,12 @@ public class PickUpItem : NetworkBehaviour, IInteractable
                 {
                     useItem.RPC_MostrarOutline(); // Show outline if the item is a use item
                 }
+            }
+
+            if (pickMosquetes != null)
+            {
+                Debug.Log("Pegou mosquete: ");
+                pickMosquetes.RPC_PegouMosquete(); // Show outline if the item is a mosquete
             }
 
 

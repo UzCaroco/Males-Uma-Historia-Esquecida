@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using TMPro;
 using UnityEngine.Video;
+using Fusion;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -159,14 +160,33 @@ public class FirstPersonCamera : MonoBehaviour
                         Debug.Log("Inven encontrado no jogador");
                         if ((int)inven.itemAtual.itemType == 12)
                         {
-                            Debug.Log("Item atual é a chave do cadeado da prisão");
-                            GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
-                            Debug.Log("RawImage encontrada: " + raw.name);
-                            raw.gameObject.SetActive(true); // Ativa a RawImage
-                            var videoPlayer = GameObject.Find("Video").GetComponent<VideoPlayer>();
-                            Debug.Log("VideoPlayer encontrado: " + videoPlayer.name);
-                            videoPlayer.clip = videoPrisao;
-                            videoPlayer.Play(); // <- essa linha é importante
+                            PickMosquetes pickMosquetes = FindAnyObjectByType<PickMosquetes>();
+                            if (pickMosquetes != null)
+                            {
+                                Debug.Log("pickMosquetes encontrado");
+                                if (pickMosquetes.mosquetes < 8) //Se não pegou todos os mosquestes roda outra cutscene
+                                {
+                                    GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
+                                    Debug.Log("RawImage encontrada: " + raw.name);
+                                    raw.gameObject.SetActive(true); // Ativa a RawImage
+                                    var videoPlayer = GameObject.Find("Video").GetComponent<VideoPlayer>();
+                                    Debug.Log("VideoPlayer encontrado: " + videoPlayer.name);
+                                    videoPlayer.clip = videoPrisao;
+                                    videoPlayer.Play();
+                                }
+                                else //Se pegou todos os mosquetes roda cutscene da fase 3
+                                {
+                                    PularVideo[] pularVideos = FindObjectsOfType<PularVideo>();
+                                    foreach (PularVideo pular in pularVideos)
+                                    {
+                                        pular.NovaCutscene(3);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Debug.LogError("pickMosquetes não encontrado");
+                            }
                         }
                     }
                 }

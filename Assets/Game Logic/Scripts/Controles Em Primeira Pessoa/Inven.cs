@@ -86,11 +86,21 @@ public class Inven : NetworkBehaviour
                                     interactable.RPC_OnInteractObject(inventario); // Chama o método de interação do objeto
                                 }
 
-                                inventario.itemAtual = pickUpItem.itemData;
-                                inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
-                                inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
-                                inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
-                                inventario.dropPoint = hit.transform; // Armazena a posição do item
+                                if ((int)pickUpItem.itemData.itemType != 16)
+                                {
+                                    inventario.itemAtual = pickUpItem.itemData;
+                                    inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
+                                    inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
+                                    inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
+                                    inventario.dropPoint = hit.transform; // Armazena a posição do item
+                                }
+                                else
+                                {
+                                    inventario.itemAtualID = (int)pickUpItem.itemData.itemType; // Atualiza o ID do item atual
+                                    inventario.itemIcon = pickUpItem.itemData.icon; // Atualiza o ícone do item
+                                    inventario.cam.GetComponent<FirstPersonCamera>().slotItem.sprite = pickUpItem.itemData.icon; // Atualiza o ícone do item na câmera
+                                    inventario.dropPoint = hit.transform; // Armazena a posição do item
+                                }
 
                             }
                             else

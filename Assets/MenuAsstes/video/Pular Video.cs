@@ -8,6 +8,7 @@ public class PularVideo : MonoBehaviour
     [SerializeField] GameObject rawImage;
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] VideoClip cutsceneFase2;
+    [SerializeField] VideoClip cutsceneFase3;
 
     public void Pular()
     {
@@ -30,6 +31,12 @@ public class PularVideo : MonoBehaviour
             Debug.Log("Nova cutscene iniciada: Fase 2");
             videoPlayer.clip = cutsceneFase2; // Define o novo vídeo
         }
+        else if (cutscene == 3)
+        {
+            Debug.Log("Nova cutscene iniciada: Fase 2");
+            videoPlayer.clip = cutsceneFase3; // Define o novo vídeo
+        }
+
         videoPlayer.Play(); // Inicia o novo vídeo
         Debug.Log("Novo vídeo iniciado: " + videoPlayer.clip.name);
 
