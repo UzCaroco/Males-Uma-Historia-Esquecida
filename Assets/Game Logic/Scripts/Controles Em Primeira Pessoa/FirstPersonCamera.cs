@@ -42,7 +42,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     public bool estaAgachado = false;
 
-    [SerializeField] VideoClip videoPrisao;
+    [SerializeField] VideoClip videoPrisao, videoArmas;
 
     void Start()
     {
@@ -176,11 +176,8 @@ public class FirstPersonCamera : MonoBehaviour
                                 }
                                 else //Se pegou todos os mosquetes roda cutscene da fase 3
                                 {
-                                    PularVideo[] pularVideos = FindObjectsOfType<PularVideo>();
-                                    foreach (PularVideo pular in pularVideos)
-                                    {
-                                        pular.NovaCutscene(3);
-                                    }
+                                    PlayerMovement playerQualquer = FindAnyObjectByType<PlayerMovement>();
+                                    playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-25f, 8.54f, 13f));
                                 }
                             }
                             else
@@ -191,9 +188,29 @@ public class FirstPersonCamera : MonoBehaviour
                     }
                 }
             }
-            else
+            else //Aqui verifica se pegou todos os mosquestes, mas ainda não salvou os prisioneiros
             {
-                Debug.Log("Nada para interagir");
+                if (hit.collider.TryGetComponent(out PickUpItem pickupItem))
+                {
+                    if ((int)pickupItem.itemData.itemType == 16)
+                    {
+                        PickMosquetes pickMosquetes = FindAnyObjectByType<PickMosquetes>();
+                        if (pickMosquetes != null && pickMosquetes.mosquetes >= 7)
+                        {
+                            if (pickMosquetes.cadeadoPrisao != null)
+                            {
+                                Debug.Log("Pegou mosquete: " + pickMosquetes.mosquetes);
+                                GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
+                                Debug.Log("RawImage encontrada: " + raw.name);
+                                raw.gameObject.SetActive(true); // Ativa a RawImage
+                                var videoPlayer = GameObject.Find("Video").GetComponent<VideoPlayer>();
+                                Debug.Log("VideoPlayer encontrado: " + videoPlayer.name);
+                                videoPlayer.clip = videoArmas;
+                                videoPlayer.Play();
+                            }
+                        }
+                    }
+                }
             }
         }
 
