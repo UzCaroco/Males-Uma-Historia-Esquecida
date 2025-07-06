@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Fusion;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class SpawnNewPhase : NetworkBehaviour
