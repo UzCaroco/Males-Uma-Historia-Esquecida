@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fusion;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -17,6 +18,21 @@ public class TriggerVideofase3 : MonoBehaviour
             rawImage.SetActive(true);
             videoPlayer.clip = cutscene3;
             videoPlayer.Play();
+
+
+            SpawnarNovaFase();
+
+
+        }
+    }
+
+    private void SpawnarNovaFase()
+    {
+        SpawnNewPhase spawnPhase = FindAnyObjectByType<SpawnNewPhase>();
+        if (spawnPhase != null)
+        {
+            spawnPhase.VerificarPlayerComAutoridade(); // Chama o RPC para spawnar a nova fase
+            Debug.Log("Nova fase spawnada com sucesso.");
         }
     }
 }

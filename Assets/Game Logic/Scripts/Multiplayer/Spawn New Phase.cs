@@ -9,13 +9,13 @@ public class SpawnNewPhase : NetworkBehaviour
     [SerializeField] sbyte phaseToSpawn = 0;
     [SerializeField] NetworkObject[] phasePrefab = new NetworkObject[2];
 
-    [SerializeField] NetworkObject canvasTemporizador;
+    [SerializeField] NetworkObject canvasTemporizador, managerFase3;
 
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_SpawnPhase()
     {
-        Debug.Log("Chamando RPC para spawnar nova fase no jogador: ");
+        Debug.Log("Chamando RPC para spawnar nova fase:" + phaseToSpawn);
         Runner.Spawn(phasePrefab[phaseToSpawn], inputAuthority: Runner.LocalPlayer);
 
         phaseToSpawn++;
@@ -36,6 +36,16 @@ public class SpawnNewPhase : NetworkBehaviour
                 Debug.Log("Despawned Sobrado");
             }
         }
+        else if (phaseToSpawn == 2)
+        {
+            NetworkObject networkObject = GameObject.Find("Bake Camara(Clone)").GetComponent<NetworkObject>();
+            Debug.Log("BUSCANDO FASE 2" + networkObject);
+            if (networkObject != null)
+            {
+                Runner.Despawn(networkObject);
+                Debug.Log("Despawned Sobrado Fase 2");
+            }
+        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
@@ -50,6 +60,17 @@ public class SpawnNewPhase : NetworkBehaviour
         else
         {
             Debug.LogError("Canvas Temporizador não está definido!");
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void RPC_ManagerFase3()
+    {
+        Debug.Log("Chamando RPC para spawnar o gamemanager: ");
+        if (canvasTemporizador != null)
+        {
+            Runner.Spawn(managerFase3, inputAuthority: Runner.LocalPlayer);
+            Debug.Log("Spawned Temporizador");
         }
     }
 
@@ -86,5 +107,27 @@ public class SpawnNewPhase : NetworkBehaviour
                 }
             }
         }
+    }
+
+    public void VerificarPlayerComAutoridade() //So entra aqui quando for da segunda para a terceira fase
+    {
+        foreach (var x in Runner.ActivePlayers)
+        {
+            var networkObject = Runner.GetPlayerObject(x); //Percorre os objetos de rede ativos (Players)
+            if (networkObject != null) //Verifica se o objeto de rede não é nulo
+            {
+                if (networkObject.HasStateAuthority)
+                {
+                    if (networkObject.TryGetComponent<SpawnNewPhase>(out var spawnPhase))
+                    {
+                        Debug.Log("Encontrou o jogador com autoridade de estado: " + networkObject);
+                        spawnPhase.RPC_SpawnPhase(); // Chama o RPC para spawnar a nova fase
+                        spawnPhase.RPC_DespawnLastPhase();
+                    }
+                    break; // Encerra o loop se encontrar o jogador com autoridade de estado
+                }
+            }
+        }
+
     }
 }

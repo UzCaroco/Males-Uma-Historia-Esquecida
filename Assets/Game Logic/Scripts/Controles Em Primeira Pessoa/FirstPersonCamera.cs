@@ -151,21 +151,18 @@ public class FirstPersonCamera : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 100))
         {
             Debug.Log("Raycast atingiu: " + hit.collider.name);
+
             if (hit.collider.TryGetComponent(out UseItem useItem))
             {
-                Debug.Log("Interagindo com: " + useItem._data.itemName);
                 if ((int)useItem._data.itemType == 12)
                 {
-                    Debug.Log("Item é a chave do cadeado da prisão");
                     if (Target.gameObject.TryGetComponent(out Inven inven))
                     {
-                        Debug.Log("Inven encontrado no jogador");
                         if ((int)inven.itemAtual.itemType == 12)
                         {
                             PickMosquetes pickMosquetes = FindAnyObjectByType<PickMosquetes>();
                             if (pickMosquetes != null)
                             {
-                                Debug.Log("pickMosquetes encontrado");
                                 if (pickMosquetes.mosquetes < 8) //Se não pegou todos os mosquestes roda outra cutscene
                                 {
                                     GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
@@ -178,8 +175,9 @@ public class FirstPersonCamera : MonoBehaviour
                                 }
                                 else //Se pegou todos os mosquetes roda cutscene da fase 3
                                 {
+                                    Debug.Log("CHEGOU AQUII pickMosquetes.mosquetes" + pickMosquetes.mosquetes);
                                     PlayerMovement playerQualquer = FindAnyObjectByType<PlayerMovement>();
-                                    playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-25f, 8.54f, 13f));
+                                    playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-27.43f, 8.54f, 45.18f));
                                 }
                             }
                             else
@@ -230,6 +228,11 @@ public class FirstPersonCamera : MonoBehaviour
                                 Debug.Log("VideoPlayer encontrado: " + videoPlayer.name);
                                 videoPlayer.clip = videoArmas;
                                 videoPlayer.Play();
+                            }
+                            else
+                            {
+                                PlayerMovement playerQualquer = FindAnyObjectByType<PlayerMovement>();
+                                playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-27.43f, 8.54f, 45.18f));
                             }
                         }
                     }

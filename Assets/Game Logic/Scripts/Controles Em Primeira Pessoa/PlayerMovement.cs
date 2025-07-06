@@ -198,6 +198,7 @@ public class PlayerMovement : NetworkBehaviour
     public void RPC_DeathAndRespawnPlayer(Vector3 posicaoDeRespawn)
     {
         _controller.Teleport(posicaoDeRespawn);
+        Debug.Log("Player FOI PARA: " + posicaoDeRespawn);
     }
 
 

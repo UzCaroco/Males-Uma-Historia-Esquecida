@@ -6963,8 +6963,10 @@ MonoBehaviour:
   phaseToSpawn: 0
   phasePrefab:
   - {fileID: 4396012032626374306, guid: 6ddc2ed89b2290646afe526d492934f8, type: 3}
-  - {fileID: 0}
+  - {fileID: 2926670231057158654, guid: d868cb5200aa8214cb4d3783fed397a6, type: 3}
   canvasTemporizador: {fileID: 176164545876132879, guid: 9aa0325a5ea65a64595ac9ab211de3cc,
+    type: 3}
+  managerFase3: {fileID: 6041927322401436058, guid: d06ac8df09414534ab9a633571d443a0,
     type: 3}
 --- !u!114 &5628818287154477352
 MonoBehaviour:

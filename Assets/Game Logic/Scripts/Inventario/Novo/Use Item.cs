@@ -106,6 +106,15 @@ public class UseItem : NetworkBehaviour, IInteractable
                             playerInventory.RPC_MissaoConcluidaTeleportePlayer();
 
                             ferroCadeado.SetActive(false); // Desativa a corrente
+
+
+                            PickMosquetes pickMosquetes = FindAnyObjectByType<PickMosquetes>();
+                            if (pickMosquetes != null && pickMosquetes.mosquetes >= 8)
+                            {
+                                PlayerMovement playerQualquer = FindAnyObjectByType<PlayerMovement>();
+                                playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-27.43f, 8.54f, 45.18f));
+                            }
+
                             Runner.Despawn(Object); // Despawns o item
                             
 

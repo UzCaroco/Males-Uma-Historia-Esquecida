@@ -24,7 +24,7 @@ public class PickMosquetes : NetworkBehaviour
             {
 
                 PlayerMovement playerQualquer = FindAnyObjectByType<PlayerMovement>();
-                playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-25f, 8.54f, 13f));
+                playerQualquer.RPC_DeathAndRespawnPlayer(new Vector3(-27.43f, 8.54f, 45.18f));
 
                 //GameObject raw = FindAnyObjectByType<RawImage>(FindObjectsInactive.Include).gameObject; // Encontra a RawImage na cena
                 //Debug.Log("RawImage encontrada: " + raw.name);

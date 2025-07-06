@@ -20,11 +20,12 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
     string missaoPedidos = "- Buscar Castanhas\r\n- Buscar Tapetes\r\n- Buscar Pães\r\n- Livros do Alcorão";
     string encontrarChaves = "Encontre as chaves douradas";
     string missoesFase2 = "- Liberte os prisioneiros\r\n- Busque armamentos";
+    string missoesFase3 = "- Derrote o máximo de inimigos";
     [Networked] int itemCount { get; set; } = 0; // Contador de itens entregues
     [SerializeField] GameObject[] itensASerEntregues = new GameObject[4]; // Referência ao NetworkObject que contém os itens a serem entregues
     [SerializeField] GameObject canvasLuiza;
 
-    [SerializeField] bool fase2 = false; // Flag para verificar se o jogador já interagiu com o NPC
+    [SerializeField] bool fase2 = false, fase3; // Flag para verificar se o jogador já interagiu com o NPC
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     public void RPC_OnInteractObject(Inven playerInventory)
@@ -42,8 +43,14 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
                 playerInventory.RPC_AtivarMissoes(missoesFase2); // Chama o RPC para ativar as missões
                 return;
             }
+            else if (fase3)
+            {
+                StartCoroutine(WaitForDialogEnd());
+                playerInventory.RPC_AtivarMissoes(missoesFase3); // Chama o RPC para ativar as missões
+                return;
+            }
 
-            playerInventory.RPC_AtivarMissoes(missaoPedidos); // Chama o RPC para ativar as missões
+                playerInventory.RPC_AtivarMissoes(missaoPedidos); // Chama o RPC para ativar as missões
 
             for (int i = 0; i < itensASerEntregues.Length; i++)
             {
@@ -130,8 +137,17 @@ public class TesteDialogScript : NetworkBehaviour, IInteractable
                     var hostSpawnPhase = networkObject.GetComponent<SpawnNewPhase>();
                     if (hostSpawnPhase != null)
                     {
-                        Debug.Log("Chamando RPC para spawnar nova fase no jogador:");
-                        hostSpawnPhase.RPC_SpawnTemporizador(); // Chama o RPC para spawnar o temporizador
+                        if (fase2)
+                        {
+                            Debug.Log("Chamando RPC para spawnar nova fase no jogador:");
+                            hostSpawnPhase.RPC_SpawnTemporizador(); // Chama o RPC para spawnar o temporizador
+                        }
+                        else if (fase3)
+                        {
+                            Debug.Log("Chamando RPC para spawnar nova fase no jogador:");
+                            hostSpawnPhase.RPC_ManagerFase3(); // Chama o RPC para spawnar o temporizador
+                        }
+                        
                     }
 
                     break; // Encerra o loop se encontrar o jogador com autoridade de estado
